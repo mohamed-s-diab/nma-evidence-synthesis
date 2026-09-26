@@ -4,7 +4,7 @@
 
 <br/>
 
-[![CI Pipeline](https://github.com/Mohamed101010101/nma-nsclc-evidence-synthesis/actions/workflows/ci.yml/badge.svg)](https://github.com/Mohamed101010101/nma-nsclc-evidence-synthesis/actions/workflows/ci.yml)
+[![CI Pipeline](https://github.com/mohamed-s-diab/nma-nsclc-evidence-synthesis/actions/workflows/ci.yml/badge.svg)](https://github.com/mohamed-s-diab/nma-nsclc-evidence-synthesis/actions/workflows/ci.yml)
 [![R Version](https://img.shields.io/badge/R-v4.6.1-276DC3.svg?logo=R&logoColor=white)](https://www.r-project.org/)
 [![renv](https://img.shields.io/badge/renv-v1.2.3%20locked-blue.svg?logo=r&logoColor=white)](https://rstudio.github.io/renv/)
 [![Package: netmeta](https://img.shields.io/badge/netmeta-v3.6--1-blue.svg)](https://cran.r-project.org/package=netmeta)
@@ -13,8 +13,8 @@
 [![Validation: Automated Tests](https://img.shields.io/badge/Quality%20Assurance-19%2F19%20Passed-brightgreen.svg)](#8-computational-reproducibility--execution-pipeline)
 [![Journal Standard](https://img.shields.io/badge/Publication%20Standard-Lancet%20%7C%20NEJM%20%7C%20BMJ%20%7C%20JAMA-purple.svg)](#4-complete-publication-gallery-300-dpi-visual-exhibits)
 [![Evidence Base](https://img.shields.io/badge/Evidence%20Base-24%20RCTs%20%7C%2015%2C753%20Pts-informational.svg)](#2-evidence-base--clinical-scenario-advanced-nsclc)
-[![Live Interactive Monograph](https://img.shields.io/badge/Live%20Report-Interactive%20Monograph-0071E3.svg?logo=googlechrome&logoColor=white)](https://mohamed101010101.github.io/nma-nsclc-evidence-synthesis/)
-[![Codespaces: Instant Cloud Run](https://img.shields.io/badge/Codespaces-Instant%20Cloud%20Run-238636.svg?logo=github&logoColor=white)](https://codespaces.new/Mohamed101010101/nma-nsclc-evidence-synthesis?quickstart=1)
+[![Live Interactive Monograph](https://img.shields.io/badge/Live%20Report-Interactive%20Monograph-0071E3.svg?logo=googlechrome&logoColor=white)](https://mohamed-s-diab.github.io/nma-nsclc-evidence-synthesis/)
+[![Codespaces: Instant Cloud Run](https://img.shields.io/badge/Codespaces-Instant%20Cloud%20Run-238636.svg?logo=github&logoColor=white)](https://codespaces.new/mohamed-s-diab/nma-nsclc-evidence-synthesis?quickstart=1)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 </div>
@@ -567,7 +567,7 @@ nma-nsclc-evidence-synthesis/
 ### ⚡ One-Click Cloud Reproducibility (Zero Installation)
 Launch an isolated, fully configured cloud R laboratory in your browser with all dependencies and system libraries pre-installed:
 
-[![Open in GitHub Codespaces](https://img.shields.io/badge/Codespaces-Open%20in%20Cloud%20(One--Click)-238636.svg?style=for-the-badge&logo=github&logoColor=white)](https://codespaces.new/Mohamed101010101/nma-nsclc-evidence-synthesis?quickstart=1)
+[![Open in GitHub Codespaces](https://img.shields.io/badge/Codespaces-Open%20in%20Cloud%20(One--Click)-238636.svg?style=for-the-badge&logo=github&logoColor=white)](https://codespaces.new/mohamed-s-diab/nma-nsclc-evidence-synthesis?quickstart=1)
 
 *Instantly boots an interactive VS Code / R environment pre-loaded with R 4.6.1, `netmeta`, Linux headers (`libglpk`), and all 86 locked dependencies ready to execute `scripts/run_all_pipeline.R` directly in the browser.*
 
@@ -576,7 +576,7 @@ Install this research compendium and all analytical dependencies directly into R
 ```r
 # In R or RStudio:
 if (!requireNamespace("remotes", quietly = TRUE)) install.packages("remotes")
-remotes::install_github("Mohamed101010101/nma-nsclc-evidence-synthesis", dependencies = TRUE)
+remotes::install_github("mohamed-s-diab/nma-nsclc-evidence-synthesis", dependencies = TRUE)
 ```
 
 ### Environment Restoration via `renv`
@@ -679,7 +679,7 @@ To cite this pipeline in academic manuscripts, clinical practice guidelines, or 
   year         = {2026},
   version      = {1.0.0},
   publisher    = {GitHub},
-  url          = {https://github.com/Mohamed101010101/nma-nsclc-evidence-synthesis}
+  url          = {https://github.com/mohamed-s-diab/nma-nsclc-evidence-synthesis}
 }
 ```
 
