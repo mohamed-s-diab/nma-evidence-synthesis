@@ -7,7 +7,9 @@
         "r.rterm.linux": "/usr/local/bin/R",
         "r.bracketedPaste": true,
         "r.plot.useHttpgd": true,
-        "r.lintr.enable": false
+        "r.lintr.enable": false,
+        "r.linting": false,
+        "r.lsp.diagnostics": false
       },
       "extensions": [
         "REditorSupport.r",
