@@ -1,0 +1,5 @@
+{
+  "r.lintr.enable": false,
+  "r.linting": false,
+  "r.lsp.diagnostics": false
+}
