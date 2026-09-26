@@ -158,6 +158,14 @@ all_tables_exist <- all(file.exists(expected_tables))
 assert_test("All core summary CSV and HTML league tables exist and are accessible", all_tables_exist)
 
 # ------------------------------------------------------------------------------
+# 5. RESEARCH COMPENDIUM METADATA & PACKAGING AUDITING
+# ------------------------------------------------------------------------------
+cat("\n--- Section 5: rOpenSci Compendium Packaging Metadata ---\n")
+
+desc_valid <- file.exists("DESCRIPTION") && !inherits(tryCatch(read.dcf("DESCRIPTION"), error = function(e) e), "error")
+assert_test("Standard rOpenSci DESCRIPTION compendium file exists and parses validly", desc_valid)
+
+# ------------------------------------------------------------------------------
 # FINAL TEST REPORT
 # ------------------------------------------------------------------------------
 cat("\n==============================================================================\n")

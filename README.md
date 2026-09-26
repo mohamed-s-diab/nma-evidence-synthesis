@@ -10,7 +10,7 @@
 [![Package: netmeta](https://img.shields.io/badge/netmeta-v3.6--1-blue.svg)](https://cran.r-project.org/package=netmeta)
 [![Methodology: Network Meta-Analysis](https://img.shields.io/badge/Evidence%20Synthesis-Network%20Meta--Analysis-darkgreen.svg)](#3-clinical--methodological-framework)
 [![Pipeline: 12 Engines](https://img.shields.io/badge/Analytical%20Engines-12%20R%20Modules-teal.svg)](#3-clinical--methodological-framework)
-[![Validation: Automated Tests](https://img.shields.io/badge/Quality%20Assurance-18%2F18%20Passed-brightgreen.svg)](#8-computational-reproducibility--execution-pipeline)
+[![Validation: Automated Tests](https://img.shields.io/badge/Quality%20Assurance-19%2F19%20Passed-brightgreen.svg)](#8-computational-reproducibility--execution-pipeline)
 [![Journal Standard](https://img.shields.io/badge/Publication%20Standard-Lancet%20%7C%20NEJM%20%7C%20BMJ%20%7C%20JAMA-purple.svg)](#4-complete-publication-gallery-300-dpi-visual-exhibits)
 [![Evidence Base](https://img.shields.io/badge/Evidence%20Base-24%20RCTs%20%7C%2015%2C753%20Pts-informational.svg)](#2-evidence-base--clinical-scenario-advanced-nsclc)
 [![Live Interactive Monograph](https://img.shields.io/badge/Live%20Report-Interactive%20Monograph-0071E3.svg?logo=googlechrome&logoColor=white)](https://mohamed101010101.github.io/nma-nsclc-evidence-synthesis/)
@@ -553,6 +553,7 @@ nma-nsclc-evidence-synthesis/
 ├── report/
 │   ├── nma_comprehensive_report.Rmd       # Comprehensive PRISMA-NMA Dynamic Markdown Document
 │   └── nma_comprehensive_report.html      # Standalone Interactive HTML Publication Report
+├── DESCRIPTION                            # Formal rOpenSci research compendium package specification
 ├── renv.lock                              # Hermetic Package Dependency Lockfile (v1.2.3)
 ├── REPRODUCIBILITY.md                     # Deterministic reproduction protocol & package manifest
 ├── CITATION.cff                           # Machine-readable scholarly citation metadata
@@ -570,6 +571,14 @@ Launch an isolated, fully configured cloud R laboratory in your browser with all
 
 *Instantly boots an interactive VS Code / R environment pre-loaded with R 4.6.1, `netmeta`, Linux headers (`libglpk`), and all 86 locked dependencies ready to execute `scripts/run_all_pipeline.R` directly in the browser.*
 
+### Package-Level Installation (rOpenSci Standard)
+Install this research compendium and all analytical dependencies directly into R from GitHub:
+```r
+# In R or RStudio:
+if (!requireNamespace("remotes", quietly = TRUE)) install.packages("remotes")
+remotes::install_github("Mohamed101010101/nma-nsclc-evidence-synthesis", dependencies = TRUE)
+```
+
 ### Environment Restoration via `renv`
 To restore the exact pinned package versions locally with deterministic isolation:
 ```r
@@ -579,7 +588,7 @@ renv::restore()
 ```
 
 ### Automated Quality Assurance & Integrity Testing
-To run the automated 18-step verification suite across data schemas, script syntax, model convergence, and publication exhibits:
+To run the automated 19-step verification suite across data schemas, script syntax, model convergence, and publication exhibits:
 ```bash
 # In Terminal, PowerShell, or Command Prompt:
 Rscript tests/test_pipeline_integrity.R
