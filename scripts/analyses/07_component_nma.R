@@ -40,7 +40,7 @@ if (cache_valid) {
   cat(" - Skipping redundant estimation. To force refit, set force_refit <- TRUE\n")
   cnma_data <- readRDS(model_file)
 } else {
-  cat(" - Deconstructing multi-agent oncology regimens into active components ...\n")
+  cat(" - Deconstructing multi-agent combination regimens into active components ...\n")
   dat <- read.csv(data_path, stringsAsFactors = FALSE)
 
   # Pharmacologic Component Mapping

@@ -1,7 +1,7 @@
 # ==============================================================================
 # Script: scripts/analyses/06_leave_one_out_sensitivity.R
 # Purpose: Leave-One-Out (LOO) Influence & Sensitivity Cross-Validation in NMA
-# Standard: Cochrane Handbook (Section 11.4) & Tier-1 Oncology Benchmarks
+# Standard: Cochrane Handbook (Section 11.4) & Clinical Trial Benchmarks
 # Method: Iteratively omits each of the 24 landmark trials (including multi-arm
 #         contrast clusters) and evaluates the robustness of treatment hazard
 #         ratios, between-study heterogeneity (tau^2), and P-score rankings.

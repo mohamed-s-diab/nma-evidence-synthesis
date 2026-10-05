@@ -153,7 +153,7 @@ $$\boldsymbol{\theta}^{(s)} \sim \mathcal{N}_m(\hat{\boldsymbol{\theta}}, \bolds
 For each iteration $s$, treatments are ordered to generate discrete rank probability distributions $P(\text{Rank} = k)$ and cumulative rankograms.
 
 ### 3.9 Minimal Clinically Important Difference (MCID) Framework
-Following oncology value frameworks (ASCO / ESMO), clinical relevance requires achieving a predefined threshold beyond statistical significance. The MCID is set at a $\ge 20\%$ relative mortality reduction ($\text{HR} \le 0.80$). Across 10,000 Monte Carlo draws, the posterior probability of achieving $\text{HR} \le 0.80$ is computed:
+Following clinical value frameworks (ASCO / ESMO), clinical relevance requires achieving a predefined threshold beyond statistical significance. The MCID is set at a $\ge 20\%$ relative mortality reduction ($\text{HR} \le 0.80$). Across 10,000 Monte Carlo draws, the posterior probability of achieving $\text{HR} \le 0.80$ is computed:
 
 $$P(\text{MCID}) = \frac{1}{S} \sum_{s=1}^S \mathbb{I}\left(\text{HR}^{(s)} \le 0.80\right)$$
 
