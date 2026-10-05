@@ -1,5 +1,5 @@
 Package: nsclc.nma
-Title: Publication-Grade Frequentist Network Meta-Analysis Engine for Advanced NSCLC
+Title: Reproducible Frequentist Network Meta-Analysis Framework (Multi-Treatment Evidence Synthesis)
 Version: 1.0.0
 Authors@R: c(
     person("Mohamed Said Mohamed", "Diab", , "ms8598263@gmail.com", role = c("aut", "cre"),
@@ -13,11 +13,10 @@ Authors@R: c(
     person("Mahmoud Hussein", "Fathy", role = "ctb",
            comment = c(Affiliation = "Faculty of Medicine, Modern University for Technology and Information (MTI)"))
   )
-Description: A publication-grade frequentist Network Meta-Analysis (NMA)
-    computational engine and research compendium evaluating first-line
-    systemic immunotherapies and chemotherapies in advanced non-small cell
-    lung cancer (NSCLC). Implements 12 sequential mathematical engines,
-    graph-theoretical Laplacian synthesis via netmeta, local and global
+Description: A reproducible frequentist Network Meta-Analysis (NMA)
+    computational engine and research compendium evaluating multi-arm,
+    multi-treatment trial evidence. Implements 12 sequential mathematical
+    engines, graph-theoretical Laplacian synthesis via netmeta, local and global
     inconsistency diagnostics (node-splitting, NetHeat spectral decomposition),
     probabilistic rank simulation (10,000 Monte Carlo iterations), Minimal
     Clinically Important Difference (MCID) frontiers, and high-resolution

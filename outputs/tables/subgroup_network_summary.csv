@@ -1,4 +1,4 @@
 "Subgroup","Number_of_Trials","Pairwise_Contrasts","Treatments_Evaluated","Tau2","Tau","I2_Percent","Cochrans_Q","DF_Q","Pval_Q"
-"Asia-Pacific",8,10,"Chemo, IO_Chemo, TKI, TKI_Chemo",0,0,"0.0%",1.68,6,"0.9464"
-"Global",16,22,"Chemo, Dual_IO, IO_Chemo, IO_Mono, TKI, TKI_Chemo",0.0047,0.0686,"27.3%",19.27,14,"0.1551"
-"Full Network (Reference)",24,32,"Chemo, Dual_IO, IO_Chemo, IO_Mono, TKI, TKI_Chemo",0,0,"0.0%",21.44,23,"0.5544"
+"Asia-Pacific",8,10,"Drug A, Drug C, Drug E, Drug F",0,0,"0.0%",1.68,6,"0.9464"
+"Global",16,22,"Drug A, Drug B, Drug C, Drug D, Drug E, Drug F",0.0047,0.0686,"27.3%",19.27,14,"0.1551"
+"Full Network (Reference)",24,32,"Drug A, Drug B, Drug C, Drug D, Drug E, Drug F",0,0,"0.0%",21.44,23,"0.5544"

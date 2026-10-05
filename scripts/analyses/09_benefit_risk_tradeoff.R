@@ -60,7 +60,7 @@ if (cache_valid) {
     TE = TE, seTE = seTE,
     treat1 = treat1, treat2 = treat2,
     studlab = studlab, data = pw_tox,
-    sm = "OR", reference.group = "Chemo",
+    sm = "OR", reference.group = "Drug A",
     random = TRUE, common = TRUE,
     tol.multiarm = 0.005, details.chkmultiarm = FALSE
   )
@@ -71,35 +71,35 @@ if (cache_valid) {
   # Load OS Baseline Model & Hierarchy
   nma_os <- readRDS(nma_os_file)
   
-  # Extract Regimen-Specific Estimates vs Chemo
+  # Extract Regimen-Specific Estimates vs Drug A
   trts <- nma_os$trts
   
   df_br <- data.frame(
     Treatment   = trts,
-    # OS Efficacy Estimates (HR vs Chemo)
-    HR_OS       = round(exp(nma_os$TE.random[trts, "Chemo"]), 3),
-    HR_OS_Lower = round(exp(nma_os$lower.random[trts, "Chemo"]), 3),
-    HR_OS_Upper = round(exp(nma_os$upper.random[trts, "Chemo"]), 3),
-    Pval_OS     = nma_os$pval.random[trts, "Chemo"],
+    # OS Efficacy Estimates (HR vs Drug A)
+    HR_OS       = round(exp(nma_os$TE.random[trts, "Drug A"]), 3),
+    HR_OS_Lower = round(exp(nma_os$lower.random[trts, "Drug A"]), 3),
+    HR_OS_Upper = round(exp(nma_os$upper.random[trts, "Drug A"]), 3),
+    Pval_OS     = nma_os$pval.random[trts, "Drug A"],
     
-    # Severe Toxicity Estimates (OR vs Chemo)
-    OR_Tox      = round(exp(nma_tox$TE.random[trts, "Chemo"]), 3),
-    OR_Tox_Lower= round(exp(nma_tox$lower.random[trts, "Chemo"]), 3),
-    OR_Tox_Upper= round(exp(nma_tox$upper.random[trts, "Chemo"]), 3),
-    Pval_Tox    = nma_tox$pval.random[trts, "Chemo"],
+    # Severe Toxicity Estimates (OR vs Drug A)
+    OR_Tox      = round(exp(nma_tox$TE.random[trts, "Drug A"]), 3),
+    OR_Tox_Lower= round(exp(nma_tox$lower.random[trts, "Drug A"]), 3),
+    OR_Tox_Upper= round(exp(nma_tox$upper.random[trts, "Drug A"]), 3),
+    Pval_Tox    = nma_tox$pval.random[trts, "Drug A"],
     
     # SUCRA Metrics
     SUCRA_Safety   = round(rk_tox$ranking.random[trts], 3),
     stringsAsFactors = FALSE
   )
   
-  # Reference adjustments for Chemo
-  df_br$HR_OS[df_br$Treatment == "Chemo"]       <- 1.000
-  df_br$HR_OS_Lower[df_br$Treatment == "Chemo"] <- 1.000
-  df_br$HR_OS_Upper[df_br$Treatment == "Chemo"] <- 1.000
-  df_br$OR_Tox[df_br$Treatment == "Chemo"]       <- 1.000
-  df_br$OR_Tox_Lower[df_br$Treatment == "Chemo"] <- 1.000
-  df_br$OR_Tox_Upper[df_br$Treatment == "Chemo"] <- 1.000
+  # Reference adjustments for Drug A
+  df_br$HR_OS[df_br$Treatment == "Drug A"]       <- 1.000
+  df_br$HR_OS_Lower[df_br$Treatment == "Drug A"] <- 1.000
+  df_br$HR_OS_Upper[df_br$Treatment == "Drug A"] <- 1.000
+  df_br$OR_Tox[df_br$Treatment == "Drug A"]       <- 1.000
+  df_br$OR_Tox_Lower[df_br$Treatment == "Drug A"] <- 1.000
+  df_br$OR_Tox_Upper[df_br$Treatment == "Drug A"] <- 1.000
   
   # Add OS SUCRA
   if (file.exists(rank_file)) {

@@ -28,21 +28,21 @@ cum_mat    <- rank_data$cum_prob_mat
 
 # Regimen clinical labels and colors
 trt_labels <- c(
-  "IO_Chemo"  = "IO + Platinum-Chemo",
-  "TKI_Chemo" = "EGFR-TKI + Chemo",
-  "Dual_IO"   = "Dual IO (CTLA-4 + PD-(L)1)",
-  "IO_Mono"   = "IO Monotherapy",
-  "TKI"       = "EGFR-TKI Monotherapy",
-  "Chemo"     = "Platinum-Chemotherapy Alone"
+  "Drug A" = "Drug A",
+  "Drug B" = "Drug B",
+  "Drug C" = "Drug C",
+  "Drug D" = "Drug D",
+  "Drug E" = "Drug E",
+  "Drug F" = "Drug F"
 )
 
 palette_regimens <- c(
-  "IO_Chemo"  = "#1B365D",  # Deep Navy
-  "TKI_Chemo" = "#E65100",  # Amber/Orange
-  "Dual_IO"   = "#6A1B9A",  # Royal Purple
-  "IO_Mono"   = "#00838F",  # Teal Cyan
-  "TKI"       = "#C62828",  # Crimson
-  "Chemo"     = "#546E7A"   # Slate Grey
+  "Drug A" = "#546E7A",  # Slate Grey
+  "Drug B" = "#00838F",  # Teal Cyan
+  "Drug C" = "#1B365D",  # Deep Navy
+  "Drug D" = "#6A1B9A",  # Royal Purple
+  "Drug E" = "#C62828",  # Crimson
+  "Drug F" = "#E65100"   # Amber/Orange
 )
 
 # Convert rank matrix to long format for ggplot2

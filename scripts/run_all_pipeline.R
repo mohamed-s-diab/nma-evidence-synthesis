@@ -66,7 +66,7 @@ cat("===========================================================================
 
 design_modules <- list(
   list(file = "scripts/designs/fig01_network_geometry.R",       name = "Figure 01: Evidence Network Geometry (Topology)"),
-  list(file = "scripts/designs/fig02_forest_plot.R",            name = "Figure 02: Reference Forest Plot vs Chemotherapy"),
+  list(file = "scripts/designs/fig02_forest_plot.R",            name = "Figure 02: Reference Forest Plot vs Drug A"),
   list(file = "scripts/designs/fig03_pscore_ranking.R",         name = "Figure 03: P-Score Treatment Ranking Hierarchy"),
   list(file = "scripts/designs/fig04_netsplit_inconsistency.R",   name = "Figure 04: Node-Splitting Local Inconsistency Forest Plot"),
   list(file = "scripts/designs/fig05_netheat_plot.R",           name = "Figure 05: Net Heat Inconsistency Matrix Plot"),

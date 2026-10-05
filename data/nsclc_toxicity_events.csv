@@ -1,33 +1,33 @@
 studlab,treat1,treat2,event1,n1,event2,n2
-"KEYNOTE-024 (2016)",IO_Mono,Chemo,41,154,80,151
-"KEYNOTE-042 (2019)",IO_Mono,Chemo,113,637,261,637
-"EMPOWER-Lung1 (2021)",IO_Mono,Chemo,56,356,139,354
-"IMpower110 (2020)",IO_Mono,Chemo,43,286,105,286
-"KEYNOTE-189 (2018)",IO_Chemo,Chemo,276,410,130,206
-"KEYNOTE-407 (2018)",IO_Chemo,Chemo,194,278,192,281
-"IMpower130 (2019)",IO_Chemo,Chemo,330,451,138,228
-"CameL (2021)",IO_Chemo,Chemo,142,205,114,207
-"RATIONALE-307 (2021)",IO_Chemo,Chemo,172,243,79,121
-"ORIENT-11 (2021)",IO_Chemo,Chemo,164,266,67,131
-"IMpower150 (2018)",IO_Chemo,Chemo,224,392,226,394
-"CheckMate-9LA (2020)",IO_Chemo,Chemo,220,361,172,358
-"CheckMate-9LA (2020)",Dual_IO,Chemo,190,361,172,358
-"CheckMate-9LA (2020)",Dual_IO,IO_Chemo,190,361,220,361
-"CheckMate-227 (2019)",IO_Mono,Chemo,75,396,143,397
-"CheckMate-227 (2019)",Dual_IO,Chemo,130,396,143,397
-"CheckMate-227 (2019)",Dual_IO,IO_Mono,130,396,75,396
-"POSEIDON (2022)",IO_Chemo,Chemo,176,338,150,337
-"POSEIDON (2022)",Dual_IO,Chemo,180,338,150,337
-"POSEIDON (2022)",Dual_IO,IO_Chemo,180,338,176,338
-"IPASS (2009)",TKI,Chemo,174,609,372,608
-"EURTAC (2012)",TKI,Chemo,39,86,58,87
-"OPTIMAL (2011)",TKI,Chemo,14,82,46,72
-"WJTOG3405 (2010)",TKI,Chemo,23,86,53,86
-"FLAURA2 (2023)",TKI_Chemo,TKI,179,279,75,278
-"ARTEMIS (2022)",TKI_Chemo,TKI,78,120,32,120
-"NEJ009 (2020)",TKI,Chemo,27,85,48,85
-"NEJ009 (2020)",TKI_Chemo,Chemo,111,170,48,85
-"NEJ009 (2020)",TKI_Chemo,TKI,111,170,27,85
-"KEYNOTE-598 (2021)",Dual_IO,IO_Mono,99,284,56,284
-"MARIPOSA-2 (2023)",TKI_Chemo,Chemo,94,131,126,263
-"INSPIRE (2021)",IO_Chemo,IO_Mono,86,144,28,142
+"Study 01 (2016)",Drug B,Drug A,41,154,80,151
+"Study 02 (2019)",Drug B,Drug A,113,637,261,637
+"Study 03 (2021)",Drug B,Drug A,56,356,139,354
+"Study 04 (2020)",Drug B,Drug A,43,286,105,286
+"Study 05 (2018)",Drug C,Drug A,276,410,130,206
+"Study 06 (2018)",Drug C,Drug A,194,278,192,281
+"Study 07 (2019)",Drug C,Drug A,330,451,138,228
+"Study 08 (2021)",Drug C,Drug A,142,205,114,207
+"Study 09 (2021)",Drug C,Drug A,172,243,79,121
+"Study 10 (2021)",Drug C,Drug A,164,266,67,131
+"Study 11 (2018)",Drug C,Drug A,224,392,226,394
+"Study 12 (2020)",Drug C,Drug A,220,361,172,358
+"Study 12 (2020)",Drug D,Drug A,190,361,172,358
+"Study 12 (2020)",Drug D,Drug C,190,361,220,361
+"Study 13 (2019)",Drug B,Drug A,75,396,143,397
+"Study 13 (2019)",Drug D,Drug A,130,396,143,397
+"Study 13 (2019)",Drug D,Drug B,130,396,75,396
+"Study 14 (2022)",Drug C,Drug A,176,338,150,337
+"Study 14 (2022)",Drug D,Drug A,180,338,150,337
+"Study 14 (2022)",Drug D,Drug C,180,338,176,338
+"Study 15 (2009)",Drug E,Drug A,174,609,372,608
+"Study 16 (2012)",Drug E,Drug A,39,86,58,87
+"Study 17 (2011)",Drug E,Drug A,14,82,46,72
+"Study 18 (2010)",Drug E,Drug A,23,86,53,86
+"Study 19 (2023)",Drug F,Drug E,179,279,75,278
+"Study 20 (2022)",Drug F,Drug E,78,120,32,120
+"Study 21 (2020)",Drug E,Drug A,27,85,48,85
+"Study 21 (2020)",Drug F,Drug A,111,170,48,85
+"Study 21 (2020)",Drug F,Drug E,111,170,27,85
+"Study 22 (2021)",Drug D,Drug B,99,284,56,284
+"Study 23 (2023)",Drug F,Drug A,94,131,126,263
+"Study 24 (2021)",Drug C,Drug B,86,144,28,142

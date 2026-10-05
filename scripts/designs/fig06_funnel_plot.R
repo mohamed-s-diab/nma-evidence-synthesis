@@ -38,12 +38,12 @@ load_time_taken <- round(as.numeric(difftime(load_end_time, load_start_time, uni
 cat(sprintf(" - Loaded cached model & rankings in %.3f seconds.\n", load_time_taken))
 
 trt_labels_map <- c(
-  "IO_Chemo"  = "IO + Chemo",
-  "TKI_Chemo" = "TKI + Chemo",
-  "Dual_IO"   = "Dual IO",
-  "IO_Mono"   = "IO Monotherapy",
-  "TKI"       = "TKI Monotherapy",
-  "Chemo"     = "Chemotherapy"
+  "Drug A" = "Drug A",
+  "Drug B" = "Drug B",
+  "Drug C" = "Drug C",
+  "Drug D" = "Drug D",
+  "Drug E" = "Drug E",
+  "Drug F" = "Drug F"
 )
 
 # 2. Render Publication Funnel Plot (300 DPI)

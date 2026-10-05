@@ -44,14 +44,16 @@ n_trts <- length(trt_order)
 mat_rnd <- lg$random
 pval_rnd <- nma$pval.random[trt_order, trt_order]
 
-trt_meta <- list(
-  "IO_Chemo"  = list(name = "IO + Chemo", class = "IO Combo", pscore = sprintf("%.1f%%", pscores_rand["IO_Chemo"] * 100), rank = "Rank 1"),
-  "TKI_Chemo" = list(name = "TKI + Chemo", class = "Targeted Combo", pscore = sprintf("%.1f%%", pscores_rand["TKI_Chemo"] * 100), rank = "Rank 2"),
-  "Dual_IO"   = list(name = "Dual IO", class = "Dual Checkpoint", pscore = sprintf("%.1f%%", pscores_rand["Dual_IO"] * 100), rank = "Rank 3"),
-  "IO_Mono"   = list(name = "IO Monotherapy", class = "Anti-PD-(L)1", pscore = sprintf("%.1f%%", pscores_rand["IO_Mono"] * 100), rank = "Rank 4"),
-  "TKI"       = list(name = "TKI Monotherapy", class = "Targeted Mono", pscore = sprintf("%.1f%%", pscores_rand["TKI"] * 100), rank = "Rank 5"),
-  "Chemo"     = list(name = "Chemotherapy", class = "Standard Control", pscore = sprintf("%.1f%%", pscores_rand["Chemo"] * 100), rank = "Rank 6")
-)
+trt_meta <- lapply(seq_along(trt_order), function(idx) {
+  t <- trt_order[idx]
+  list(
+    name = t,
+    class = ifelse(t == "Drug A", "Reference Regimen", sprintf("Regimen %s", gsub("Drug ", "", t))),
+    pscore = sprintf("%.1f%%", pscores_rand[t] * 100),
+    rank = sprintf("Rank %d", idx)
+  )
+})
+names(trt_meta) <- trt_order
 
 cells_df <- data.frame()
 
@@ -76,12 +78,7 @@ for (i in 1:n_trts) {
     if (cell_type == "diagonal") {
       meta_info <- trt_meta[[row_trt]]
       tag_text <- meta_info$class
-      d_name <- meta_info$name
-      if (d_name == "IO Monotherapy") d_name <- "IO\nMonotherapy"
-      if (d_name == "TKI Monotherapy") d_name <- "TKI\nMonotherapy"
-      if (d_name == "Chemotherapy") d_name <- "Chemo-\ntherapy"
-      
-      hr_text <- d_name
+      hr_text <- meta_info$name
       ci_text <- paste0(meta_info$rank, " • P-Score: ", meta_info$pscore)
       bg_color <- "#1E3A8A" # Deep Navy
       hr_color <- "#FFFFFF"
@@ -157,7 +154,7 @@ for (i in 1:n_trts) {
 cells_df$X <- cells_df$Col
 cells_df$Y <- n_trts - cells_df$Row + 1
 
-axis_labels <- c("IO + Chemo", "TKI + Chemo", "Dual IO", "IO Mono", "TKI Mono", "Chemo")
+axis_labels <- trt_order
 
 p_league <- ggplot(cells_df) +
   geom_rect(aes(

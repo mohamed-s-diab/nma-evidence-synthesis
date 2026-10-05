@@ -26,28 +26,28 @@ df_comb <- cnma$combinations_df
 
 # Component clinical display labels
 comp_labels <- c(
-  "IO"    = "Anti-PD-(L)1 Monoclonal Antibody (IO)",
-  "TKI"   = "Tyrosine Kinase Inhibitor (TKI)",
-  "CTLA4" = "Anti-CTLA-4 Monoclonal Antibody (CTLA4)"
+  "Component B" = "Component B",
+  "Component D" = "Component D",
+  "Component C" = "Component C"
 )
 
 comb_labels <- c(
-  "Chemo + IO"  = "Chemo + Anti-PD-(L)1 (Additive CNMA)",
-  "Chemo + TKI" = "Chemo + TKI (Additive CNMA)",
-  "CTLA4 + IO"  = "Anti-CTLA-4 + Anti-PD-(L)1 (Additive CNMA)",
-  "IO"          = "Anti-PD-(L)1 Monotherapy (Additive CNMA)",
-  "TKI"         = "TKI Monotherapy (Additive CNMA)"
+  "Component A + Component B" = "Component A + Component B (Additive CNMA)",
+  "Component A + Component D" = "Component A + Component D (Additive CNMA)",
+  "Component B + Component C" = "Component B + Component C (Additive CNMA)",
+  "Component B"               = "Component B Monotherapy (Additive CNMA)",
+  "Component D"               = "Component D Monotherapy (Additive CNMA)"
 )
 
 df_comp$Display_Name <- comp_labels[df_comp$Item]
 df_comb$Display_Name <- comb_labels[df_comb$Item]
 
 # Clean, prominent horizontal category titles
-df_comp$Category <- "PANEL A: Marginal Incremental Effects of Individual Components (Added to Platinum-Chemo Backbone)"
-df_comb$Category <- "PANEL B: Predicted Regimen Efficacy under Additive Model (vs Platinum-Chemo Backbone)"
+df_comp$Category <- "PANEL A: Marginal Incremental Effects of Individual Components (Added to Component A Backbone)"
+df_comb$Category <- "PANEL B: Predicted Regimen Efficacy under Additive Model (vs Component A Backbone)"
 
 # Harmonized color palette
-df_comp$Color <- c("#1B365D", "#2E7D32", "#C62828") # CTLA4, IO, TKI
+df_comp$Color <- c("#1B365D", "#2E7D32", "#C62828") # Component C, B, D
 df_comb$Color <- c("#00838F", "#E65100", "#6A1B9A", "#2E7D32", "#C62828")
 
 df_plot <- rbind(
@@ -57,19 +57,19 @@ df_plot <- rbind(
 
 # Order items logically within each category
 df_plot$Display_Name <- factor(df_plot$Display_Name, levels = rev(c(
-  "Anti-PD-(L)1 Monoclonal Antibody (IO)",
-  "Tyrosine Kinase Inhibitor (TKI)",
-  "Anti-CTLA-4 Monoclonal Antibody (CTLA4)",
-  "Chemo + Anti-PD-(L)1 (Additive CNMA)",
-  "Chemo + TKI (Additive CNMA)",
-  "Anti-CTLA-4 + Anti-PD-(L)1 (Additive CNMA)",
-  "Anti-PD-(L)1 Monotherapy (Additive CNMA)",
-  "TKI Monotherapy (Additive CNMA)"
+  "Component B",
+  "Component D",
+  "Component C",
+  "Component A + Component B (Additive CNMA)",
+  "Component A + Component D (Additive CNMA)",
+  "Component B + Component C (Additive CNMA)",
+  "Component B Monotherapy (Additive CNMA)",
+  "Component D Monotherapy (Additive CNMA)"
 )))
 
 df_plot$Category <- factor(df_plot$Category, levels = c(
-  "PANEL A: Marginal Incremental Effects of Individual Components (Added to Platinum-Chemo Backbone)",
-  "PANEL B: Predicted Regimen Efficacy under Additive Model (vs Platinum-Chemo Backbone)"
+  "PANEL A: Marginal Incremental Effects of Individual Components (Added to Component A Backbone)",
+  "PANEL B: Predicted Regimen Efficacy under Additive Model (vs Component A Backbone)"
 ))
 
 p <- ggplot(df_plot, aes(x = iHR, y = Display_Name)) +
@@ -93,11 +93,11 @@ p <- ggplot(df_plot, aes(x = iHR, y = Display_Name)) +
   ) +
   labs(
     title = "Component Network Meta-Analysis (CNMA): Deconstruction of Regimen Synergy",
-    subtitle = sprintf("Marginal Incremental Hazard Ratios (iHR) & Additive Combinations vs Platinum-Chemotherapy Anchor\nSynergy Test vs Standard NMA: Q_diff = %.2f (df = %d, p = %.4f -> Significant Multi-Agent Synergistic Interaction Detected)",
+    subtitle = sprintf("Marginal Incremental Hazard Ratios (iHR) & Additive Combinations vs Component A Anchor Backbone\nSynergy Test vs Standard NMA: Q_diff = %.2f (df = %d, p = %.4f -> Significant Multi-Agent Synergistic Interaction Detected)",
                        cnma$Q_diff, cnma$df_Q_diff, cnma$pval_Q_diff),
     x = "Incremental Hazard Ratio (iHR) & 95% Confidence Interval (Log Scale)",
     y = NULL,
-    caption = "Frequentist Additive CNMA Model (Rücker et al., 2020) fitted using netmeta::netcomb(). Anchor Reference = Platinum Chemotherapy.\niHR < 1.0 indicates improved Overall Survival when adding component/combination; iHR > 1.0 indicates diminished survival."
+    caption = "Frequentist Additive CNMA Model (Rücker et al., 2020) fitted using netmeta::netcomb(). Anchor Reference = Component A.\niHR < 1.0 indicates improved Overall Survival when adding component/combination; iHR > 1.0 indicates diminished survival."
   ) +
   theme_minimal(base_size = 12) +
   theme(

@@ -27,19 +27,19 @@ df_sum  <- mr_data$summary_table
 
 # Group comparison classes for aesthetic clarity
 dat$Comp_Class <- with(dat, ifelse(
-  (treat1 == "IO_Chemo" & treat2 == "Chemo") | (treat1 == "Chemo" & treat2 == "IO_Chemo"), "IO + Chemo vs Chemo",
-  ifelse((treat1 == "IO_Mono" & treat2 == "Chemo") | (treat1 == "Chemo" & treat2 == "IO_Mono"), "IO Monotherapy vs Chemo",
-  ifelse((treat1 == "Dual_IO") | (treat2 == "Dual_IO"), "Dual IO Regimens",
-  ifelse((treat1 %in% c("TKI", "TKI_Chemo") | treat2 %in% c("TKI", "TKI_Chemo")), "Targeted TKI Regimens",
+  (treat1 == "Drug C" & treat2 == "Drug A") | (treat1 == "Drug A" & treat2 == "Drug C"), "Drug C vs Drug A",
+  ifelse((treat1 == "Drug B" & treat2 == "Drug A") | (treat1 == "Drug A" & treat2 == "Drug B"), "Drug B vs Drug A",
+  ifelse((treat1 == "Drug D") | (treat2 == "Drug D"), "Drug D Regimens",
+  ifelse((treat1 %in% c("Drug E", "Drug F") | treat2 %in% c("Drug E", "Drug F")), "Drug E & F Regimens",
          "Active Head-to-Head"))
 )))
 
 palette_class <- c(
-  "IO + Chemo vs Chemo"     = "#1B365D", # Deep Navy
-  "IO Monotherapy vs Chemo" = "#00838F", # Teal Cyan
-  "Dual IO Regimens"        = "#6A1B9A", # Purple
-  "Targeted TKI Regimens"   = "#C62828", # Red
-  "Active Head-to-Head"     = "#E65100"  # Amber
+  "Drug C vs Drug A"    = "#1B365D", # Deep Navy
+  "Drug B vs Drug A"    = "#00838F", # Teal Cyan
+  "Drug D Regimens"     = "#6A1B9A", # Purple
+  "Drug E & F Regimens" = "#C62828", # Red
+  "Active Head-to-Head" = "#E65100"  # Amber
 )
 
 # Extract slope and SE for Year

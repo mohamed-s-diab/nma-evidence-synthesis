@@ -38,12 +38,12 @@ cat(" - Computing node-splitting models across all closed evidence loops ...\n")
 ns <- netsplit(nma)
 
 trt_labels_map <- c(
-  "IO_Chemo"  = "IO + Chemo",
-  "TKI_Chemo" = "TKI + Chemo",
-  "Dual_IO"   = "Dual IO",
-  "IO_Mono"   = "IO Monotherapy",
-  "TKI"       = "TKI Monotherapy",
-  "Chemo"     = "Chemotherapy"
+  "Drug A" = "Drug A",
+  "Drug B" = "Drug B",
+  "Drug C" = "Drug C",
+  "Drug D" = "Drug D",
+  "Drug E" = "Drug E",
+  "Drug F" = "Drug F"
 )
 
 clean_comps <- function(comps, map) {

@@ -32,21 +32,21 @@ cat(sprintf(" - Loaded model with %d treatments and %d comparisons.\n", nma$n, n
 
 # 2. Node & Palette Configuration
 colors_nodes <- c(
-  "Chemo"     = "#718096", # Slate Grey (Standard Reference)
-  "IO_Mono"   = "#3182CE", # Classic Blue (Active Monotherapy)
-  "IO_Chemo"  = "#2B6CB0", # Deep Blue (Chemo Combo)
-  "Dual_IO"   = "#805AD5", # Purple (Dual Checkpoint)
-  "TKI"       = "#D69E2E", # Warm Amber (Targeted Mono)
-  "TKI_Chemo" = "#DD6B20"  # Rust Orange (Targeted Combo)
+  "Drug A" = "#718096", # Slate Grey (Standard Reference)
+  "Drug B" = "#3182CE", # Classic Blue
+  "Drug C" = "#2B6CB0", # Deep Blue
+  "Drug D" = "#805AD5", # Purple
+  "Drug E" = "#D69E2E", # Warm Amber
+  "Drug F" = "#DD6B20"  # Rust Orange
 )
 
 trt_labels_map <- c(
-  "IO_Chemo"  = "IO + Chemo",
-  "TKI_Chemo" = "TKI + Chemo",
-  "Dual_IO"   = "Dual IO",
-  "IO_Mono"   = "IO Monotherapy",
-  "TKI"       = "TKI Monotherapy",
-  "Chemo"     = "Chemotherapy"
+  "Drug A" = "Drug A",
+  "Drug B" = "Drug B",
+  "Drug C" = "Drug C",
+  "Drug D" = "Drug D",
+  "Drug E" = "Drug E",
+  "Drug F" = "Drug F"
 )
 
 # Compute cumulative patient sample size per treatment node

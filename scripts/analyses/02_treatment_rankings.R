@@ -41,12 +41,12 @@ pscores_rand <- rk$ranking.random
 trt_order <- names(sort(pscores_rand, decreasing = TRUE))
 
 trt_labels_map <- c(
-  "IO_Chemo"  = "IO + Chemo",
-  "TKI_Chemo" = "TKI + Chemo",
-  "Dual_IO"   = "Dual IO",
-  "IO_Mono"   = "IO Monotherapy",
-  "TKI"       = "TKI Monotherapy",
-  "Chemo"     = "Chemotherapy"
+  "Drug A" = "Drug A",
+  "Drug B" = "Drug B",
+  "Drug C" = "Drug C",
+  "Drug D" = "Drug D",
+  "Drug E" = "Drug E",
+  "Drug F" = "Drug F"
 )
 
 # 3. Construct Comprehensive Treatment Ranking Table
@@ -56,23 +56,23 @@ df_rankings <- data.frame(
   Rank = 1:length(trt_order),
   Pscore_Random = round(pscores_rand[trt_order], 4),
   Pscore_Common = round(rk$ranking.common[trt_order], 4),
-  HR_vs_Chemo_Random = ifelse(trt_order == "Chemo", "1.00 (Reference)",
-                              sprintf("%.2f [%.2f; %.2f]", 
-                                      exp(nma$TE.random[trt_order, "Chemo"]),
-                                      exp(nma$lower.random[trt_order, "Chemo"]),
-                                      exp(nma$upper.random[trt_order, "Chemo"]))),
-  Pval_vs_Chemo = ifelse(trt_order == "Chemo", "Reference",
-                         ifelse(nma$pval.random[trt_order, "Chemo"] < 0.0001, "< 0.0001",
-                                sprintf("%.4f", nma$pval.random[trt_order, "Chemo"]))),
+  HR_vs_Ref_Random = ifelse(trt_order == "Drug A", "1.00 (Reference)",
+                            sprintf("%.2f [%.2f; %.2f]", 
+                                    exp(nma$TE.random[trt_order, "Drug A"]),
+                                    exp(nma$lower.random[trt_order, "Drug A"]),
+                                    exp(nma$upper.random[trt_order, "Drug A"]))),
+  Pval_vs_Ref = ifelse(trt_order == "Drug A", "Reference",
+                       ifelse(nma$pval.random[trt_order, "Drug A"] < 0.0001, "< 0.0001",
+                              sprintf("%.4f", nma$pval.random[trt_order, "Drug A"]))),
   stringsAsFactors = FALSE
 )
 
 # 4. Export Ranking Table to CSV
 dir.create("outputs/tables", recursive = TRUE, showWarnings = FALSE)
 output_tbl <- "outputs/tables/treatment_rankings.csv"
-write.csv(df_rankings[, c("Treatment", "Rank", "Pscore_Random", "Pscore_Common", "HR_vs_Chemo_Random", "Pval_vs_Chemo")], 
+write.csv(df_rankings[, c("Treatment", "Rank", "Pscore_Random", "Pscore_Common", "HR_vs_Ref_Random", "Pval_vs_Ref")], 
           output_tbl, row.names = FALSE)
 
 cat(sprintf(" - Successfully exported ranking table to: %s\n\n", output_tbl))
-print(df_rankings[, c("Treatment", "Rank", "Pscore_Random", "HR_vs_Chemo_Random", "Pval_vs_Chemo")])
+print(df_rankings[, c("Treatment", "Rank", "Pscore_Random", "HR_vs_Ref_Random", "Pval_vs_Ref")])
 cat("\n")

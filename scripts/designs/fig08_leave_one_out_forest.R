@@ -2,7 +2,7 @@
 # Design Script: scripts/designs/fig08_leave_one_out_forest.R
 # Visual Target: Figure 8 - Leave-One-Out (LOO) Influence & Stability Forest Plot
 # Output File:   outputs/figures/08_leave_one_out_forest.png (300 DPI Publication Exhibit)
-# Focus:         IO + Chemo vs Chemotherapy Stability across 24 Trial Exclusions
+# Focus:         Drug C vs Drug A Stability across 24 Trial Exclusions
 # ==============================================================================
 
 suppressPackageStartupMessages({
@@ -37,13 +37,13 @@ df_plot$Label <- ifelse(df_plot$Iteration == 0,
 df_plot$Y_Rank <- nrow(df_plot):1
 df_plot$Is_Baseline <- (df_plot$Iteration == 0)
 
-baseline_hr  <- df_plot$IO_Chemo_HR[df_plot$Is_Baseline]
-baseline_lci <- df_plot$IO_Chemo_LCI[df_plot$Is_Baseline]
-baseline_uci <- df_plot$IO_Chemo_UCI[df_plot$Is_Baseline]
+baseline_hr  <- df_plot$Drug_C_HR[df_plot$Is_Baseline]
+baseline_lci <- df_plot$Drug_C_LCI[df_plot$Is_Baseline]
+baseline_uci <- df_plot$Drug_C_UCI[df_plot$Is_Baseline]
 
 df_plot$HR_Label <- sprintf("%.2f [%.2f, %.2f]", 
-                            df_plot$IO_Chemo_HR, df_plot$IO_Chemo_LCI, df_plot$IO_Chemo_UCI)
-df_plot$Pscore_Label <- sprintf("P-Score: %.3f", df_plot$Pscore_IO_Chemo)
+                            df_plot$Drug_C_HR, df_plot$Drug_C_LCI, df_plot$Drug_C_UCI)
+df_plot$Pscore_Label <- sprintf("P-Score: %.3f", df_plot$Pscore_Drug_C)
 
 # 2. Construct Publication-Grade ggplot
 p <- ggplot(df_plot, aes(y = factor(Y_Rank, levels = 1:nrow(df_plot), labels = df_plot$Label[order(df_plot$Y_Rank)]))) +
@@ -55,10 +55,10 @@ p <- ggplot(df_plot, aes(y = factor(Y_Rank, levels = 1:nrow(df_plot), labels = d
   # Line of no effect
   geom_vline(xintercept = 1.0, color = "#94A3B8", linetype = "solid", size = 0.6) +
   # Error bars
-  geom_errorbarh(aes(xmin = IO_Chemo_LCI, xmax = IO_Chemo_UCI, color = Is_Baseline),
+  geom_errorbarh(aes(xmin = Drug_C_LCI, xmax = Drug_C_UCI, color = Is_Baseline),
                  height = 0.25, size = 0.8) +
   # Points
-  geom_point(aes(x = IO_Chemo_HR, color = Is_Baseline, shape = Is_Baseline, size = Is_Baseline)) +
+  geom_point(aes(x = Drug_C_HR, color = Is_Baseline, shape = Is_Baseline, size = Is_Baseline)) +
   # Text annotations on right margin
   geom_text(aes(x = 1.05, label = HR_Label, fontface = ifelse(Is_Baseline, "bold", "plain")),
             hjust = 0, size = 3.3, family = "sans", color = "#1E293B") +
@@ -75,10 +75,10 @@ p <- ggplot(df_plot, aes(y = factor(Y_Rank, levels = 1:nrow(df_plot), labels = d
     labels = c("0.40", "0.50", "0.60", "0.70", "0.80", "0.90", "1.00", "1.20")
   ) +
   labs(
-    title = "Leave-One-Out (LOO) Influence Cross-Validation: IO + Chemo vs Chemotherapy",
+    title = "Leave-One-Out (LOO) Influence Cross-Validation: Drug C vs Drug A",
     subtitle = sprintf("Overall Survival Hazard Ratio across 24 systematic trial omissions | Baseline Pooled HR = %.2f [%.2f, %.2f] (Rank 1 in 100%% of Iterations)",
                        baseline_hr, baseline_lci, baseline_uci),
-    x = "Hazard Ratio (95% CI) — Log Scale (HR < 1.0 Favors IO + Chemo)",
+    x = "Hazard Ratio (95% CI) — Log Scale (HR < 1.0 Favors Drug C)",
     y = "Iterative Evidence Subset (Single Trial Omitted)"
   ) +
   theme_minimal(base_size = 11, base_family = "sans") +

@@ -1,7 +1,7 @@
 ---
-title: "Frequentist Network Meta-Analysis in Oncology: A Comprehensive Evidence Synthesis"
-subtitle: "First-Line Systemic Therapies for Advanced Non-Small Cell Lung Cancer (NSCLC) - Overall Survival"
-author: "Elite Biostatistics & Evidence Synthesis Portfolio"
+title: "Frequentist Network Meta-Analysis: Methodological Evidence Synthesis Monograph"
+subtitle: "Comparative Efficacy and Safety of Systemic Interventions (Multi-Treatment Trial Benchmark)"
+author: "Evidence Synthesis & Biostatistics Working Group"
 date: "`r Sys.Date()`"
 output:
   html_document:
@@ -42,51 +42,51 @@ td { padding: 10px 14px; border: 1px solid #e2e8f0; text-align: center; }
   <span class="badge-custom">12 Analytical Engines</span>
   <span class="badge-custom">14 Publication Figures (300 DPI)</span>
   <span class="badge-custom">PRISMA-NMA Compliant</span>
-  <span class="badge-custom">Publication Standard: The Lancet | JAMA | BMJ | NEJM</span>
 </div>
 
 ---
 
-# Executive Summary & Methodological Rationale
+# Executive Summary & Methodological Framework
 
 <div class="summary-box">
-<h3 style="margin-top: 0; color: #1e40af;">Why Frequentist Graph-Theoretical NMA with Advanced Validation Engines?</h3>
-Through this publication-grade analytical pipeline, an investigator executes a definitive, fully reproducible evidence synthesis combining 12 advanced statistical engines and 14 high-resolution 300 DPI figures. Beyond standard pairwise and network modeling, this suite provides leave-one-out influence auditing across all 24 landmark trials, deconstructs multi-agent regimen synergy via Component Network Meta-Analysis (CNMA), computes 10,000 Monte Carlo cumulative rankograms, synthesizes a dual-outcome benefit-risk decision matrix (survival efficacy vs severe toxicity), assesses clinical superiority via the Minimal Clinically Important Difference (MCID) framework, and confirms temporal/geographic transitivity through network meta-regression.
+<h3 style="margin-top: 0; color: #1e40af;">Scope of the Evidence Synthesis Framework</h3>
+This report presents a fully reproducible frequentist Network Meta-Analysis (NMA) integrating 12 sequential analytical modules and 14 high-resolution 300 DPI exhibits adhering to PRISMA-NMA reporting guidelines. The pipeline combines graph-theoretical Laplacian estimation via <code>netmeta</code>, global variance decomposition, local node-splitting (<code>netsplit</code>), leave-one-out cross-validation across 24 randomized controlled trials, component deconstruction (CNMA), 10,000 Monte Carlo ranking simulations, bivariate benefit-risk modeling, and transitivity assessments.
 </div>
 
-This report presents a comprehensive, publication-grade Network Meta-Analysis (NMA) adhering strictly to the **PRISMA-NMA** reporting guidelines and formatted to meet the rigorous peer-review standards of high-impact medical journals (*The Lancet*, *The New England Journal of Medicine*, *BMJ*, *JAMA Oncology*).
-
-### Clinical Scope & Oncology Dataset
-- **Clinical Indication:** First-Line Systemic Therapy for Advanced Non-Small Cell Lung Cancer (NSCLC) without actionable driver mutations (EGFR/ALK wild-type).
-- **Primary Endpoint:** Overall Survival (OS) quantified as Hazard Ratios ($\text{HR}$) with $95\%$ Confidence Intervals.
-- **Secondary Safety Endpoint:** Grade 3–5 Severe Treatment-Related Adverse Events (TRAEs) quantified as Odds Ratios ($\text{OR}$) with $95\%$ Confidence Intervals.
-- **Evidence Base:** 24 landmark Phase II/III Randomized Controlled Trials synthesizing **15,753 patients**, including 20 two-arm trials and 4 multi-center three-arm trials.
-- **Competing Systemic Regimens:**
-  1. `Chemo`: Platinum-doublet Chemotherapy (Historical Standard Reference / Anchor Comparator).
-  2. `IO_Mono`: Anti-PD-(L)1 Monotherapy (Pembrolizumab, Atezolizumab, Cemiplimab).
-  3. `IO_Chemo`: Immune Checkpoint Inhibitor + Platinum Chemotherapy Combination.
-  4. `Dual_IO`: Dual Immune Checkpoint Blockade (Anti-PD-1 + Anti-CTLA-4).
-  5. `TKI`: Targeted Tyrosine Kinase Inhibitor Monotherapy (EGFR/ALK-targeted control).
-  6. `TKI_Chemo`: Targeted Therapy + Platinum Chemotherapy Combination.
+### Evidence Base & Study Design
+- **Clinical Setting:** First-line systemic therapies evaluated in adult patients with advanced disease.
+- **Primary Endpoint:** Overall Survival (OS), quantified as Hazard Ratios ($\text{HR}$) with $95\%$ Confidence Intervals.
+- **Secondary Safety Endpoint:** Grade 3–5 Severe Adverse Events, quantified as Odds Ratios ($\text{OR}$) with $95\%$ Confidence Intervals.
+- **Evidence Base:** 24 randomized controlled trials encompassing **15,753 patients** (20 two-arm trials, 4 three-arm trials) and 14,357 safety-evaluable patients across 32 study contrasts.
+- **Competing Therapeutic Regimens:**
+  1. `Drug A`: Standard comparator / reference backbone anchor.
+  2. `Drug B`: Active monotherapy.
+  3. `Drug C`: Combination regimen (backbone + active agent).
+  4. `Drug D`: Dual-combination regimen.
+  5. `Drug E`: Targeted monotherapy.
+  6. `Drug F`: Targeted combination regimen.
+- **Constituent Components (CNMA):**
+  - `Component A`: Reference backbone anchor.
+  - `Component B`, `Component C`, `Component D`: Individual active therapeutic agents.
 
 ---
 
-## Core Methodological Engines Demonstrated in this Portfolio
+## Core Methodological Engines Implemented
 
 <div class="highlight-box">
-<h3 style="margin-top: 0; color: #065f46;">Methodological Mastery & Key Analytical Deliverables:</h3>
+<h3 style="margin-top: 0; color: #065f46;">Key Analytical Modules:</h3>
 <ol style="margin-bottom: 0; padding-left: 20px; line-height: 1.7;">
-  <li><strong>Precise Survival Contrast Transformation:</strong> Robust mathematical conversion of trial-reported Hazard Ratios ($\text{HR}$) and 95% Confidence Intervals into symmetric Gaussian log-hazard contrasts ($\text{TE} = \ln(\text{HR})$) and standard errors ($\text{seTE}$).</li>
-  <li><strong>Multi-Arm Trial Geometry & Correlation Handling:</strong> Strict preservation of linear contrast additivity ($\text{TE}_{BC} = \text{TE}_{AC} - \text{TE}_{AB}$) and positive-definite covariance structure satisfying <code>netmeta::chkmultiarm()</code>.</li>
-  <li><strong>Deterministic Graph-Theoretical Inversion:</strong> Implementation of electrical network theory (Rücker 2012) via the Laplacian matrix pseudoinverse ($L^+$), guaranteeing exact analytical solutions for common and random-effects models.</li>
-  <li><strong>Global & Local Inconsistency Testing:</strong> Orthogonal decomposition of global variance ($Q = Q_{\text{het}} + Q_{\text{inc}}$), local node-splitting analysis (<code>netsplit</code>), and Net Heat matrix evaluation to isolate inconsistency hotspots.</li>
-  <li><strong>Leave-One-Out (LOO) Influence Cross-Validation:</strong> Parallelized sensitivity analysis systematically dropping each trial to audit estimate stability and network robustness (Figure 08).</li>
-  <li><strong>Additive & Interactive Component NMA (CNMA):</strong> Deconstructing multi-agent oncology combinations into marginal components (IO, CTLA4, TKI) and testing for pharmacologic synergy ($Q_{\text{diff}}$ test, Figure 09).</li>
-  <li><strong>Probabilistic Treatment Hierarchy & SUCRA:</strong> 10,000 Monte Carlo draws from the multivariate normal covariance matrix yielding full discrete rank probabilities and cumulative rankograms (Figure 10).</li>
-  <li><strong>Bi-dimensional Benefit-Risk Trade-Off Matrix:</strong> Simultaneous dual NMA modeling mapping survival efficacy against severe Grade 3-5 toxicity in a 4-quadrant decision framework (Figure 11).</li>
-  <li><strong>Network Meta-Regression & Transitivity Diagnostics:</strong> Formal assessment of candidate effect modifiers (publication year, sample size, geographic region) via <code>netmetareg</code> (Figure 12).</li>
-  <li><strong>Subgroup Network Meta-Analysis (Asia-Pacific vs. Global):</strong> Evaluating geographic transitivity and ethnic consistency across 8 Asian and 16 Global trials with between-subgroups heterogeneity testing ($Q_{\text{bws}}$, Figure 13).</li>
-  <li><strong>Minimal Clinically Important Difference (MCID) Probability Engine:</strong> 10,000 Monte Carlo draws assessing the exact probability of achieving $\ge 20\%$ mortality reduction ($\text{HR} \le 0.80$) across all regimens and $6 \times 6$ pairwise comparisons (Figure 14).</li>
+  <li><strong>Contrast Scale Transformation:</strong> Exact conversion of reported Hazard Ratios and 95% CIs to symmetric Gaussian log-hazard contrasts ($\text{TE} = \ln(\text{HR})$) and standard errors ($\text{seTE}$).</li>
+  <li><strong>Multi-Arm Covariance Adjustment:</strong> Preservation of linear contrast additivity ($\text{TE}_{BC} = \text{TE}_{AC} - \text{TE}_{AB}$) and positive-definite covariance structure via <code>netmeta::chkmultiarm()</code>.</li>
+  <li><strong>Graph-Theoretical Inversion:</strong> Implementation of electrical network theory (Rücker, 2012) via the Laplacian pseudoinverse ($L^+$), guaranteeing exact analytical weighted least squares solutions.</li>
+  <li><strong>Orthogonal Inconsistency Testing:</strong> Decomposition of global variance ($Q = Q_{\text{het}} + Q_{\text{inc}}$), local node-splitting analysis (<code>netsplit</code>), and Net Heat leverage evaluation.</li>
+  <li><strong>Leave-One-Out (LOO) Sensitivity:</strong> Systematic jackknife cross-validation across all 24 trials auditing estimate stability.</li>
+  <li><strong>Component Network Meta-Analysis (CNMA):</strong> Deconstructing multi-agent regimens into constituent components and testing for pharmacological synergy ($Q_{\text{diff}}$ test).</li>
+  <li><strong>Probabilistic Hierarchy & SUCRA:</strong> 10,000 Monte Carlo draws from the multivariate normal covariance matrix yielding discrete rank distributions and cumulative rankograms.</li>
+  <li><strong>Bivariate Benefit-Risk Trade-Off Matrix:</strong> Concurrent synthesis of survival efficacy against severe adverse events across four decision quadrants.</li>
+  <li><strong>Network Meta-Regression:</strong> Evaluating potential effect modification across publication year, sample size, and geographic setting.</li>
+  <li><strong>Subgroup Network Meta-Analysis:</strong> Assessing geographic transitivity across regional cohorts with between-subgroups heterogeneity testing ($Q_{\text{bws}}$).</li>
+  <li><strong>Minimal Clinically Important Difference (MCID):</strong> Calculating the posterior probability of achieving $\ge 20\%$ mortality reduction ($\text{HR} \le 0.80$).</li>
 </ol>
 </div>
 
@@ -95,38 +95,19 @@ This report presents a comprehensive, publication-grade Network Meta-Analysis (N
 # Mathematical Foundations of Network Meta-Analysis
 
 ## Contrast Data Representation for Survival Outcomes
-In time-to-event outcomes (Overall Survival, Progression-Free Survival), clinical trials report Hazard Ratios ($\text{HR}$) and $95\%$ Confidence Intervals $[\text{lower}, \text{upper}]$. Because the distribution of $\text{HR}$ is right-skewed, synthesis is conducted on the natural logarithmic scale:
+In time-to-event outcomes, clinical trials report Hazard Ratios ($\text{HR}$) and $95\%$ Confidence Intervals $[\text{lower}, \text{upper}]$. Statistical synthesis is conducted on the natural logarithmic scale:
 
-$$\text{Treatment Effect } (y_i) = \text{TE}_i = \ln(\text{HR}_i)$$
+$$\text{TE}_i = \ln(\text{HR}_i), \quad \text{seTE}_i = \frac{\ln(\text{upper}_i) - \ln(\text{lower}_i)}{2 \times 1.96}$$
 
-The standard error ($\text{seTE}_i$) is derived from the symmetrical Gaussian limits:
+## Multi-Arm Trial Adjustments
+In multi-arm trials with a shared control arm $A$, the covariance between contrasts $AB$ and $AC$ equals the variance of the baseline arm:
 
-$$\text{seTE}_i = \frac{\ln(\text{upper}_i) - \ln(\text{lower}_i)}{2 \times 1.95996}$$
+$$\text{Cov}(\text{TE}_{AB}, \text{TE}_{AC}) = \text{Var}(\text{Arm}_A)$$
 
-## Bucher's Principle of Indirect Comparison
-For any three treatments $A$, $B$, and $C$, where direct trials exist for $A \text{ vs } B$ and $A \text{ vs } C$, but no direct trials have compared $B \text{ vs } C$:
+Adjustment via `netmeta` ensures correct effective sample size and prevents unit-of-analysis error.
 
-$$\ln(\widehat{\text{HR}}_{BC}^{\text{indirect}}) = \ln(\widehat{\text{HR}}_{AC}^{\text{direct}}) - \ln(\widehat{\text{HR}}_{AB}^{\text{direct}})$$
-
-Under independence, the variance of this indirect contrast is simply additive:
-
-$$\text{Var}\left(\ln(\widehat{\text{HR}}_{BC}^{\text{indirect}})\right) = \text{Var}\left(\ln(\widehat{\text{HR}}_{AC}^{\text{direct}})\right) + \text{Var}\left(\ln(\widehat{\text{HR}}_{AB}^{\text{direct}})\right)$$
-
-## Graph-Theoretical Synthesis (G. Rücker Electrical Network Model)
-`netmeta` generalizes Bucher's method to complex networks with multiple loops, active controls, and multi-arm trials using graph theory. The evidence network is represented as an electrical circuit where:
-- Nodes represent treatments.
-- Conductances ($w_{ij} = 1/\text{Var}_{ij}$) represent the precision of direct head-to-head evidence.
-- The Laplacian matrix $L$ combines the network topology and weights:
-
-$$L_{ij} = \begin{cases} -w_{ij} & \text{if } i \neq j \\ \sum_{k \neq i} w_{ik} & \text{if } i = j \end{cases}$$
-
-The Moore-Penrose pseudoinverse $L^+$ provides the combined treatment estimates and their standard errors across all closed loops simultaneously.
-
----
-
-# Evidence Network Geometry
-
-The geometry plot displays the topology of the clinical evidence base. Node diameters reflect total patient enrollment, line thickness reflects the volume of direct trial comparisons, and shaded polygons indicate multi-arm studies.
+## Network Geometry
+The evidence network structure is displayed below:
 
 ```{r fig_geometry, echo=FALSE, out.width="95%"}
 knitr::include_graphics("../outputs/figures/01_network_geometry.png")
@@ -134,9 +115,9 @@ knitr::include_graphics("../outputs/figures/01_network_geometry.png")
 
 ---
 
-# Comparative Efficacy vs Standard Reference (Chemo)
+# Comparative Efficacy vs Reference Backbone (Drug A)
 
-The forest plot displays the relative survival benefit of all active regimens compared to standard Platinum Chemotherapy (`Chemo`), sorted by clinical hierarchy.
+The forest plot displays relative survival benefits versus reference comparator `Drug A`, sorted by hierarchical ranking.
 
 ```{r fig_forest, echo=FALSE, out.width="95%"}
 knitr::include_graphics("../outputs/figures/02_forest_plot_random.png")
@@ -146,9 +127,9 @@ knitr::include_graphics("../outputs/figures/02_forest_plot_random.png")
 
 # Treatment Ranking Hierarchy (P-Scores)
 
-The frequentist P-score measures the certainty that one treatment is superior to another, averaged across all competing interventions. It is mathematically equivalent to the Bayesian Surface Under the Cumulative Ranking (SUCRA) curve:
+Frequentist P-scores (Rücker & Schwarzer, 2015) quantify the probability that an intervention is superior to competing treatments:
 
-$$P\text{-score}_i = \frac{1}{n-1} \sum_{j \neq i} \Phi\left(\frac{\widehat{\theta}_i - \widehat{\theta}_j}{\sqrt{\text{Var}(\widehat{\theta}_i - \widehat{\theta}_j)}}\right)$$
+$$P\text{-score}_i = \frac{1}{m-1} \sum_{j \neq i} \Phi\left(\frac{\widehat{\theta}_j - \widehat{\theta}_i}{\sqrt{\text{Var}(\widehat{\theta}_i - \widehat{\theta}_j)}}\right)$$
 
 ```{r fig_ranking, echo=FALSE, out.width="90%"}
 knitr::include_graphics("../outputs/figures/03_pscore_ranking.png")
@@ -158,65 +139,55 @@ knitr::include_graphics("../outputs/figures/03_pscore_ranking.png")
 
 ```{r table_rankings, echo=FALSE}
 df_rank <- read.csv("../outputs/tables/treatment_rankings.csv", encoding = "UTF-8", check.names = FALSE)
-knitr::kable(df_rank, col.names = c("Treatment Regimen", "Rank", "P-Score (Random)", "P-Score (Common)", "HR vs Chemo [95% CI]", "p-value"),
-             caption = "Table 1: Hierarchical Ranking of Systemic Regimens in First-Line NSCLC")
+knitr::kable(df_rank, col.names = c("Treatment Regimen", "Rank", "P-Score (Random)", "P-Score (Common)", "HR vs Drug A [95% CI]", "p-value"),
+             caption = "Table 1: Hierarchical Ranking of Systemic Regimens")
 ```
 
 ---
 
 # Dual-Model League Table: Direct vs Network Synthesis
 
-The **League Table** is the centerpiece of comparative effectiveness in Network Meta-Analysis, enabling comprehensive head-to-head evaluation across all treatment pairs simultaneously.
+The league table presents all pairwise head-to-head comparisons across the evidence network.
 
 ```{r fig_league_table, echo=FALSE, out.width="100%", fig.align='center'}
 knitr::include_graphics("../outputs/figures/07_league_table_figure.png")
 ```
 
-### Reading Guide & Clinical Interpretation
-- **Diagonal (Navy Badges):** Interventions ordered hierarchically from highest efficacy to lowest efficacy based on frequentist P-scores (from top-left `IO + Chemo` to bottom-right `Chemotherapy`).
-- **Lower Triangle (Green & Slate Tiles):** Network Meta-Analysis estimates from the Random-Effects model ($\text{Column} \text{ vs } \text{Row}$). A Hazard Ratio ($\text{HR}$) $< 1.0$ favors the higher-ranked column intervention over the row intervention.
-- **Emerald Green Highlighting (★):** Identifies pairs with statistically significant survival superiority ($p < 0.05$, where the 95% CI completely excludes 1.0).
-- **Upper Triangle (Soft Blue Tiles):** Direct head-to-head pairwise meta-analysis estimates ($\text{Row} \text{ vs } \text{Column}$) synthesized from available RCTs. Dashes (`—`) pinpoint treatment comparisons that have never been evaluated in a head-to-head clinical trial.
-
-### Numerical League Matrix (Standard Format)
+### Reading Guide
+- **Diagonal (Navy Badges):** Regimens ordered hierarchically by P-score from Rank 1 (`Drug C`) to Rank 6 (`Drug A`).
+- **Lower Triangle (Green & Slate Tiles):** Random-effects NMA estimates ($\text{Column} \text{ vs } \text{Row}$). Green highlighting indicates statistically significant superiority ($p < 0.05$).
+- **Upper Triangle (Blue Tiles):** Direct pairwise head-to-head estimates from clinical trials. Dashes (`—`) indicate unstudied direct comparisons.
 
 ```{r table_league, echo=FALSE}
-lg_mat <- read.csv("../outputs/tables/league_table_random_common.csv", row.names = 1)
-knitr::kable(lg_mat, caption = "Table 2: Complete Dual-Model League Table Matrix (Random vs Common Effects)")
+lg_mat <- read.csv("../outputs/tables/league_table_random_common.csv", row.names = 1, check.names = FALSE)
+knitr::kable(lg_mat, caption = "Table 2: Complete Dual-Model League Table Matrix")
 ```
 
 ---
 
 # Methodological Assumption Testing: Inconsistency & Transitivity
 
-Network Meta-Analysis rests on the **transitivity assumption** (that anchor treatments are clinically similar across trial loops). Inconsistency occurs if direct and indirect evidence are discordant.
-
 ## Global Inconsistency Decomposition (Cochran's $Q$)
-Total network variance $Q$ is decomposed into within-design heterogeneity ($Q_{\text{het}}$) and between-design inconsistency ($Q_{\text{inc}}$):
-
-$$Q = Q_{\text{het}} + Q_{\text{inc}}$$
 
 ```{r table_inconsistency, echo=FALSE}
 df_inc <- read.csv("../outputs/tables/inconsistency_statistics.csv")
-knitr::kable(df_inc, col.names = c("Component", "Q Statistic", "Degrees of Freedom", "p-value", "Clinical Interpretation"),
+knitr::kable(df_inc, col.names = c("Component", "Q Statistic", "Degrees of Freedom", "p-value", "Assessment"),
              caption = "Table 3: Global Test of Heterogeneity and Inconsistency")
 ```
 
-*Result:* The between-designs inconsistency test yields $p = 0.8396$, confirming that the transitivity assumption is strictly upheld across the evidence network.
+*Result:* The between-designs inconsistency test yields $p = 0.8396$, confirming that direct and indirect evidence are coherent across all closed loops of the network.
 
-## Local Inconsistency via Node-Splitting (Separating Direct from Indirect)
-Node-splitting separates direct evidence from indirect evidence for every closed loop in the network. A $p$-value $< 0.05$ flags local inconsistency.
+## Local Inconsistency via Node-Splitting
 
 ```{r fig_netsplit, echo=FALSE, out.width="95%"}
 knitr::include_graphics("../outputs/figures/04_netsplit_inconsistency.png")
 ```
 
-## Net Heat Plot (Inconsistency Hot-Spots & Direct Evidence Contribution)
-The Net Heat plot evaluates both the **inconsistency contribution** ($\Delta Q$) across designs and the **direct evidence weight** (Hat matrix $H_{ij}$) simultaneously:
-- **Background Tiles ($\Delta Q$):** Diverging scale where warm red tones identify designs driving network tension/inconsistency, whereas cool blue tones indicate stabilizing designs.
-- **Inner Slate Squares ($H_{ij}$):** Area corresponds to the statistical weight of direct trial evidence in estimating each comparison.
+Across all evaluated loops, direct and indirect point estimates show overlapping confidence intervals with $p > 0.40$.
 
-```{r fig_netheat, echo=FALSE, out.width="100%", fig.align='center'}
+## Net Heat Inconsistency Matrix & Leverage Diagnostics
+
+```{r fig_netheat, echo=FALSE, out.width="95%"}
 knitr::include_graphics("../outputs/figures/05_netheat_plot.png")
 ```
 
@@ -224,36 +195,17 @@ knitr::include_graphics("../outputs/figures/05_netheat_plot.png")
 
 # Small-Study Effects & Publication Bias
 
-To evaluate whether smaller trials systematically report exaggerated treatment effects, a **comparison-adjusted funnel plot** is generated, ordering treatments by their established clinical hierarchy.
-
 ```{r fig_funnel, echo=FALSE, out.width="90%"}
 knitr::include_graphics("../outputs/figures/06_funnel_plot.png")
 ```
 
-### Formal Egger Linear Regression Asymmetry Test
-Beyond visual inspection, small-study effects were formally tested using the weighted linear regression of comparison-adjusted residuals on their standard errors (Egger et al., 1997; Chaimani & Salanti, 2012):
-
-$$\frac{\text{TE}_{\text{adj}, i}}{\text{seTE}_i} = \alpha + \beta \left(\frac{1}{\text{seTE}_i}\right) + \epsilon_i$$
-
-- **Test Statistic:** $t = -1.53$ ($\text{df} = 30$, $p = 0.1374$).
-- **Bias Intercept Estimate:** $\hat{\alpha} = -0.7990$ ($\text{SE} = 0.5235$, $95\%$ CI: $-1.868 \text{ to } +0.270$).
-- **Empirical Conclusion:** The linear regression intercept is statistically indistinguishable from zero ($p = 0.1374 > 0.10$). The funnel distribution displays robust symmetry around the comparison-specific zero-line, confirming the absence of small-study effects or selective publication distortion across the 24 landmark trials.
-
-```{r table_egger, echo=FALSE}
-if (file.exists("../outputs/tables/publication_bias_egger.csv")) {
-  df_eg <- read.csv("../outputs/tables/publication_bias_egger.csv")
-  knitr::kable(df_eg, caption = "Table 3b: Formal Egger Linear Regression Test of Funnel Plot Asymmetry")
-}
-```
+Egger's linear regression test for funnel asymmetry indicates no statistically significant asymmetry ($t = -1.52, p = 0.1374$), confirming symmetric distribution around comparison-specific anchors.
 
 ---
 
-# Leave-One-Out (LOO) Influence & Sensitivity Cross-Validation
+# Leave-One-Out (LOO) Influence Cross-Validation
 
-<div class="advanced-box">
-<h3 style="margin-top: 0; color: #7e22ce;">Influence Cross-Validation Engine</h3>
-To guarantee that the primary clinical finding—the survival superiority of IO + Chemotherapy—is not an artifact driven by any single high-impact trial (such as KEYNOTE-189 or CheckMate-9LA), a complete Leave-One-Out (LOO) cross-validation was conducted across all 24 randomized trials in the evidence network.
-</div>
+To verify that network estimates are not driven by any single trial, jackknife cross-validation was conducted across all 24 trials.
 
 ```{r fig_loo, echo=FALSE, out.width="100%", fig.align='center'}
 knitr::include_graphics("../outputs/figures/08_leave_one_out_forest.png")
@@ -261,42 +213,32 @@ knitr::include_graphics("../outputs/figures/08_leave_one_out_forest.png")
 
 ### Empirical Stability Findings
 - **Baseline Estimate:** $\text{HR} = 0.687$ ($95\%$ CI: $0.638 - 0.740$).
-- **LOO Hazard Ratio Range:** Across all 24 iterations, the estimated HR shifted within a narrow band of $[0.674 \text{ to } 0.707]$ (total maximum shift across the network was only $0.033$).
-- **Rank 1 Retention:** IO + Chemotherapy retained the **#1 hierarchical rank in 100% of iterations (24/24)**.
-- **Between-Study Variance:** Heterogeneity remained stable ($\tau^2$ between $0.0000$ and $0.0002$).
+- **LOO Hazard Ratio Range:** Across all 24 iterations, the estimated HR remained between $0.674$ and $0.707$.
+- **Rank 1 Retention:** `Drug C` retained the **#1 hierarchical rank in 100% of iterations (24/24)**.
+- **Between-Study Variance:** Heterogeneity remained stable ($\tau^2 \le 0.0002$).
 
 ```{r table_loo, echo=FALSE}
 if (file.exists("../outputs/tables/leave_one_out_results.csv")) {
   df_loo <- read.csv("../outputs/tables/leave_one_out_results.csv")
-  knitr::kable(head(df_loo, 10), 
-               caption = "Table 4: Top 10 Influence Iterations from Leave-One-Out Cross-Validation")
+  knitr::kable(head(df_loo, 10), caption = "Table 4: Top 10 Influence Iterations from Leave-One-Out Cross-Validation")
 }
 ```
 
 ---
 
-# Additive & Interactive Component Network Meta-Analysis (CNMA)
+# Component Network Meta-Analysis (CNMA)
 
-<div class="advanced-box">
-<h3 style="margin-top: 0; color: #7e22ce;">Pharmacologic Component Deconstruction</h3>
-Modern oncology regimens combine multiple distinct active agents (immunotherapies, cytotoxic chemotherapies, targeted kinase inhibitors). Using the graph-theoretical component model of Rücker et al. (2020) implemented in <code>netmeta::netcomb()</code>, we deconstructed the 6 regimens into their constituent active agents:
-<ul>
-  <li><strong>Chemo Backbone:</strong> Reference platinum doublet.</li>
-  <li><strong>Anti-PD-(L)1 (IO):</strong> Monoclonal antibodies blocking PD-1/PD-L1.</li>
-  <li><strong>Anti-CTLA-4 (CTLA4):</strong> Monoclonal antibodies blocking CTLA-4.</li>
-  <li><strong>Tyrosine Kinase Inhibitor (TKI):</strong> Small-molecule EGFR/ALK inhibitors.</li>
-</ul>
-</div>
+Using the additive and interactive component model of Rücker et al. (2020), regimens were deconstructed into constituent components relative to `Component A`:
 
 ```{r fig_cnma, echo=FALSE, out.width="100%", fig.align='center'}
 knitr::include_graphics("../outputs/figures/09_component_effects.png")
 ```
 
-### Key Component Findings & Interaction Testing
-- **Anti-PD-(L)1 Addition (IO):** Produces a decisive, statistically significant incremental survival benefit: $\text{iHR} = 0.711$ ($95\%$ CI: $0.659 - 0.767$, $z = -8.83$, $p < 0.0001$).
-- **Tyrosine Kinase Inhibitor Addition (TKI):** Significantly extends survival: $\text{iHR} = 0.845$ ($95\%$ CI: $0.746 - 0.956$, $z = -2.66$, $p = 0.0077$).
-- **Anti-CTLA-4 Addition (CTLA4):** Adding anti-CTLA-4 to an anti-PD-(L)1 backbone does not confer additional survival benefit across the unselected population: $\text{iHR} = 1.056$ ($95\%$ CI: $0.939 - 1.189$, $z = 0.91$, $p = 0.3635$).
-- **Synergy / Interaction Test:** Comparing the additive model against the standard NMA yields $Q_{\text{diff}} = 15.68$ ($\text{df} = 2$, $p = 0.0004$), confirming significant synergistic interaction in immuno-chemotherapy combinations beyond simple linear additivity.
+### Component Effects & Interaction Testing
+- **`Component B` Addition:** $\text{iHR} = 0.711$ ($95\%$ CI: $0.659 - 0.767$, $p < 0.0001$).
+- **`Component D` Addition:** $\text{iHR} = 0.845$ ($95\%$ CI: $0.746 - 0.956$, $p = 0.0077$).
+- **`Component C` Addition:** $\text{iHR} = 1.056$ ($95\%$ CI: $0.939 - 1.189$, $p = 0.3635$).
+- **Interaction Test:** $Q_{\text{diff}} = 15.65$ ($\text{df} = 2$, $p = 0.0004$), indicating significant synergistic interaction beyond linear additivity.
 
 ```{r table_cnma, echo=FALSE}
 if (file.exists("../outputs/tables/component_nma_effects.csv")) {
@@ -307,24 +249,21 @@ if (file.exists("../outputs/tables/component_nma_effects.csv")) {
 
 ---
 
-# Probabilistic Treatment Hierarchy & Full Cumulative Rankograms
+# Probabilistic Treatment Hierarchy & Cumulative Rankograms
 
-<div class="advanced-box">
-<h3 style="margin-top: 0; color: #7e22ce;">10,000 Monte Carlo Multivariate Normal Simulation</h3>
-Following the methodologies of Salanti et al. (2011) and Rücker & Schwarzer (2015), 10,000 parameter vectors were drawn from the multivariate normal distribution parameterized by the network treatment estimates and the random-effects covariance matrix $\Sigma$. For each draw, all 6 regimens were ranked to generate empirical rank probability distributions and cumulative ranking curves.
-</div>
+Parameter draws (10,000 Monte Carlo iterations) from the network covariance matrix generate empirical rank distributions:
 
 ```{r fig_rankograms, echo=FALSE, out.width="100%", fig.align='center'}
 knitr::include_graphics("../outputs/figures/10_rankograms.png")
 ```
 
-### Probabilistic Ranking Summary
-- **`IO + Chemo`:** Achieved **Rank 1 probability of 73.4%** and Rank 2 probability of 25.2% (cumulative top-2 probability of **98.6%**; SUCRA = **94.4%**; Mean Rank = **1.28**).
-- **`TKI + Chemo`:** Ranked second overall (SUCRA = **75.2%**; Mean Rank = **2.24**; Rank 1 probability = 24.5%; Rank 2 probability = 42.9%).
-- **`Dual IO`:** Occupied intermediate hierarchy (SUCRA = **58.6%**; Mean Rank = **3.07**; modal Rank = 3).
-- **`IO Monotherapy`:** (SUCRA = **51.4%**; Mean Rank = **3.43**; modal Rank = 4).
-- **`TKI Monotherapy`:** (SUCRA = **20.1%**; Mean Rank = **4.99**; modal Rank = 5).
-- **`Chemotherapy Alone`:** Ranked lowest across all iterations (SUCRA = **0.4%**; Mean Rank = **5.98**; Rank 6 probability = **98.3%**).
+### Ranking Distribution Summary
+- **`Drug C`:** Rank 1 = 73.8%, Rank 2 = 24.6% (Top-2: 98.4%) — SUCRA = **94.4%**, Mean Rank = **1.28**.
+- **`Drug F`:** Rank 1 = 24.5%, Rank 2 = 43.0% — SUCRA = **75.1%**, Mean Rank = **2.24**.
+- **`Drug D`:** Modal Rank = 3 (46.5%) — SUCRA = **58.6%**, Mean Rank = **3.07**.
+- **`Drug B`:** Modal Rank = 4 (52.3%) — SUCRA = **51.5%**, Mean Rank = **3.43**.
+- **`Drug E`:** Modal Rank = 5 (96.3%) — SUCRA = **20.1%**, Mean Rank = **5.00**.
+- **`Drug A`:** Rank 6 = 98.3% — SUCRA = **0.4%**, Mean Rank = **5.98**.
 
 ```{r table_rank_probs, echo=FALSE}
 if (file.exists("../outputs/tables/rank_probabilities_matrix.csv")) {
@@ -333,24 +272,18 @@ if (file.exists("../outputs/tables/rank_probabilities_matrix.csv")) {
 }
 ```
 
-### Minimal Clinically Important Difference (MCID) Decision Framework ($\text{HR} \le 0.80$)
-
-<div class="advanced-box">
-<h3 style="margin-top: 0; color: #7e22ce;">Translating Statistical Significance into Clinical Superiority</h3>
-According to the **American Society of Clinical Oncology (ASCO)** and **European Society for Medical Oncology (ESMO)** Value Frameworks, a statistically significant hazard ratio is only clinically meaningful if it meets the **Minimal Clinically Important Difference (MCID)** threshold—defined in first-line advanced NSCLC as achieving a **$\ge 20\%$ relative reduction in overall mortality risk** ($\text{HR} \le 0.80$). Across our 10,000 Monte Carlo iterations, we calculated the empirical posterior probability of exceeding this definitive clinical threshold for every competing regimen.
-</div>
+## Minimal Clinically Important Difference (MCID) Framework ($\text{HR} \le 0.80$)
 
 ```{r fig_mcid, echo=FALSE, out.width="100%", fig.align='center'}
 knitr::include_graphics("../outputs/figures/14_mcid_probabilities.png")
 ```
 
-#### MCID Probabilities vs. Chemotherapy Anchor:
-- **`IO + Chemo`:** Achieved **$100.0\%$ probability** of attaining $\text{HR} \le 0.80$ ($P(\text{HR} < 1.00) = 100.0\%$), establishing that its survival benefit is clinically transformative in every simulated scenario.
-- **`TKI + Chemo`:** Achieved **$91.9\%$ probability** of meeting MCID ($P(\text{HR} < 1.00) = 100.0\%$).
-- **`Dual IO`:** Achieved **$84.6\%$ probability** of meeting MCID ($P(\text{HR} < 1.00) = 100.0\%$).
-- **`IO Monotherapy`:** Achieved **$76.3\%$ probability** of meeting MCID ($P(\text{HR} < 1.00) = 100.0\%$).
-- **`TKI Monotherapy`:** Achieved only **$1.0\%$ probability** of meeting MCID ($P(\text{HR} < 1.00) = 98.3\%$) in an unselected population.
-- **`Chemotherapy Alone`:** $0.0\%$ (Reference anchor).
+### MCID Probabilities vs Drug A:
+- **`Drug C`:** **99.99% probability** of meeting MCID ($\text{HR} \le 0.80$).
+- **`Drug F`:** **91.92% probability** of meeting MCID.
+- **`Drug D`:** **84.42% probability** of meeting MCID.
+- **`Drug B`:** **76.43% probability** of meeting MCID.
+- **`Drug E`:** **1.05% probability** of meeting MCID.
 
 ```{r table_mcid_matrix, echo=FALSE}
 if (file.exists("../outputs/tables/mcid_superiority_matrix.csv")) {
@@ -363,26 +296,23 @@ if (file.exists("../outputs/tables/mcid_superiority_matrix.csv")) {
 
 # Bi-dimensional Benefit-Risk Trade-Off Matrix
 
-<div class="advanced-box">
-<h3 style="margin-top: 0; color: #7e22ce;">Dual-Outcome Network Meta-Analysis: Efficacy vs Severe Toxicity</h3>
-Clinical decision-making requires balancing survival prolongation against the risk of severe, life-threatening adverse events. We paired our primary Overall Survival NMA with a second, full network meta-analysis of Grade 3–5 Treatment-Related Adverse Events (TRAEs) across all 24 trials (N = 14,357 patients) to construct a bi-dimensional decision matrix.
-</div>
+Survival efficacy is synthesized concurrently with Grade 3–5 severe adverse events across 14,357 patients:
 
 ```{r fig_benefit_risk, echo=FALSE, out.width="100%", fig.align='center'}
 knitr::include_graphics("../outputs/figures/11_benefit_risk_tradeoff.png")
 ```
 
-### 4-Quadrant Clinical Decision Synthesis
-1. **Quadrant II: Optimal Window (Superior Survival + Low Severe Toxicity):**
-   - **`IO Monotherapy`:** Achieves moderate survival extension ($\text{HR} = 0.78$, $95\%$ CI: $0.71 - 0.84$) with **dramatically reduced severe toxicity** relative to chemotherapy ($\text{OR} = 0.34$, $95\%$ CI: $0.28 - 0.42$, $p < 0.0001$). Ideal for elderly, frail, or biomarker-selected patients (PD-L1 $\ge 50\%$).
-2. **Quadrant I: Intensive Combinations (Superior Survival + Increased Toxicity):**
-   - **`IO + Chemo`:** Maximizes survival ($\text{HR} = 0.69$, $95\%$ CI: $0.64 - 0.74$) with an acceptable increase in Grade 3–5 toxicity ($\text{OR} = 1.37$, $95\%$ CI: $1.16 - 1.62$). Recommended as first-line standard for fit patients.
-   - **`TKI + Chemo`:** Strong survival ($\text{HR} = 0.72$) but the highest severe toxicity in the network ($\text{OR} = 1.62$, $95\%$ CI: $1.16 - 2.27$).
-   - **`Dual IO`:** Significant survival benefit ($\text{HR} = 0.76$) with toxicity equivalent to platinum chemotherapy ($\text{OR} = 1.01$, $95\%$ CI: $0.79 - 1.28$).
-3. **Quadrant III: Tolerable Compromise (Modest Survival + Low Severe Toxicity):**
-   - **`TKI Monotherapy`:** Favorable safety ($\text{OR} = 0.29$, $95\%$ CI: $0.22 - 0.38$) with modest unselected survival benefit ($\text{HR} = 0.90$).
-4. **Quadrant IV: Unfavorable Backbone (Chemotherapy Alone):**
-   - High toxicity with inferior survival, confirming chemotherapy alone is no longer optimal as first-line therapy.
+### Quadrant Distribution Summary
+1. **Quadrant II (High Efficacy, Low Severe Toxicity):**
+   - **`Drug B`:** HR = 0.78 (95% CI: 0.71–0.84), OR = 0.34 (95% CI: 0.28–0.42, $p < 0.0001$).
+2. **Quadrant I (High Efficacy, Higher Toxicity):**
+   - **`Drug C`:** HR = 0.69 (95% CI: 0.64–0.74), OR = 1.37 (95% CI: 1.16–1.62, $p = 0.0003$).
+   - **`Drug D`:** HR = 0.76 (95% CI: 0.69–0.84), OR = 1.01 (95% CI: 0.79–1.28, $p = 0.9636$).
+   - **`Drug F`:** HR = 0.72 (95% CI: 0.63–0.83), OR = 1.62 (95% CI: 1.16–2.27, $p = 0.0046$).
+3. **Quadrant III (Modest Efficacy, Low Severe Toxicity):**
+   - **`Drug E`:** HR = 0.90 (95% CI: 0.82–0.99), OR = 0.29 (95% CI: 0.22–0.38, $p < 0.0001$).
+4. **Quadrant IV (Reference Anchor):**
+   - **`Drug A`:** Reference backbone ($\text{HR} = 1.00, \text{OR} = 1.00$).
 
 ```{r table_benefit_risk, echo=FALSE}
 if (file.exists("../outputs/tables/benefit_risk_tradeoff.csv")) {
@@ -395,64 +325,40 @@ if (file.exists("../outputs/tables/benefit_risk_tradeoff.csv")) {
 
 # Network Meta-Regression & Transitivity Diagnostics
 
-<div class="advanced-box">
-<h3 style="margin-top: 0; color: #7e22ce;">Empirical Verification of Transitivity Assumptions</h3>
-Network meta-analysis relies on the fundamental assumption that patient populations and study characteristics are sufficiently similar across trial comparisons that treatment effects are transitive. We evaluated 3 potential effect modifiers using <code>netmeta::netmetareg()</code>:
-<ul>
-  <li><strong>Publication Year:</strong> Testing for temporal drift or changes in supportive care (2009–2023).</li>
-  <li><strong>Trial Sample Size:</strong> Testing for small-study biases across trial scales ($\ln(N)$).</li>
-  <li><strong>Geographic Setting:</strong> Testing for regional heterogeneity (Asia-Pacific vs Global multi-center trials).</li>
-</ul>
-</div>
-
 ```{r fig_metareg, echo=FALSE, out.width="100%", fig.align='center'}
 knitr::include_graphics("../outputs/figures/12_metaregression_bubble.png")
 ```
 
-### Transitivity Audit Results
-- **Temporal Stability (Publication Year):** $\beta = +0.0003$ ($95\%$ CI: $-0.0164 \text{ to } +0.0170$, $z = 0.03$, $p = 0.9744$). Relative treatment effects remained completely constant over a 14-year period.
-- **Small-Study Effects (Sample Size):** $\beta = +0.0511$ ($95\%$ CI: $-0.0457 \text{ to } +0.1478$, $z = 1.03$, $p = 0.3008$). No evidence that smaller trials systematically distorted treatment estimates.
-- **Geographic Setting (Region):** $\beta = -0.0246$ ($95\%$ CI: $-0.1723 \text{ to } +0.1230$, $z = -0.33$, $p = 0.7438$). No significant difference in treatment efficacy between Asia-Pacific and global trials.
+### Moderator Screening Results
+- **Publication Year:** $\beta = -0.0037$ (95% CI: -0.0225 to +0.0152, $p = 0.7037$).
+- **Trial Sample Size:** $\beta = -0.0454$ (95% CI: -0.1449 to +0.0541, $p = 0.3713$).
+- **Geographic Setting:** $\beta = +0.0167$ (95% CI: -0.1322 to +0.1657, $p = 0.8259$).
 
-*Conclusion:* All three candidate confounders exhibited regression slopes statistically indistinguishable from zero ($p > 0.30$), confirming that the transitivity assumption is strictly preserved across the network.
+*Conclusion:* All candidate moderators yielded regression slopes non-significantly different from zero ($p > 0.30$), supporting the transitivity assumption across the network.
 
 ```{r table_metareg, echo=FALSE}
 if (file.exists("../outputs/tables/metaregression_results.csv")) {
   df_mr <- read.csv("../outputs/tables/metaregression_results.csv")
-  knitr::kable(df_mr, caption = "Table 8: Network Meta-Regression Moderator Screening & Transitivity Diagnostics")
+  knitr::kable(df_mr, caption = "Table 8: Network Meta-Regression Moderator Screening")
 }
 ```
 
 ---
 
-# Subgroup Network Meta-Analysis: Asia-Pacific vs. Global Evidence
+# Subgroup Network Meta-Analysis: Regional Cohorts
 
-<div class="advanced-box">
-<h3 style="margin-top: 0; color: #7e22ce;">Empirical Testing of Geographic & Ethnic Effect Modification</h3>
-A critical clinical question in thoracic oncology is whether trial findings from East Asian populations (with higher EGFR mutation frequencies and distinct post-progression therapeutic paradigms) translate seamlessly to global Western cohorts. We partitioned the 24 landmark trials into:
-<ul>
-  <li><strong>Asia-Pacific Cohort (8 Trials, N = 4,491 patients):</strong> CameL, RATIONALE-307, ORIENT-11, IPASS, OPTIMAL, WJTOG3405, ARTEMIS, NEJ009.</li>
-  <li><strong>Global Multi-Center Cohort (16 Trials, N = 11,262 patients):</strong> KEYNOTE-024, KEYNOTE-042, EMPOWER-Lung1, IMpower110, KEYNOTE-189, KEYNOTE-407, IMpower130, IMpower150, CheckMate-9LA, CheckMate-227, POSEIDON, EURTAC, FLAURA2, KEYNOTE-598, MARIPOSA-2, INSPIRE.</li>
-</ul>
-Using <code>netmeta::subgroup()</code>, we conducted a formal between-subgroups heterogeneity test ($Q_{\text{bws}}$) across all overlapping direct and indirect comparisons.
-</div>
+Evaluating consistency between Asia-Pacific trials (8 trials, 4,491 patients) and Global trials (16 trials, 11,262 patients):
 
 ```{r fig_subgroup, echo=FALSE, out.width="100%", fig.align='center'}
 knitr::include_graphics("../outputs/figures/13_subgroup_forest.png")
 ```
 
-### Subgroup Interaction & Transitivity Findings
-- **Within-Subgroup Heterogeneity:**
-  - Asia-Pacific Network: $\tau^2 = 0.0000$ ($\tau = 0.0000$, $I^2 = 0.0\%$, $Q = 1.08, \text{df} = 6, p = 0.9822$).
-  - Global Multi-Center Network: $\tau^2 = 0.0047$ ($\tau = 0.0686$, $I^2 = 27.3\%$, $Q = 20.45, \text{df} = 15, p = 0.1554$).
-- **Omnibus Between-Subgroups Interaction Test:**
-  $$Q_{\text{bws}} = 1.1041 \quad (\text{df} = 6, \quad p = 0.9814)$$
-- **Pairwise Consistency:**
-  - *IO + Chemo vs Chemo:* Asia-Pacific $\text{HR} = 0.69$ ($0.59 - 0.82$) vs Global $\text{HR} = 0.68$ ($0.62 - 0.75$) ($Q = 0.0334, p = 0.8549$).
-  - *TKI + Chemo vs Chemo:* Asia-Pacific $\text{HR} = 0.72$ ($0.59 - 0.87$) vs Global $\text{HR} = 0.75$ ($0.59 - 0.96$) ($Q = 0.0868, p = 0.7683$).
-  - *TKI Monotherapy vs Chemo:* Asia-Pacific $\text{HR} = 0.89$ ($0.80 - 0.99$) vs Global $\text{HR} = 0.98$ ($0.73 - 1.30$) ($Q = 0.3821, p = 0.5365$).
+### Between-Subgroups Interaction Testing ($Q_{\text{bws}}$)
+- **`Drug C vs Drug A`:** Asia-Pacific $\text{HR} = 0.69$ ($0.59 - 0.82$) vs Global $\text{HR} = 0.68$ ($0.62 - 0.75$) ($Q_{\text{bws}} = 0.0334, df = 1, p = 0.8549$).
+- **`Drug F vs Drug A`:** Asia-Pacific $\text{HR} = 0.72$ ($0.59 - 0.87$) vs Global $\text{HR} = 0.75$ ($0.59 - 0.96$) ($Q_{\text{bws}} = 0.0868, df = 1, p = 0.7683$).
+- **`Drug E vs Drug A`:** Asia-Pacific $\text{HR} = 0.89$ ($0.80 - 0.99$) vs Global $\text{HR} = 0.98$ ($0.73 - 1.30$) ($Q_{\text{bws}} = 0.3821, df = 1, p = 0.5365$).
 
-*Conclusion:* The between-subgroups test confirmed strict regional homogeneity across all clinical contrasts ($p = 0.9814$), verifying that relative treatment effects for first-line immunotherapies and targeted combinations are universally generalizable across global and Asian patient populations.
+*Conclusion:* Between-subgroup testing confirmed regional consistency across all evaluated comparisons ($p > 0.50$).
 
 ```{r table_subgroup, echo=FALSE}
 if (file.exists("../outputs/tables/subgroup_analysis_results.csv")) {
@@ -461,106 +367,52 @@ if (file.exists("../outputs/tables/subgroup_analysis_results.csv")) {
 }
 ```
 
-```{r table_subgroup_summary, echo=FALSE}
-if (file.exists("../outputs/tables/subgroup_network_summary.csv")) {
-  df_sg_sum <- read.csv("../outputs/tables/subgroup_network_summary.csv")
-  knitr::kable(df_sg_sum, caption = "Table 9b: Evidence Network Metrics Partitioned by Geographic Subgroup")
-}
-```
-
 ---
 
 # PRISMA-NMA Reporting Compliance Checklist
 
-| Item | PRISMA-NMA Section | Status | Verification in this Portfolio |
+| Item | PRISMA-NMA Section | Status | Verification in this Monograph |
 |:-----|:-------------------|:------:|:--------------------------------|
-| **1** | Title | Completed | Explicitly identifies network meta-analysis in advanced NSCLC |
+| **1** | Title | Completed | Explicitly identifies network meta-analysis |
 | **2** | Abstract | Completed | Structured executive summary with P-scores and key HRs |
-| **3** | Rationale | Completed | Methodological rationale explaining why indirect comparisons are required |
-| **4** | Objectives | Completed | Clinical Scope: First-line advanced NSCLC, 6 regimens, OS primary endpoint |
-| **6** | Eligibility Criteria | Completed | Phase II/III RCTs in advanced NSCLC without actionable driver mutations |
+| **3** | Rationale | Completed | Methodological rationale for indirect comparisons |
+| **4** | Objectives | Completed | 6 systemic regimens, OS primary endpoint |
+| **6** | Eligibility Criteria | Completed | Phase II/III RCTs |
 | **8** | Geometry of Network | Completed | Figure 01 (weighted nodes and edges) |
-| **12** | Synthesis of Results | Completed | Graph-theoretical frequentist NMA (`netmeta` Laplacian pseudoinverse) |
-| **14** | Exploration for Inconsistency | Completed | Global $Q$ test + Node-splitting (`netsplit`) + Net Heat (Figure 05) |
-| **15** | Risk of Bias / Model Diagnostics | Completed | Statistical diagnostics: Global $Q_{\text{inc}}$, Node-Splitting (`netsplit`), Net Heat leverage, and LOO sensitivity |
-| **16** | Risk of Bias Across Studies | Completed | Comparison-adjusted funnel plot & Egger regression test (Figure 06) |
-| **21** | Results of Individual Studies | Completed | Complete contrast dataset (`data/nsclc_trial_contrasts.csv`) |
-| **22** | Sensitivity / Influence Analysis | Completed | Leave-One-Out (LOO) influence cross-validation across 24 trials (Figure 08) |
+| **12** | Synthesis of Results | Completed | Graph Laplacian frequentist NMA (`netmeta`) |
+| **14** | Exploration for Inconsistency | Completed | Global $Q$ + Node-splitting (`netsplit`) + Net Heat (Figure 05) |
+| **15** | Risk of Bias / Diagnostics | Completed | Global $Q_{\text{inc}}$, local node-splitting, Net Heat leverage, LOO |
+| **16** | Risk of Bias Across Studies | Completed | Comparison-adjusted funnel plot & Egger regression (Figure 06) |
+| **21** | Individual Studies | Completed | Contrast dataset (`data/nsclc_trial_contrasts.csv`) |
+| **22** | Sensitivity Analysis | Completed | Leave-One-Out (LOO) cross-validation (Figure 08) |
 | **23** | Network Meta-Analysis Results | Completed | Reference forest plot + Dual-model League table (Figure 07) |
-| **S1** | Component Deconstruction | Completed | Additive and interactive CNMA via `netcomb` (Figure 09) |
+| **S1** | Component Deconstruction | Completed | Additive/interactive CNMA via `netcomb` (Figure 09) |
 | **S2** | Probabilistic Rank Distributions | Completed | 10,000 Monte Carlo cumulative rankograms & SUCRA (Figure 10) |
-| **S3** | Benefit-Risk Synthesis | Completed | Dual-outcome efficacy vs Grade 3-5 toxicity decision matrix (Figure 11) |
+| **S3** | Benefit-Risk Synthesis | Completed | Dual-outcome efficacy vs severe toxicity decision matrix (Figure 11) |
 | **S4** | Transitivity & Meta-Regression | Completed | Network meta-regression across time, sample size, and region (Figure 12) |
-| **S5** | Subgroup Evidence Synthesis | Completed | Subgroup NMA: Asia-Pacific vs Global trials ($Q_{\text{bws}}$ test, Figure 13) |
-| **S6** | Clinical Significance Framework | Completed | MCID probability engine ($HR \le 0.80$ decision framework, Figure 14) |
-| **24** | Model Robustness & Evidence Certainty | Completed | Evaluated quantitatively via 24-trial LOO cross-validation and ASCO/ESMO MCID posterior probability engine |
-| **25** | Limitations | Completed | Evaluated heterogeneity ($\tau^2$) and design structure |
-| **26** | Conclusions | Completed | Clinical guidance for first-line oncology regimens based on certainty and survival benefit |
+| **S5** | Subgroup Synthesis | Completed | Subgroup NMA: Asia-Pacific vs Global trials ($Q_{\text{bws}}$, Figure 13) |
+| **S6** | Clinical Significance Framework | Completed | MCID probability engine ($\text{HR} \le 0.80$, Figure 14) |
+| **24** | Model Robustness | Completed | Quantitative validation via 24-trial LOO and MCID framework |
+| **25** | Limitations | Completed | Evaluated heterogeneity ($\tau^2 = 0.0000$) |
+| **26** | Conclusions | Completed | Comparative hierarchy based on survival benefit and safety profiles |
 
 ---
 
-# Reproducibility & Citation
+# Methodological References
 
-```bibtex
-@article{rucker2012network,
-  title={Network meta-analysis, electrical networks and graph theory},
-  author={R{\"u}cker, Gerta},
-  journal={Research Synthesis Methods},
-  volume={3},
-  number={4},
-  pages={312--324},
-  year={2012},
-  publisher={Wiley Online Library}
-}
-
-@article{salanti2011evaluating,
-  title={Evaluating the quality of evidence from a network meta-analysis},
-  author={Salanti, Georgia and Del Giovane, Cinzia and Chaimani, Anna and Caldwell, Deborah M and Higgins, Julian PT},
-  journal={PLoS ONE},
-  volume={9},
-  number={7},
-  pages={e99682},
-  year={2014}
-}
-
-@article{rucker2020component,
-  title={Component network meta-analysis: modeling, estimation and application to psychological interventions},
-  author={R{\"u}cker, Gerta and Petropoulou, Maria and Schwarzer, Guido},
-  journal={Biostatistics},
-  volume={21},
-  number={4},
-  pages={808--824},
-  year={2020}
-}
-
-@article{jansen2013conducting,
-  title={Conducting indirect-treatment-comparison and network-meta-analysis studies: report of the ISPOR Task Force on Indirect Treatment Comparisons Good Research Practices: part 2},
-  author={Jansen, Jeroen P and Fleurence, Rachael and Devine, Beth and Hawkins, Neil and Ferguson, Roy and May, Jamie and others},
-  journal={Value in Health},
-  volume={14},
-  number={4},
-  pages={429--436},
-  year={2011}
-}
-
-@article{hutton2015prisma,
-  title={The PRISMA extension statement for reporting of systematic reviews incorporating network meta-analyses of health care interventions: checklist and explanations},
-  author={Hutton, Brian and Salanti, Georgia and Caldwell, Deborah M and Chaimani, Anna and Schmid, Christopher H and Cameron, Chris and Ioannidis, John PA and Straus, Sharon and Thorlund, Kristian and Jansen, Jeroen P and others},
-  journal={Annals of Internal Medicine},
-  volume={162},
-  number={11},
-  pages={777--784},
-  year={2015}
-}
-```
+1. **Rücker, G.** (2012). Network meta-analysis, electrical networks and graph theory. *Research Synthesis Methods*, 3(4), 312–324. [doi:10.1002/jrsm.1058](https://doi.org/10.1002/jrsm.1058)
+2. **Rücker, G., & Schwarzer, G.** (2015). Ranking treatments in frequentist network meta-analysis works without resampling methods. *BMC Medical Research Methodology*, 15(1), 58. [doi:10.1186/s12874-015-0060-8](https://doi.org/10.1186/s12874-015-0060-8)
+3. **Rücker, G., Petropoulou, M., & Schwarzer, G.** (2020). Component network meta-analysis: modeling, estimation and application to psychological interventions. *Biostatistics*, 21(4), 808–824. [doi:10.1093/biostatistics/kxz025](https://doi.org/10.1093/biostatistics/kxz025)
+4. **Hutton, B., et al.** (2015). The PRISMA extension statement for reporting of systematic reviews incorporating network meta-analyses. *Annals of Internal Medicine*, 162(11), 777–784. [doi:10.7326/M14-2385](https://doi.org/10.7326/M14-2385)
+5. **Salanti, G.** (2012). Indirect and mixed-treatment comparison, network, or multiple-treatments meta-analysis: many names, many benefits, many concerns for the next generation evidence synthesis tool. *Research Synthesis Methods*, 3(2), 80–97. [doi:10.1002/jrsm.1037](https://doi.org/10.1002/jrsm.1037)
+6. **Krahn, U., Binder, H., & König, J.** (2013). A graphical tool for locating inconsistency in network meta-analyses. *BMC Medical Research Methodology*, 13(1), 35. [doi:10.1186/1471-2288-13-35](https://doi.org/10.1186/1471-2288-13-35)
+7. **Dias, S., et al.** (2010). Checking consistency in mixed treatment comparison meta-analysis. *Statistics in Medicine*, 29(7–8), 932–944. [doi:10.1002/sim.3767](https://doi.org/10.1002/sim.3767)
+8. **Chaimani, A., & Salanti, G.** (2012). Using network meta-analysis to evaluate the existence of small-study effects. *Research Synthesis Methods*, 3(2), 161–176. [doi:10.1002/jrsm.57](https://doi.org/10.1002/jrsm.57)
 
 ---
 
-# Appendix: Computational Environment & Session Information
-
-To ensure complete scientific and computational reproducibility in accordance with ICMJE and PRISMA-NMA reporting guidelines, the exact computing architecture and package environment are detailed below:
+# Appendix: Session Information
 
 ```{r session_info, echo=TRUE}
 sessionInfo()
 ```
-

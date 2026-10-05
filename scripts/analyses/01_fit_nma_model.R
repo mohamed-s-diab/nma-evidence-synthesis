@@ -61,7 +61,7 @@ if (cache_valid) {
     studlab = studlab,
     data = dat,
     sm = "HR",
-    reference.group = "Chemo",
+    reference.group = "Drug A",
     common = TRUE,
     random = TRUE,
     tol.multiarm = 0.005,

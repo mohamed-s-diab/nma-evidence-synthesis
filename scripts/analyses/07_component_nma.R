@@ -44,14 +44,14 @@ if (cache_valid) {
   dat <- read.csv(data_path, stringsAsFactors = FALSE)
 
   # Pharmacologic Component Mapping
-  # Chemo is defined as the inactive backbone reference
+  # Component A is defined as the inactive backbone reference
   map_trt <- c(
-    "Chemo"     = "Chemo",
-    "IO_Mono"   = "IO",
-    "IO_Chemo"  = "Chemo + IO",
-    "Dual_IO"   = "CTLA4 + IO",
-    "TKI"       = "TKI",
-    "TKI_Chemo" = "Chemo + TKI"
+    "Drug A" = "Component A",
+    "Drug B" = "Component B",
+    "Drug C" = "Component A + Component B",
+    "Drug D" = "Component B + Component C",
+    "Drug E" = "Component D",
+    "Drug F" = "Component A + Component D"
   )
 
   dat$t1_comp <- unname(map_trt[dat$treat1])
@@ -66,15 +66,15 @@ if (cache_valid) {
     studlab = studlab,
     data = dat,
     sm = "HR",
-    reference.group = "Chemo",
+    reference.group = "Component A",
     random = TRUE,
     common = TRUE,
     tol.multiarm = 0.005,
     details.chkmultiarm = FALSE
   )
 
-  # Fit Component NMA (CNMA) with inactive reference = 'Chemo'
-  nc <- netcomb(nma_comp, inactive = "Chemo")
+  # Fit Component NMA (CNMA) with inactive reference = 'Component A'
+  nc <- netcomb(nma_comp, inactive = "Component A")
 
   # Extract Component-Specific Incremental Effects
   # Comp.random is a vector of log-hazard ratios
@@ -88,7 +88,7 @@ if (cache_valid) {
   df_components <- data.frame(
     Type           = "Component",
     Item           = comp_names,
-    Reference      = "Chemo Backbone",
+    Reference      = "Component A Backbone",
     iHR            = round(comp_hr, 3),
     CI_Lower       = round(comp_lower, 3),
     CI_Upper       = round(comp_upper, 3),
@@ -100,22 +100,22 @@ if (cache_valid) {
   )
 
   # Extract Full Regimen Combinations under Additive Model
-  comb_trts   <- nc$trts[nc$trts != "Chemo"]
+  comb_trts   <- nc$trts[nc$trts != "Component A"]
   # In netcomb, treatment estimates vs reference:
-  te_comb     <- nc$TE.random[comb_trts, "Chemo"]
-  low_comb    <- nc$lower.random[comb_trts, "Chemo"]
-  upp_comb    <- nc$upper.random[comb_trts, "Chemo"]
-  p_comb      <- nc$pval.random[comb_trts, "Chemo"]
+  te_comb     <- nc$TE.random[comb_trts, "Component A"]
+  low_comb    <- nc$lower.random[comb_trts, "Component A"]
+  upp_comb    <- nc$upper.random[comb_trts, "Component A"]
+  p_comb      <- nc$pval.random[comb_trts, "Component A"]
 
   df_combinations <- data.frame(
     Type           = "Combination (Additive Model)",
     Item           = comb_trts,
-    Reference      = "Chemo Backbone",
+    Reference      = "Component A Backbone",
     iHR            = round(exp(te_comb), 3),
     CI_Lower       = round(exp(low_comb), 3),
     CI_Upper       = round(exp(upp_comb), 3),
     HR_String      = sprintf("%.2f (%.2f-%.2f)", exp(te_comb), exp(low_comb), exp(upp_comb)),
-    Z_Score        = round((te_comb) / nc$seTE.random[comb_trts, "Chemo"], 2),
+    Z_Score        = round((te_comb) / nc$seTE.random[comb_trts, "Component A"], 2),
     P_Value        = p_comb,
     P_Value_String = ifelse(p_comb < 0.0001, "< 0.0001", sprintf("= %.4f", p_comb)),
     stringsAsFactors = FALSE
@@ -159,21 +159,21 @@ if (cache_valid) {
 }
 
 cat("\n [COMPONENT NMA SCIENTIFIC AUDIT]\n")
-cat(sprintf(" - Anti-PD-(L)1 (IO)    iHR : %.3f (95%% CI: %.3f - %.3f, p %s)\n",
-            df_components$iHR[df_components$Item == "IO"],
-            df_components$CI_Lower[df_components$Item == "IO"],
-            df_components$CI_Upper[df_components$Item == "IO"],
-            df_components$P_Value_String[df_components$Item == "IO"]))
-cat(sprintf(" - Tyrosine Kinase (TKI) iHR : %.3f (95%% CI: %.3f - %.3f, p %s)\n",
-            df_components$iHR[df_components$Item == "TKI"],
-            df_components$CI_Lower[df_components$Item == "TKI"],
-            df_components$CI_Upper[df_components$Item == "TKI"],
-            df_components$P_Value_String[df_components$Item == "TKI"]))
-cat(sprintf(" - Anti-CTLA-4 (CTLA4)  iHR : %.3f (95%% CI: %.3f - %.3f, p %s)\n",
-            df_components$iHR[df_components$Item == "CTLA4"],
-            df_components$CI_Lower[df_components$Item == "CTLA4"],
-            df_components$CI_Upper[df_components$Item == "CTLA4"],
-            df_components$P_Value_String[df_components$Item == "CTLA4"]))
+cat(sprintf(" - Component B iHR : %.3f (95%% CI: %.3f - %.3f, p %s)\n",
+            df_components$iHR[df_components$Item == "Component B"],
+            df_components$CI_Lower[df_components$Item == "Component B"],
+            df_components$CI_Upper[df_components$Item == "Component B"],
+            df_components$P_Value_String[df_components$Item == "Component B"]))
+cat(sprintf(" - Component D iHR : %.3f (95%% CI: %.3f - %.3f, p %s)\n",
+            df_components$iHR[df_components$Item == "Component D"],
+            df_components$CI_Lower[df_components$Item == "Component D"],
+            df_components$CI_Upper[df_components$Item == "Component D"],
+            df_components$P_Value_String[df_components$Item == "Component D"]))
+cat(sprintf(" - Component C iHR : %.3f (95%% CI: %.3f - %.3f, p %s)\n",
+            df_components$iHR[df_components$Item == "Component C"],
+            df_components$CI_Lower[df_components$Item == "Component C"],
+            df_components$CI_Upper[df_components$Item == "Component C"],
+            df_components$P_Value_String[df_components$Item == "Component C"]))
 cat(sprintf(" - Additivity vs Synergy Q_diff : %.2f (df = %d, p = %.4f)\n",
             nc$Q.diff, nc$df.Q.diff, nc$pval.Q.diff))
 

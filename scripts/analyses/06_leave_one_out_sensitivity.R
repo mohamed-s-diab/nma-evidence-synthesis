@@ -70,7 +70,7 @@ if (cache_valid) {
       TE = TE, seTE = seTE,
       treat1 = treat1, treat2 = treat2,
       studlab = studlab, data = dat_sub,
-      sm = "HR", reference.group = "Chemo",
+      sm = "HR", reference.group = "Drug A",
       common = TRUE, random = TRUE,
       tol.multiarm = 0.005, details.chkmultiarm = FALSE
     ))
@@ -82,17 +82,17 @@ if (cache_valid) {
       Iteration = idx,
       Omitted_Study = sprintf("Excluding %s", study_name),
       Studies_Remaining = length(unique(dat_sub$studlab)),
-      IO_Chemo_HR = round(exp(sub_nma$TE.random["IO_Chemo", "Chemo"]), 3),
-      IO_Chemo_LCI = round(exp(sub_nma$lower.random["IO_Chemo", "Chemo"]), 3),
-      IO_Chemo_UCI = round(exp(sub_nma$upper.random["IO_Chemo", "Chemo"]), 3),
-      TKI_Chemo_HR = round(exp(sub_nma$TE.random["TKI_Chemo", "Chemo"]), 3),
-      Dual_IO_HR   = round(exp(sub_nma$TE.random["Dual_IO", "Chemo"]), 3),
-      IO_Mono_HR   = round(exp(sub_nma$TE.random["IO_Mono", "Chemo"]), 3),
-      TKI_HR       = round(exp(sub_nma$TE.random["TKI", "Chemo"]), 3),
+      Drug_C_HR = round(exp(sub_nma$TE.random["Drug C", "Drug A"]), 3),
+      Drug_C_LCI = round(exp(sub_nma$lower.random["Drug C", "Drug A"]), 3),
+      Drug_C_UCI = round(exp(sub_nma$upper.random["Drug C", "Drug A"]), 3),
+      Drug_F_HR = round(exp(sub_nma$TE.random["Drug F", "Drug A"]), 3),
+      Drug_D_HR   = round(exp(sub_nma$TE.random["Drug D", "Drug A"]), 3),
+      Drug_B_HR   = round(exp(sub_nma$TE.random["Drug B", "Drug A"]), 3),
+      Drug_E_HR   = round(exp(sub_nma$TE.random["Drug E", "Drug A"]), 3),
       Tau2 = round(sub_nma$tau2, 4),
       I2_Pct = round(sub_nma$I2 * 100, 1),
       Q_Total = round(sub_nma$Q, 2),
-      Pscore_IO_Chemo = round(sub_rk$ranking.random["IO_Chemo"], 4),
+      Pscore_Drug_C = round(sub_rk$ranking.random["Drug C"], 4),
       Top_Treatment = top_trt,
       stringsAsFactors = FALSE
     )
@@ -107,17 +107,17 @@ if (cache_valid) {
     Iteration = 0,
     Omitted_Study = "None (Full Evidence Base)",
     Studies_Remaining = n_studies,
-    IO_Chemo_HR = round(exp(base_nma$TE.random["IO_Chemo", "Chemo"]), 3),
-    IO_Chemo_LCI = round(exp(base_nma$lower.random["IO_Chemo", "Chemo"]), 3),
-    IO_Chemo_UCI = round(exp(base_nma$upper.random["IO_Chemo", "Chemo"]), 3),
-    TKI_Chemo_HR = round(exp(base_nma$TE.random["TKI_Chemo", "Chemo"]), 3),
-    Dual_IO_HR   = round(exp(base_nma$TE.random["Dual_IO", "Chemo"]), 3),
-    IO_Mono_HR   = round(exp(base_nma$TE.random["IO_Mono", "Chemo"]), 3),
-    TKI_HR       = round(exp(base_nma$TE.random["TKI", "Chemo"]), 3),
+    Drug_C_HR = round(exp(base_nma$TE.random["Drug C", "Drug A"]), 3),
+    Drug_C_LCI = round(exp(base_nma$lower.random["Drug C", "Drug A"]), 3),
+    Drug_C_UCI = round(exp(base_nma$upper.random["Drug C", "Drug A"]), 3),
+    Drug_F_HR = round(exp(base_nma$TE.random["Drug F", "Drug A"]), 3),
+    Drug_D_HR   = round(exp(base_nma$TE.random["Drug D", "Drug A"]), 3),
+    Drug_B_HR   = round(exp(base_nma$TE.random["Drug B", "Drug A"]), 3),
+    Drug_E_HR   = round(exp(base_nma$TE.random["Drug E", "Drug A"]), 3),
     Tau2 = round(base_nma$tau2, 4),
     I2_Pct = round(base_nma$I2 * 100, 1),
     Q_Total = round(base_nma$Q, 2),
-    Pscore_IO_Chemo = round(base_rk$ranking.random["IO_Chemo"], 4),
+    Pscore_Drug_C = round(base_rk$ranking.random["Drug C"], 4),
     Top_Treatment = names(sort(base_rk$ranking.random, decreasing = TRUE))[1],
     stringsAsFactors = FALSE
   )
@@ -136,16 +136,16 @@ if (cache_valid) {
 }
 
 # 4. Audit Summary
-min_hr <- min(df_loo$IO_Chemo_HR[-1])
-max_hr <- max(df_loo$IO_Chemo_HR[-1])
-all_top_io <- all(df_loo$Top_Treatment == "IO_Chemo")
+min_hr <- min(df_loo$Drug_C_HR[-1])
+max_hr <- max(df_loo$Drug_C_HR[-1])
+all_top_io <- all(df_loo$Top_Treatment == "Drug C")
 
 cat("\n [LEAVE-ONE-OUT STABILITY AUDIT]\n")
-cat(sprintf(" - Baseline IO+Chemo vs Chemo HR : %.3f (95%% CI: %.3f - %.3f)\n", 
-            df_loo$IO_Chemo_HR[1], df_loo$IO_Chemo_LCI[1], df_loo$IO_Chemo_UCI[1]))
+cat(sprintf(" - Baseline Drug C vs Drug A HR : %.3f (95%% CI: %.3f - %.3f)\n", 
+            df_loo$Drug_C_HR[1], df_loo$Drug_C_LCI[1], df_loo$Drug_C_UCI[1]))
 cat(sprintf(" - Range of LOO HR across trials : [%.3f to %.3f] (Shift: %.3f)\n",
             min_hr, max_hr, max_hr - min_hr))
-cat(sprintf(" - Rank 1 Consistency Across All 24 Iterations : %s (100%% IO+Chemo maintained Top Rank)\n", 
+cat(sprintf(" - Rank 1 Consistency Across All 24 Iterations : %s (100%% Drug C maintained Top Rank)\n", 
             ifelse(all_top_io, "PERFECT", "VARIATION DETECTED")))
 cat(sprintf(" - Heterogeneity Stability (tau^2 range)        : [%.4f to %.4f]\n", 
             min(df_loo$Tau2[-1]), max(df_loo$Tau2[-1])))

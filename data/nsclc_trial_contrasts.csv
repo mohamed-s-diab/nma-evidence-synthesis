@@ -1,33 +1,33 @@
 "studlab","year","phase","region","treat1","treat2","HR","lower_CI","upper_CI","TE","seTE","n_treat1","n_treat2","n_total"
-"KEYNOTE-024 (2016)",2016,"Phase III","Global","IO_Mono","Chemo",0.63,0.47,0.86,-0.462,0.1541,154,151,305
-"KEYNOTE-042 (2019)",2019,"Phase III","Global","IO_Mono","Chemo",0.81,0.71,0.93,-0.2107,0.0689,637,637,1274
-"EMPOWER-Lung1 (2021)",2021,"Phase III","Global","IO_Mono","Chemo",0.57,0.42,0.77,-0.5621,0.1546,356,354,710
-"IMpower110 (2020)",2020,"Phase III","Global","IO_Mono","Chemo",0.76,0.54,1.07,-0.2744,0.1745,286,286,572
-"KEYNOTE-189 (2018)",2018,"Phase III","Global","IO_Chemo","Chemo",0.49,0.38,0.64,-0.7133,0.133,410,206,616
-"KEYNOTE-407 (2018)",2018,"Phase III","Global","IO_Chemo","Chemo",0.64,0.49,0.85,-0.4463,0.1405,278,281,559
-"IMpower130 (2019)",2019,"Phase III","Global","IO_Chemo","Chemo",0.79,0.64,0.98,-0.2357,0.1087,451,228,679
-"CameL (2021)",2021,"Phase III","Asia-Pacific","IO_Chemo","Chemo",0.73,0.55,0.96,-0.3147,0.1421,205,207,412
-"RATIONALE-307 (2021)",2021,"Phase III","Asia-Pacific","IO_Chemo","Chemo",0.71,0.51,0.99,-0.3425,0.1692,243,121,364
-"ORIENT-11 (2021)",2021,"Phase III","Asia-Pacific","IO_Chemo","Chemo",0.65,0.5,0.85,-0.4308,0.1354,266,131,397
-"IMpower150 (2018)",2018,"Phase III","Global","IO_Chemo","Chemo",0.78,0.64,0.96,-0.2485,0.1034,392,394,786
-"CheckMate-9LA (2020)",2020,"Phase III","Global","IO_Chemo","Chemo",0.66,0.55,0.8,-0.4155,0.0955,361,358,1080
-"CheckMate-9LA (2020)",2020,"Phase III","Global","Dual_IO","Chemo",0.74,0.61,0.89,-0.3011,0.0955,361,358,1080
-"CheckMate-9LA (2020)",2020,"Phase III","Global","Dual_IO","IO_Chemo",1.12,0.93,1.35,0.1144,0.0948,361,361,1080
-"CheckMate-227 (2019)",2019,"Phase III","Global","IO_Mono","Chemo",0.88,0.74,1.05,-0.1278,0.0905,396,397,1189
-"CheckMate-227 (2019)",2019,"Phase III","Global","Dual_IO","Chemo",0.79,0.66,0.94,-0.2357,0.0905,396,397,1189
-"CheckMate-227 (2019)",2019,"Phase III","Global","Dual_IO","IO_Mono",0.9,0.75,1.07,-0.1079,0.0905,396,396,1189
-"POSEIDON (2022)",2022,"Phase III","Global","IO_Chemo","Chemo",0.71,0.58,0.86,-0.3425,0.1004,338,337,1013
-"POSEIDON (2022)",2022,"Phase III","Global","Dual_IO","Chemo",0.77,0.63,0.94,-0.2614,0.1004,338,337,1013
-"POSEIDON (2022)",2022,"Phase III","Global","Dual_IO","IO_Chemo",1.08,0.89,1.32,0.0811,0.1004,338,338,1013
-"IPASS (2009)",2009,"Phase III","Asia-Pacific","TKI","Chemo",0.9,0.79,1.02,-0.1054,0.0652,609,608,1217
-"EURTAC (2012)",2012,"Phase III","Europe","TKI","Chemo",0.93,0.64,1.35,-0.0726,0.1904,86,87,173
-"OPTIMAL (2011)",2011,"Phase III","Asia-Pacific","TKI","Chemo",1.04,0.69,1.58,0.0392,0.2114,82,72,154
-"WJTOG3405 (2010)",2010,"Phase III","Asia-Pacific","TKI","Chemo",0.78,0.5,1.2,-0.2485,0.2233,86,86,172
-"FLAURA2 (2023)",2023,"Phase III","Global","TKI_Chemo","TKI",0.75,0.57,0.97,-0.2877,0.1356,279,278,557
-"ARTEMIS (2022)",2022,"Phase III","Asia-Pacific","TKI_Chemo","TKI",0.81,0.61,1.07,-0.2107,0.1434,180,182,362
-"NEJ009 (2020)",2020,"Phase III","Asia-Pacific","TKI","Chemo",0.82,0.63,1.06,-0.1985,0.1315,171,171,512
-"NEJ009 (2020)",2020,"Phase III","Asia-Pacific","TKI_Chemo","Chemo",0.69,0.53,0.89,-0.3711,0.1315,170,171,512
-"NEJ009 (2020)",2020,"Phase III","Asia-Pacific","TKI_Chemo","TKI",0.84,0.65,1.09,-0.1726,0.1315,170,171,512
-"KEYNOTE-598 (2021)",2021,"Phase III","Global","Dual_IO","IO_Mono",1.08,0.85,1.37,0.077,0.1218,284,284,568
-"MARIPOSA-2 (2023)",2023,"Phase III","Global","TKI_Chemo","Chemo",0.77,0.6,0.98,-0.2614,0.1252,263,263,526
-"INSPIRE (2021)",2021,"Phase II/III","Global","IO_Chemo","IO_Mono",0.85,0.65,1.11,-0.1625,0.1365,145,145,290
+"Study 01 (2016)",2016,"Phase III","Global","Drug B","Drug A",0.63,0.47,0.86,-0.462,0.1541,154,151,305
+"Study 02 (2019)",2019,"Phase III","Global","Drug B","Drug A",0.81,0.71,0.93,-0.2107,0.0689,637,637,1274
+"Study 03 (2021)",2021,"Phase III","Global","Drug B","Drug A",0.57,0.42,0.77,-0.5621,0.1546,356,354,710
+"Study 04 (2020)",2020,"Phase III","Global","Drug B","Drug A",0.76,0.54,1.07,-0.2744,0.1745,286,286,572
+"Study 05 (2018)",2018,"Phase III","Global","Drug C","Drug A",0.49,0.38,0.64,-0.7133,0.133,410,206,616
+"Study 06 (2018)",2018,"Phase III","Global","Drug C","Drug A",0.64,0.49,0.85,-0.4463,0.1405,278,281,559
+"Study 07 (2019)",2019,"Phase III","Global","Drug C","Drug A",0.79,0.64,0.98,-0.2357,0.1087,451,228,679
+"Study 08 (2021)",2021,"Phase III","Asia-Pacific","Drug C","Drug A",0.73,0.55,0.96,-0.3147,0.1421,205,207,412
+"Study 09 (2021)",2021,"Phase III","Asia-Pacific","Drug C","Drug A",0.71,0.51,0.99,-0.3425,0.1692,243,121,364
+"Study 10 (2021)",2021,"Phase III","Asia-Pacific","Drug C","Drug A",0.65,0.5,0.85,-0.4308,0.1354,266,131,397
+"Study 11 (2018)",2018,"Phase III","Global","Drug C","Drug A",0.78,0.64,0.96,-0.2485,0.1034,392,394,786
+"Study 12 (2020)",2020,"Phase III","Global","Drug C","Drug A",0.66,0.55,0.8,-0.4155,0.0955,361,358,1080
+"Study 12 (2020)",2020,"Phase III","Global","Drug D","Drug A",0.74,0.61,0.89,-0.3011,0.0955,361,358,1080
+"Study 12 (2020)",2020,"Phase III","Global","Drug D","Drug C",1.12,0.93,1.35,0.1144,0.0948,361,361,1080
+"Study 13 (2019)",2019,"Phase III","Global","Drug B","Drug A",0.88,0.74,1.05,-0.1278,0.0905,396,397,1189
+"Study 13 (2019)",2019,"Phase III","Global","Drug D","Drug A",0.79,0.66,0.94,-0.2357,0.0905,396,397,1189
+"Study 13 (2019)",2019,"Phase III","Global","Drug D","Drug B",0.9,0.75,1.07,-0.1079,0.0905,396,396,1189
+"Study 14 (2022)",2022,"Phase III","Global","Drug C","Drug A",0.71,0.58,0.86,-0.3425,0.1004,338,337,1013
+"Study 14 (2022)",2022,"Phase III","Global","Drug D","Drug A",0.77,0.63,0.94,-0.2614,0.1004,338,337,1013
+"Study 14 (2022)",2022,"Phase III","Global","Drug D","Drug C",1.08,0.89,1.32,0.0811,0.1004,338,338,1013
+"Study 15 (2009)",2009,"Phase III","Asia-Pacific","Drug E","Drug A",0.9,0.79,1.02,-0.1054,0.0652,609,608,1217
+"Study 16 (2012)",2012,"Phase III","Europe","Drug E","Drug A",0.93,0.64,1.35,-0.0726,0.1904,86,87,173
+"Study 17 (2011)",2011,"Phase III","Asia-Pacific","Drug E","Drug A",1.04,0.69,1.58,0.0392,0.2114,82,72,154
+"Study 18 (2010)",2010,"Phase III","Asia-Pacific","Drug E","Drug A",0.78,0.5,1.2,-0.2485,0.2233,86,86,172
+"Study 19 (2023)",2023,"Phase III","Global","Drug F","Drug E",0.75,0.57,0.97,-0.2877,0.1356,279,278,557
+"Study 20 (2022)",2022,"Phase III","Asia-Pacific","Drug F","Drug E",0.81,0.61,1.07,-0.2107,0.1434,180,182,362
+"Study 21 (2020)",2020,"Phase III","Asia-Pacific","Drug E","Drug A",0.82,0.63,1.06,-0.1985,0.1315,171,171,512
+"Study 21 (2020)",2020,"Phase III","Asia-Pacific","Drug F","Drug A",0.69,0.53,0.89,-0.3711,0.1315,170,171,512
+"Study 21 (2020)",2020,"Phase III","Asia-Pacific","Drug F","Drug E",0.84,0.65,1.09,-0.1726,0.1315,170,171,512
+"Study 22 (2021)",2021,"Phase III","Global","Drug D","Drug B",1.08,0.85,1.37,0.077,0.1218,284,284,568
+"Study 23 (2023)",2023,"Phase III","Global","Drug F","Drug A",0.77,0.6,0.98,-0.2614,0.1252,263,263,526
+"Study 24 (2021)",2021,"Phase II/III","Global","Drug C","Drug B",0.85,0.65,1.11,-0.1625,0.1365,145,145,290

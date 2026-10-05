@@ -1,7 +1,7 @@
 "Treatment","HR_OS","HR_OS_Lower","HR_OS_Upper","Pval_OS","OR_Tox","OR_Tox_Lower","OR_Tox_Upper","Pval_Tox","SUCRA_Safety","SUCRA_Efficacy","Quadrant","Net_Benefit_Score"
-"IO_Mono",0.776,0.714,0.843,2.24413455789916e-09,0.34,0.275,0.419,7.76804091694388e-24,0.833,0.514,"Ideal Profile (High Efficacy, Low Toxicity)",1.347
-"TKI",0.899,0.815,0.991,0.032718398380612,0.286,0.218,0.375,1.18269563870895e-19,0.967,0.201,"Favorable Tolerability (Low Efficacy, Low Toxicity)",1.168
-"IO_Chemo",0.687,0.638,0.74,2.29121376870535e-23,1.367,1.156,1.617,0.000258286601244524,0.165,0.944,"Intensive Efficacy (High Efficacy, Higher Toxicity)",1.109
-"Dual_IO",0.762,0.694,0.836,1.05720937128557e-08,1.006,0.792,1.276,0.963594639218808,0.492,0.586,"Intensive Efficacy (High Efficacy, Higher Toxicity)",1.078
-"TKI_Chemo",0.725,0.631,0.832,4.51409225702527e-06,1.623,1.161,2.271,0.00464850960766793,0.04,0.752,"Intensive Efficacy (High Efficacy, Higher Toxicity)",0.792
-"Chemo",1,1,1,NA,1,1,1,NA,0.503,0.003,"Favorable Tolerability (Low Efficacy, Low Toxicity)",0.506
+"Drug B",0.776,0.714,0.843,2.24413455790334e-09,0.34,0.275,0.419,7.76804091694219e-24,0.833,0.514,"Ideal Profile (High Efficacy, Low Toxicity)",1.347
+"Drug E",0.899,0.815,0.991,0.0327183983806224,0.286,0.218,0.375,1.18269563870874e-19,0.967,0.201,"Favorable Tolerability (Low Efficacy, Low Toxicity)",1.168
+"Drug C",0.687,0.638,0.74,2.29121376872029e-23,1.367,1.156,1.617,0.000258286601244474,0.165,0.944,"Intensive Efficacy (High Efficacy, Higher Toxicity)",1.109
+"Drug D",0.762,0.694,0.836,1.05720937128641e-08,1.006,0.792,1.276,0.963594639218796,0.492,0.586,"Intensive Efficacy (High Efficacy, Higher Toxicity)",1.078
+"Drug F",0.725,0.631,0.832,4.51409225703078e-06,1.623,1.161,2.271,0.00464850960766788,0.04,0.751,"Intensive Efficacy (High Efficacy, Higher Toxicity)",0.791
+"Drug A",1,1,1,NA,1,1,1,NA,0.503,0.003,"Favorable Tolerability (Low Efficacy, Low Toxicity)",0.506

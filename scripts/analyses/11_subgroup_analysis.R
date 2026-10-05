@@ -108,20 +108,20 @@ if (cache_valid) {
   
   # Map treatment names to clean publication clinical labels
   trt_labels_clean <- c(
-    "IO_Chemo"  = "IO + Chemo",
-    "TKI_Chemo" = "TKI + Chemo",
-    "Dual_IO"   = "Dual IO",
-    "IO_Mono"   = "IO Monotherapy",
-    "TKI"       = "TKI Monotherapy",
-    "Chemo"     = "Chemotherapy"
+    "Drug A" = "Drug A",
+    "Drug B" = "Drug B",
+    "Drug C" = "Drug C",
+    "Drug D" = "Drug D",
+    "Drug E" = "Drug E",
+    "Drug F" = "Drug F"
   )
   
   # In netmeta, TE = treat1 vs treat2.
-  # If treat1 is Chemo, treat2 is Active: exp(-TE) is Active vs Chemo (HR < 1 indicates survival prolongation)
-  merged_comps$Active_Trt <- ifelse(merged_comps$treat1 == "Chemo", merged_comps$treat2, merged_comps$treat1)
-  merged_comps$Comparator <- ifelse(merged_comps$treat1 == "Chemo", merged_comps$treat1, merged_comps$treat2)
+  # If treat1 is Drug A, treat2 is Active: exp(-TE) is Active vs Drug A (HR < 1 indicates survival prolongation)
+  merged_comps$Active_Trt <- ifelse(merged_comps$treat1 == "Drug A", merged_comps$treat2, merged_comps$treat1)
+  merged_comps$Comparator <- ifelse(merged_comps$treat1 == "Drug A", merged_comps$treat1, merged_comps$treat2)
   
-  invert_flag <- (merged_comps$treat1 == "Chemo")
+  invert_flag <- (merged_comps$treat1 == "Drug A")
   
   te_asia <- ifelse(invert_flag, -merged_comps$TE_Asia, merged_comps$TE_Asia)
   low_asia <- ifelse(invert_flag, -merged_comps$upper_Asia, merged_comps$lower_Asia)

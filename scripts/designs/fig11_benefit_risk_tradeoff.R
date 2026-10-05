@@ -31,21 +31,21 @@ df_br   <- br_data$benefit_risk_df
 
 # Regimen labels and colors
 trt_labels <- c(
-  "IO_Chemo"  = "IO + Chemo",
-  "TKI_Chemo" = "TKI + Chemo",
-  "Dual_IO"   = "Dual IO",
-  "IO_Mono"   = "IO Monotherapy",
-  "TKI"       = "TKI Monotherapy",
-  "Chemo"     = "Chemo Alone (Ref)"
+  "Drug A" = "Drug A (Ref)",
+  "Drug B" = "Drug B",
+  "Drug C" = "Drug C",
+  "Drug D" = "Drug D",
+  "Drug E" = "Drug E",
+  "Drug F" = "Drug F"
 )
 
 palette_regimens <- c(
-  "IO_Chemo"  = "#1B365D",  # Navy
-  "TKI_Chemo" = "#E65100",  # Orange
-  "Dual_IO"   = "#6A1B9A",  # Purple
-  "IO_Mono"   = "#2E7D32",  # Forest Green
-  "TKI"       = "#C62828",  # Red
-  "Chemo"     = "#546E7A"   # Grey
+  "Drug A" = "#546E7A",  # Grey
+  "Drug B" = "#2E7D32",  # Forest Green
+  "Drug C" = "#1B365D",  # Navy
+  "Drug D" = "#6A1B9A",  # Purple
+  "Drug E" = "#C62828",  # Red
+  "Drug F" = "#E65100"   # Orange
 )
 
 df_br$Label <- trt_labels[df_br$Treatment]
@@ -63,20 +63,20 @@ revlog_trans <- trans_new(
 df_labels <- df_br %>%
   mutate(
     Label_X = case_when(
-      Treatment == "IO_Chemo"  ~ 1.28,
-      Treatment == "TKI_Chemo" ~ 1.96,
-      Treatment == "Dual_IO"   ~ 0.70,
-      Treatment == "IO_Mono"   ~ 0.25,
-      Treatment == "TKI"       ~ 0.29,
-      Treatment == "Chemo"     ~ 0.78
+      Treatment == "Drug C" ~ 1.28,
+      Treatment == "Drug F" ~ 1.96,
+      Treatment == "Drug D" ~ 0.70,
+      Treatment == "Drug B" ~ 0.25,
+      Treatment == "Drug E" ~ 0.29,
+      Treatment == "Drug A" ~ 0.78
     ),
     Label_Y = case_when(
-      Treatment == "IO_Chemo"  ~ 0.648,
-      Treatment == "TKI_Chemo" ~ 0.725,
-      Treatment == "Dual_IO"   ~ 0.742,
-      Treatment == "IO_Mono"   ~ 0.745,
-      Treatment == "TKI"       ~ 0.955,
-      Treatment == "Chemo"     ~ 0.940
+      Treatment == "Drug C" ~ 0.648,
+      Treatment == "Drug F" ~ 0.725,
+      Treatment == "Drug D" ~ 0.742,
+      Treatment == "Drug B" ~ 0.745,
+      Treatment == "Drug E" ~ 0.955,
+      Treatment == "Drug A" ~ 0.940
     )
   )
 
@@ -177,9 +177,9 @@ p <- ggplot(df_br, aes(x = OR_Tox, y = HR_OS)) +
   ) +
   labs(
     title = "Bi-dimensional Benefit-Risk Trade-Off Matrix: Survival Efficacy vs Severe Toxicity",
-    subtitle = "Simultaneous Dual Network Meta-Analysis Mapping Overall Survival Hazard Ratio against Grade 3-5 Adverse Event Odds Ratio\nReference Arm: Platinum Chemotherapy Backbone (HR = 1.00, OR = 1.00; Point size proportional to Net Clinical Benefit Score)",
-    x = "Severe Toxicity (Grade 3-5 AEs): Odds Ratio vs Chemotherapy (Log Scale, < 1.0 = Safer)",
-    y = "Overall Survival Efficacy: Hazard Ratio vs Chemotherapy (Inverted Log Scale, Top = Superior Survival)",
+    subtitle = "Simultaneous Dual Network Meta-Analysis Mapping Overall Survival Hazard Ratio against Grade 3-5 Adverse Event Odds Ratio\nReference Arm: Drug A Comparator Backbone (HR = 1.00, OR = 1.00; Point size proportional to Net Clinical Benefit Score)",
+    x = "Severe Toxicity (Grade 3-5 AEs): Odds Ratio vs Drug A (Log Scale, < 1.0 = Safer)",
+    y = "Overall Survival Efficacy: Hazard Ratio vs Drug A (Inverted Log Scale, Top = Superior Survival)",
     caption = "Derived from dual frequentist random-effects network meta-analyses across 24 randomized controlled trials (N = 14,357 patients).\nHorizontal and vertical error bars denote 95% confidence intervals. Quadrant thresholds define clinical decision domains."
   ) +
   theme_minimal(base_size = 12) +

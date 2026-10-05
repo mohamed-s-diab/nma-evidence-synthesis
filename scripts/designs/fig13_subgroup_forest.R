@@ -33,9 +33,9 @@ total_p   <- sg_bundle$total_pval
 df_asia <- data.frame(
   Comparison = df_merged$Comparison_Clean,
   Subgroup = "Asia-Pacific (8 Trials)",
-  HR = exp(ifelse(df_merged$treat1 == "Chemo", -df_merged$TE_Asia, df_merged$TE_Asia)),
-  Lower = exp(ifelse(df_merged$treat1 == "Chemo", -df_merged$upper_Asia, df_merged$lower_Asia)),
-  Upper = exp(ifelse(df_merged$treat1 == "Chemo", -df_merged$lower_Asia, df_merged$upper_Asia)),
+  HR = exp(ifelse(df_merged$treat1 == "Drug A", -df_merged$TE_Asia, df_merged$TE_Asia)),
+  Lower = exp(ifelse(df_merged$treat1 == "Drug A", -df_merged$upper_Asia, df_merged$lower_Asia)),
+  Upper = exp(ifelse(df_merged$treat1 == "Drug A", -df_merged$lower_Asia, df_merged$upper_Asia)),
   k = df_merged$k_Asia,
   HR_Label = df_merged$HR_Asia,
   Q_bws = df_merged$Q_bws,
@@ -46,9 +46,9 @@ df_asia <- data.frame(
 df_glob <- data.frame(
   Comparison = df_merged$Comparison_Clean,
   Subgroup = "Global (16 Trials)",
-  HR = exp(ifelse(df_merged$treat1 == "Chemo", -df_merged$TE_Global, df_merged$TE_Global)),
-  Lower = exp(ifelse(df_merged$treat1 == "Chemo", -df_merged$upper_Global, df_merged$lower_Global)),
-  Upper = exp(ifelse(df_merged$treat1 == "Chemo", -df_merged$lower_Global, df_merged$upper_Global)),
+  HR = exp(ifelse(df_merged$treat1 == "Drug A", -df_merged$TE_Global, df_merged$TE_Global)),
+  Lower = exp(ifelse(df_merged$treat1 == "Drug A", -df_merged$upper_Global, df_merged$lower_Global)),
+  Upper = exp(ifelse(df_merged$treat1 == "Drug A", -df_merged$lower_Global, df_merged$upper_Global)),
   k = df_merged$k_Global,
   HR_Label = df_merged$HR_Global,
   Q_bws = df_merged$Q_bws,
@@ -60,12 +60,12 @@ df_plot <- rbind(df_asia, df_glob)
 
 # Order comparisons logically by clinical importance
 comp_order <- rev(c(
-  "IO + Chemo vs Chemotherapy",
-  "TKI + Chemo vs Chemotherapy",
-  "TKI Monotherapy vs Chemotherapy",
-  "IO + Chemo vs TKI Monotherapy",
-  "IO + Chemo vs TKI + Chemo",
-  "TKI Monotherapy vs TKI + Chemo"
+  "Drug C vs Drug A",
+  "Drug F vs Drug A",
+  "Drug E vs Drug A",
+  "Drug C vs Drug E",
+  "Drug C vs Drug F",
+  "Drug E vs Drug F"
 ))
 
 df_plot$Comparison <- factor(df_plot$Comparison, levels = comp_order)

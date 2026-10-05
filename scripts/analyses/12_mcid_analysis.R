@@ -52,7 +52,7 @@ if (cache_valid) {
   nma <- readRDS(nma_file)
   
   trts_all    <- nma$trts
-  ref_trt     <- "Chemo"
+  ref_trt     <- "Drug A"
   trts_active <- setdiff(trts_all, ref_trt)
   
   # Extract submatrix covariance of active treatments vs reference
@@ -66,48 +66,49 @@ if (cache_valid) {
   draws_active <- mvrnorm(n = B, mu = mu_active, Sigma = cov_sub)
   colnames(draws_active) <- trts_active
   
-  # Reference arm (Chemo anchor) has log(HR) = 0
-  draws_all <- cbind(Chemo = rep(0, B), draws_active)
+  # Reference arm (Drug A anchor) has log(HR) = 0
+  draws_ref <- matrix(0, nrow = B, ncol = 1, dimnames = list(NULL, "Drug A"))
+  draws_all <- cbind(draws_ref, draws_active)
   draws_all <- draws_all[, trts_all] # preserve canonical treatment order
   
   # ----------------------------------------------------------------------------
-  # 2. MCID vs Chemotherapy Anchor Calculations
+  # 2. MCID vs Drug A Anchor Calculations
   # ----------------------------------------------------------------------------
   # MCID Threshold: HR <= 0.80 (>= 20% relative mortality reduction, ASCO/ESMO)
   # Sensitivity Thresholds: HR <= 0.85 (>= 15%) and HR <= 0.75 (>= 25%)
   # Any Superiority: HR < 1.00
   p_mcid_chemo   <- sapply(trts_all, function(trt) {
-    if (trt == "Chemo") return(0.0)
+    if (trt == "Drug A") return(0.0)
     mean(exp(draws_all[, trt]) <= 0.80)
   })
   
   p_mcid_085     <- sapply(trts_all, function(trt) {
-    if (trt == "Chemo") return(0.0)
+    if (trt == "Drug A") return(0.0)
     mean(exp(draws_all[, trt]) <= 0.85)
   })
   
   p_mcid_075     <- sapply(trts_all, function(trt) {
-    if (trt == "Chemo") return(0.0)
+    if (trt == "Drug A") return(0.0)
     mean(exp(draws_all[, trt]) <= 0.75)
   })
   
   p_sup_chemo    <- sapply(trts_all, function(trt) {
-    if (trt == "Chemo") return(0.0)
+    if (trt == "Drug A") return(0.0)
     mean(exp(draws_all[, trt]) < 1.00)
   })
   
   median_hr <- sapply(trts_all, function(trt) {
-    if (trt == "Chemo") return(1.000)
+    if (trt == "Drug A") return(1.000)
     median(exp(draws_all[, trt]))
   })
   
   ci_lower_hr <- sapply(trts_all, function(trt) {
-    if (trt == "Chemo") return(1.000)
+    if (trt == "Drug A") return(1.000)
     quantile(exp(draws_all[, trt]), probs = 0.025)
   })
   
   ci_upper_hr <- sapply(trts_all, function(trt) {
-    if (trt == "Chemo") return(1.000)
+    if (trt == "Drug A") return(1.000)
     quantile(exp(draws_all[, trt]), probs = 0.975)
   })
   
@@ -143,7 +144,7 @@ if (cache_valid) {
   # 4. Clinical Evidence Certainty Tier Classification
   # ----------------------------------------------------------------------------
   classify_tier <- function(p_mcid, trt) {
-    if (trt == "Chemo") return("Reference Anchor")
+    if (trt == "Drug A") return("Reference Anchor")
     if (p_mcid >= 0.80) return("Tier 1: Definitive Clinical Superiority (P >= 80%)")
     if (p_mcid >= 0.50) return("Tier 2: Probable Clinical Superiority (50% <= P < 80%)")
     if (p_mcid >= 0.20) return("Tier 3: Inconclusive / Marginal Superiority (20% <= P < 50%)")

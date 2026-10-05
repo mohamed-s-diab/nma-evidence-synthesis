@@ -1,4 +1,4 @@
 "Covariate","Domain","Unit","Slope_Beta","SE","CI_Lower","CI_Upper","Z_Score","P_Value","P_Value_String","Omnibus_QM","QM_Pval","Transitivity"
-"Publication Year","Temporal Stability","Per 1-Year Increase (2009-2023)",0.0003,0.0085,-0.0164,0.017,0.03,0.974412076969254,"0.9744",164.14,7.86020799613432e-33,"Preserved (No Effect Modification)"
-"Sample Size (log N)","Small-Study Effects","Per 1-Unit Increase in log(N)",0.0511,0.0493,-0.0457,0.1478,1.03,0.300809758545247,"0.3008",165.25,4.56648046357379e-33,"Preserved (No Effect Modification)"
-"Geographic Setting","Population Diversity","Asia-Pacific vs Global Trials",-0.0246,0.0753,-0.1723,0.123,-0.33,0.743845882953054,"0.7438",164.29,7.30894377374095e-33,"Preserved (No Effect Modification)"
+"Publication Year","Temporal Stability","Per 1-Year Increase (2009-2023)",-0.0037,0.0096,-0.0225,0.0152,-0.38,0.703695186679398,"0.7037",136.21,6.30568411452451e-27,"Preserved (No Effect Modification)"
+"Sample Size (log N)","Small-Study Effects","Per 1-Unit Increase in log(N)",-0.0454,0.0508,-0.1449,0.0541,-0.89,0.371315638234712,"0.3713",136.87,4.58871081017908e-27,"Preserved (No Effect Modification)"
+"Geographic Setting","Population Diversity","Asia-Pacific vs Global Trials",0.0167,0.076,-0.1322,0.1657,0.22,0.825910681281852,"0.8259",136.12,6.60744719748411e-27,"Preserved (No Effect Modification)"

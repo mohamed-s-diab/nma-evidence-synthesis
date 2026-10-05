@@ -37,12 +37,12 @@ load_time_taken <- round(as.numeric(difftime(load_end_time, load_start_time, uni
 cat(sprintf(" - Loaded cached rankings in %.3f seconds.\n", load_time_taken))
 
 trt_labels_map <- c(
-  "IO_Chemo"  = "IO + Chemo",
-  "TKI_Chemo" = "TKI + Chemo",
-  "Dual_IO"   = "Dual IO",
-  "IO_Mono"   = "IO Monotherapy",
-  "TKI"       = "TKI Monotherapy",
-  "Chemo"     = "Chemotherapy"
+  "Drug A" = "Drug A",
+  "Drug B" = "Drug B",
+  "Drug C" = "Drug C",
+  "Drug D" = "Drug D",
+  "Drug E" = "Drug E",
+  "Drug F" = "Drug F"
 )
 
 df_rankings <- data.frame(
@@ -61,12 +61,12 @@ df_plot_rank <- df_rankings
 df_plot_rank$Treatment <- factor(df_plot_rank$Treatment, levels = rev(df_rankings$Treatment))
 
 colors_by_trt <- c(
-  "Chemotherapy"    = "#718096",
-  "IO Monotherapy"  = "#3182CE",
-  "IO + Chemo"      = "#2B6CB0",
-  "Dual IO"         = "#805AD5",
-  "TKI Monotherapy" = "#D69E2E",
-  "TKI + Chemo"     = "#DD6B20"
+  "Drug A" = "#718096",
+  "Drug B" = "#3182CE",
+  "Drug C" = "#2B6CB0",
+  "Drug D" = "#805AD5",
+  "Drug E" = "#D69E2E",
+  "Drug F" = "#DD6B20"
 )
 
 p_rank <- ggplot(df_plot_rank, aes(x = Pscore_Random, y = Treatment, fill = Treatment)) +

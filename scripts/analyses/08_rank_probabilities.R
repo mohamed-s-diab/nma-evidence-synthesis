@@ -40,7 +40,7 @@ if (cache_valid) {
   nma <- readRDS(nma_file)
   
   trts_all    <- nma$trts
-  ref_trt     <- "Chemo"
+  ref_trt     <- "Drug A"
   trts_active <- setdiff(trts_all, ref_trt)
   
   # Extract submatrix covariance of treatments vs reference
@@ -54,8 +54,9 @@ if (cache_valid) {
   draws_active <- mvrnorm(n = B, mu = mu_active, Sigma = cov_sub)
   colnames(draws_active) <- trts_active
   
-  # Reference arm (Chemo) has log(HR) = 0
-  draws_all <- cbind(Chemo = rep(0, B), draws_active)
+  # Reference arm (Drug A) has log(HR) = 0
+  draws_ref <- matrix(0, nrow = B, ncol = 1, dimnames = list(NULL, "Drug A"))
+  draws_all <- cbind(draws_ref, draws_active)
   draws_all <- draws_all[, trts_all] # preserve canonical order
   
   # Rank for each draw (1 = best survival extension, lowest log HR)

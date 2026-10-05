@@ -1,6 +1,6 @@
 # ==============================================================================
 # Design Script: scripts/designs/fig02_forest_plot.R
-# Visual Target: Figure 2 - Reference Comparison Forest Plot vs Chemotherapy
+# Visual Target: Figure 2 - Reference Comparison Forest Plot vs Drug A
 # Output File:   outputs/figures/02_forest_plot_random.png (300 DPI Publication Figure)
 # Framework:     netmeta (Uses Cached NMA Model & Hierarchy)
 # ==============================================================================
@@ -10,7 +10,7 @@ suppressPackageStartupMessages({
 })
 
 cat("\n======================================================================\n")
-cat(" [DESIGN 02/12] FIGURE 02: REFERENCE FOREST PLOT VS CHEMO\n")
+cat(" [DESIGN 02/12] FIGURE 02: REFERENCE FOREST PLOT VS DRUG A\n")
 cat("======================================================================\n")
 
 # 1. Load Cached Model & Rankings (Auto-fit if missing or data changed)
@@ -36,12 +36,12 @@ load_time_taken <- round(as.numeric(difftime(load_end_time, load_start_time, uni
 cat(sprintf(" - Loaded cached model & rankings in %.3f seconds.\n", load_time_taken))
 
 trt_labels_map <- c(
-  "IO_Chemo"  = "IO + Chemo",
-  "TKI_Chemo" = "TKI + Chemo",
-  "Dual_IO"   = "Dual IO",
-  "IO_Mono"   = "IO Monotherapy",
-  "TKI"       = "TKI Monotherapy",
-  "Chemo"     = "Chemotherapy"
+  "Drug A" = "Drug A",
+  "Drug B" = "Drug B",
+  "Drug C" = "Drug C",
+  "Drug D" = "Drug D",
+  "Drug E" = "Drug E",
+  "Drug F" = "Drug F"
 )
 
 # 2. Render Publication Forest Plot (300 DPI)
@@ -54,12 +54,12 @@ png(output_fig, width = 3200, height = 1800, res = 300)
 forest(
   nma,
   labels = trt_labels_map[nma$trts],
-  reference.group = "Chemo",
+  reference.group = "Drug A",
   pooled = "random",
   sortvar = -rk$ranking.random,
-  smlab = "Hazard Ratio (95% CI)\nvs Chemotherapy",
+  smlab = "Hazard Ratio (95% CI)\nvs Drug A",
   label.left = "Favors Active Regimen",
-  label.right = "Favors Chemotherapy",
+  label.right = "Favors Drug A",
   drop.reference.group = TRUE,
   digits = 2,
   col.square = "#2B6CB0",

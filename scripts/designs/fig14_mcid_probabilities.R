@@ -32,40 +32,40 @@ mcid_mat    <- mcid_bundle$mcid_pairwise_mat
 trts_all    <- mcid_bundle$trts
 
 trt_labels_clean <- c(
-  "IO_Chemo"  = "IO + Platinum-Chemo",
-  "TKI_Chemo" = "EGFR-TKI + Chemo",
-  "Dual_IO"   = "Dual IO Blockade",
-  "IO_Mono"   = "IO Monotherapy",
-  "TKI"       = "EGFR-TKI Alone",
-  "Chemo"     = "Chemotherapy Anchor"
+  "Drug A" = "Drug A Anchor",
+  "Drug B" = "Drug B",
+  "Drug C" = "Drug C",
+  "Drug D" = "Drug D",
+  "Drug E" = "Drug E",
+  "Drug F" = "Drug F"
 )
 
 trt_short_labels <- c(
-  "IO_Chemo"  = "IO + Chemo",
-  "TKI_Chemo" = "TKI + Chemo",
-  "Dual_IO"   = "Dual IO",
-  "IO_Mono"   = "IO Mono",
-  "TKI"       = "TKI",
-  "Chemo"     = "Chemo"
+  "Drug A" = "Drug A",
+  "Drug B" = "Drug B",
+  "Drug C" = "Drug C",
+  "Drug D" = "Drug D",
+  "Drug E" = "Drug E",
+  "Drug F" = "Drug F"
 )
 
 palette_regimens <- c(
-  "IO_Chemo"  = "#1B365D",
-  "TKI_Chemo" = "#E65100",
-  "Dual_IO"   = "#6A1B9A",
-  "IO_Mono"   = "#00838F",
-  "TKI"       = "#C62828",
-  "Chemo"     = "#64748B"
+  "Drug A" = "#64748B",
+  "Drug B" = "#00838F",
+  "Drug C" = "#1B365D",
+  "Drug D" = "#6A1B9A",
+  "Drug E" = "#C62828",
+  "Drug F" = "#E65100"
 )
 
 # ------------------------------------------------------------------------------
-# PANEL A: MCID vs Standard Chemotherapy Anchor
+# PANEL A: MCID vs Standard Drug A Anchor
 # ------------------------------------------------------------------------------
 df_bar <- df_summary %>%
-  filter(Treatment != "Chemo") %>%
+  filter(Treatment != "Drug A") %>%
   mutate(
     Clean_Label = trt_labels_clean[Treatment],
-    Treatment_Factor = factor(Treatment, levels = rev(c("IO_Chemo", "TKI_Chemo", "Dual_IO", "IO_Mono", "TKI"))),
+    Treatment_Factor = factor(Treatment, levels = rev(c("Drug C", "Drug F", "Drug D", "Drug B", "Drug E"))),
     MCID_Pct = P_MCID_vs_Chemo * 100,
     Sup_Pct  = P_Superior_vs_Chemo * 100,
     Label_Text = sprintf("P(MCID): %.1f%%  |  P(HR < 1.0): %.1f%%", MCID_Pct, Sup_Pct)
@@ -91,7 +91,7 @@ p1 <- ggplot(df_bar, aes(y = Treatment_Factor, x = MCID_Pct, fill = Treatment)) 
     labels = function(x) paste0(x, "%")
   ) +
   labs(
-    title = "PANEL A: Probability of Clinically Meaningful Superiority vs. Chemotherapy Anchor",
+    title = "PANEL A: Probability of Clinically Meaningful Superiority vs. Drug A Anchor",
     subtitle = "MCID Threshold: HR <= 0.80 (>= 20% Relative Mortality Reduction) Across 10,000 Multivariate Monte Carlo Simulations",
     x = "Probability of Achieving Clinically Meaningful Benefit (%)",
     y = NULL
@@ -115,7 +115,7 @@ p1 <- ggplot(df_bar, aes(y = Treatment_Factor, x = MCID_Pct, fill = Treatment)) 
 df_heatmap <- as.data.frame(as.table(mcid_mat))
 colnames(df_heatmap) <- c("Trt_Row", "Trt_Col", "Prob")
 
-order_matrix <- c("IO_Chemo", "TKI_Chemo", "Dual_IO", "IO_Mono", "TKI", "Chemo")
+order_matrix <- c("Drug C", "Drug F", "Drug D", "Drug B", "Drug E", "Drug A")
 
 df_heatmap$Trt_Row <- factor(df_heatmap$Trt_Row, levels = rev(order_matrix))
 df_heatmap$Trt_Col <- factor(df_heatmap$Trt_Col, levels = order_matrix)
