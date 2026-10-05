@@ -33,10 +33,10 @@ authors:
 keywords:
   - "network-meta-analysis"
   - "evidence-synthesis"
-  - "non-small cell lung cancer"
+  - "comparative-effectiveness"
+  - "frequentist-statistics"
   - "netmeta"
   - "biostatistics"
-  - "oncology"
   - "prisma-nma"
   - "reproducible-research"
   - "clinical-trials"
