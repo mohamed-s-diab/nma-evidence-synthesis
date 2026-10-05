@@ -77,7 +77,7 @@ if (cache_valid) {
   # MCID Threshold: HR <= 0.80 (>= 20% relative mortality reduction, ASCO/ESMO)
   # Sensitivity Thresholds: HR <= 0.85 (>= 15%) and HR <= 0.75 (>= 25%)
   # Any Superiority: HR < 1.00
-  p_mcid_chemo   <- sapply(trts_all, function(trt) {
+  p_mcid_ref     <- sapply(trts_all, function(trt) {
     if (trt == "Drug A") return(0.0)
     mean(exp(draws_all[, trt]) <= 0.80)
   })
@@ -92,7 +92,7 @@ if (cache_valid) {
     mean(exp(draws_all[, trt]) <= 0.75)
   })
   
-  p_sup_chemo    <- sapply(trts_all, function(trt) {
+  p_sup_ref      <- sapply(trts_all, function(trt) {
     if (trt == "Drug A") return(0.0)
     mean(exp(draws_all[, trt]) < 1.00)
   })
@@ -151,22 +151,22 @@ if (cache_valid) {
     return("Tier 4: Unlikely Clinical Superiority (P < 20%)")
   }
   
-  evidence_tiers <- mapply(classify_tier, p_mcid_chemo, trts_all)
+  evidence_tiers <- mapply(classify_tier, p_mcid_ref, trts_all)
   
   # Build Publication-Grade Summary Table
   df_summary <- data.frame(
-    Treatment           = trts_all,
-    Median_Simulated_HR = round(median_hr, 3),
-    Simulated_95_CrI    = sprintf("%.2f-%.2f", ci_lower_hr, ci_upper_hr),
-    P_MCID_vs_Chemo     = round(p_mcid_chemo, 4),
-    P_MCID_085          = round(p_mcid_085, 4),
-    P_MCID_075          = round(p_mcid_075, 4),
-    P_Superior_vs_Chemo = round(p_sup_chemo, 4),
-    Evidence_Tier       = evidence_tiers,
-    stringsAsFactors    = FALSE
+    Treatment            = trts_all,
+    Median_Simulated_HR  = round(median_hr, 3),
+    Simulated_95_CrI     = sprintf("%.2f-%.2f", ci_lower_hr, ci_upper_hr),
+    P_MCID_vs_Drug_A     = round(p_mcid_ref, 4),
+    P_MCID_085           = round(p_mcid_085, 4),
+    P_MCID_075           = round(p_mcid_075, 4),
+    P_Superior_vs_Drug_A = round(p_sup_ref, 4),
+    Evidence_Tier        = evidence_tiers,
+    stringsAsFactors     = FALSE
   )
-  # Sort by P_MCID_vs_Chemo descending
-  df_summary <- df_summary[order(-df_summary$P_MCID_vs_Chemo), ]
+  # Sort by P_MCID_vs_Drug_A descending
+  df_summary <- df_summary[order(-df_summary$P_MCID_vs_Drug_A), ]
   rownames(df_summary) <- NULL
   
   # ----------------------------------------------------------------------------
@@ -176,10 +176,10 @@ if (cache_valid) {
     B                    = B,
     threshold_mcid       = 0.80,
     trts                 = trts_all,
-    p_mcid_chemo         = p_mcid_chemo,
+    p_mcid_ref           = p_mcid_ref,
     p_mcid_085           = p_mcid_085,
     p_mcid_075           = p_mcid_075,
-    p_sup_chemo          = p_sup_chemo,
+    p_sup_ref            = p_sup_ref,
     median_hr            = median_hr,
     ci_lower_hr          = ci_lower_hr,
     ci_upper_hr          = ci_upper_hr,
@@ -208,7 +208,7 @@ if (cache_valid) {
     trt <- df_summary$Treatment[i]
     cat(sprintf("   %d. %-10s | Median HR: %.2f [%s] | P(MCID <= 0.80): %5.1f%% | P(HR < 1.0): %5.1f%% | %s\n",
                 i, trt, df_summary$Median_Simulated_HR[i], df_summary$Simulated_95_CrI[i],
-                df_summary$P_MCID_vs_Chemo[i] * 100, df_summary$P_Superior_vs_Chemo[i] * 100,
+                df_summary$P_MCID_vs_Drug_A[i] * 100, df_summary$P_Superior_vs_Drug_A[i] * 100,
                 df_summary$Evidence_Tier[i]))
   }
 }

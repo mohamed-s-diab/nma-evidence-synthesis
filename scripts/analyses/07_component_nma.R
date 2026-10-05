@@ -3,11 +3,11 @@
 # Purpose: Additive & Interactive Component Network Meta-Analysis (CNMA)
 # Methodology: Rücker et al. (2020) / Welton et al. (2009)
 # Implementation: netmeta::netcomb() with graph-theoretical decomposition
-# Deconstructs multi-agent regimens into constituent pharmacologic components:
-#   - Chemotherapy (Chemo) [Reference Backbone]
-#   - Anti-PD-(L)1 Immunotherapy (IO)
-#   - Anti-CTLA-4 Immunotherapy (CTLA4)
-#   - Tyrosine Kinase Inhibitor (TKI)
+# Deconstructs multi-agent regimens into constituent components:
+#   - Component A [Reference Backbone Anchor]
+#   - Component B
+#   - Component C
+#   - Component D
 # Outputs: outputs/models/component_nma_data.rds
 #          outputs/tables/component_nma_effects.csv
 # ==============================================================================

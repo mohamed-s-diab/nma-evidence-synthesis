@@ -9,8 +9,8 @@
 
 cat("\n==============================================================================\n")
 cat("          MASTER NETWORK META-ANALYSIS PRODUCTION PIPELINE                    \n")
-cat("          Advanced Non-Small Cell Lung Cancer (NSCLC) Evidence Synthesis      \n")
-cat("          Tier-1 Oncology Methodology: 12 Analytical Engines | 14 Figures      \n")
+cat("          Multi-Treatment Evidence Synthesis Research Compendium              \n")
+cat("          Reproducible Methodology: 12 Analytical Modules | 14 Exhibits       \n")
 cat("==============================================================================\n")
 
 start_time <- Sys.time()

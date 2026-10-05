@@ -78,7 +78,7 @@ netgraph(
   offset = 0.045,
   multiarm = TRUE,
   col.multiarm = "#E2E8F0",
-  main = "Evidence Network Geometry: First-Line NSCLC Overall Survival"
+  main = "Evidence Network Geometry: Overall Survival (Multi-Treatment Trial Benchmark)"
 )
 mtext("Node diameter proportional to sample size | Line thickness proportional to trial count", 
       side = 3, line = 0.5, cex = 1.0, col = "#4A5568")

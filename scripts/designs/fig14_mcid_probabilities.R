@@ -2,7 +2,7 @@
 # Design Script: scripts/designs/fig14_mcid_probabilities.R
 # Visual Target: Figure 14 - MCID Clinical Superiority Probability Framework (HR <= 0.80)
 # Output File:   outputs/figures/14_mcid_probabilities.png (300 DPI Publication Exhibit)
-# Focus:         Dual Exhibit: (A) Superiority vs Chemo; (B) Pairwise MCID Matrix
+# Focus:         Dual Exhibit: (A) Superiority vs Drug A; (B) Pairwise MCID Matrix
 # ==============================================================================
 
 suppressPackageStartupMessages({
@@ -66,8 +66,8 @@ df_bar <- df_summary %>%
   mutate(
     Clean_Label = trt_labels_clean[Treatment],
     Treatment_Factor = factor(Treatment, levels = rev(c("Drug C", "Drug F", "Drug D", "Drug B", "Drug E"))),
-    MCID_Pct = P_MCID_vs_Chemo * 100,
-    Sup_Pct  = P_Superior_vs_Chemo * 100,
+    MCID_Pct = P_MCID_vs_Drug_A * 100,
+    Sup_Pct  = P_Superior_vs_Drug_A * 100,
     Label_Text = sprintf("P(MCID): %.1f%%  |  P(HR < 1.0): %.1f%%", MCID_Pct, Sup_Pct)
   )
 

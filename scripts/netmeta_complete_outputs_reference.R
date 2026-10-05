@@ -107,7 +107,7 @@
 # │   ├── pval.ref.common        : named vector — قيم p-value مقابل المرجع (Common)
 # │   ├── pval.ref.fixed         : named vector — (مرادف قديم)
 # │   ├── pval.ref.random        : named vector — قيم p-value مقابل المرجع (Random)
-# │   └── reference.group        : character — اسم العلاج المرجعي المختار (مثل "Chemo")
+# │   └── reference.group        : character — اسم العلاج المرجعي المختار (مثل "Drug A")
 # │
 # ├── 1.3 إحصاءات عدم التجانس وعدم الاتساق (Heterogeneity & Inconsistency)
 # │   │   ► Q الكلي = Q_heterogeneity + Q_inconsistency
@@ -177,7 +177,7 @@
 # │   ├── trts                   : character vector — أسماء جميع العلاجات في الشبكة (مُرتبة أبجدياً)
 # │   ├── studies                : character vector — أسماء/ملصقات الدراسات الفريدة
 # │   ├── narms                  : named integer vector — عدد الأذرع في كل دراسة
-# │   ├── designs                : character vector — التصاميم الفريدة (مثل "Chemo:IO_Chemo")
+# │   ├── designs                : character vector — التصاميم الفريدة (مثل "Drug A:Drug C")
 # │   └── seq                    : character vector — ترتيب العلاجات المستخدم في العرض
 # │
 # ├── 1.6 بيانات الإدخال الأصلية (Input Data Vectors)
@@ -374,7 +374,7 @@
 # │
 # └── 3.6 بيانات وصفية (Metadata)
 #     │
-#     ├── comparison             : character vector — أسماء المقارنات (مثل "IO_Chemo:Chemo")
+#     ├── comparison             : character vector — أسماء المقارنات (مثل "Drug C:Drug A")
 #     ├── treat1                 : character vector — العلاج الأول
 #     ├── treat2                 : character vector — العلاج الثاني
 #     ├── k                      : integer vector — عدد الدراسات لكل مقارنة مباشرة
@@ -455,8 +455,8 @@
 # │
 # ├── 4.4 بيانات المكونات (Component Information)
 # │   │
-# │   ├── comps                  : character vector — أسماء المكونات النشطة (مثل "IO", "CTLA4", "TKI")
-# │   ├── inactive               : character — اسم المكوّن غير النشط / المرجع (مثل "Chemo")
+# │   ├── comps                  : character vector — أسماء المكونات النشطة (مثل "Component B", "Component C", "Component D")
+# │   ├── inactive               : character — اسم المكوّن غير النشط / المرجع (مثل "Component A")
 # │   ├── C.matrix               : matrix — مصفوفة تحليل المكونات (Component Decomposition Matrix)
 # │   │                             ► أبعاد: [N × C] — تحليل كل علاج إلى مكوناته
 # │   ├── trts                   : character vector — أسماء العلاجات
@@ -1068,7 +1068,7 @@
 # │   │
 # │   ├── meta                   : list of "metagen" objects — كائن تحليل تجميعي لكل مقارنة
 # │   │                             ► كل كائن metagen يحتوي على جميع مخرجات meta::metagen()
-# │   ├── comparisons            : character vector — أسماء المقارنات (مثل "IO_Chemo vs Chemo")
+# │   ├── comparisons            : character vector — أسماء المقارنات (مثل "Drug C vs Drug A")
 # │   ├── x                      : netmeta object — الكائن الأصلي
 # │   └── version                : character — إصدار الحزمة
 # │
@@ -1129,7 +1129,7 @@
 # │   │                             ► source = "Total", "Within designs", "Between designs"
 # │   ├── Q.het.design           : data.frame — Q لعدم التجانس داخل كل تصميم
 # │   │                             ► أعمدة: design, df, Q, pval
-# │   │                             ► صف لكل تصميم (مثل "Chemo:IO_Chemo", "IO_Mono:Chemo")
+# │   │                             ► صف لكل تصميم (مثل "Drug A:Drug C", "Drug B:Drug A")
 # │   ├── Q.inc.detach           : data.frame — Q لعدم الاتساق عند فصل كل تصميم
 # │   │                             ► أعمدة: design, df, Q, pval
 # │   │                             ► يُظهر مساهمة كل تصميم في عدم الاتساق الإجمالي

@@ -49,10 +49,10 @@ p_yr  <- df_sum$P_Value_String[df_sum$Covariate == "Publication Year"]
 z_yr  <- df_sum$Z_Score[df_sum$Covariate == "Publication Year"]
 
 # Fitted Network Meta-Regression Line across Publication Year:
-# Derived from netmetareg model: pooled active treatment vs Chemo effect at year 2020 = -0.285 (HR = 0.752)
+# Derived from netmetareg model: pooled active treatment vs Drug A effect at year 2020 = -0.285 (HR = 0.752)
 # Slope beta = +0.0003 per year (SE = 0.0085)
 year_grid <- seq(2008.8, 2024.2, length.out = 100)
-base_log_hr <- -0.285 # Weighted mean active vs chemo log(HR) at year 2020
+base_log_hr <- -0.285 # Weighted mean active vs Drug A log(HR) at year 2020
 pred_mr <- data.frame(
   year = year_grid,
   fit  = exp(base_log_hr + b_yr * (year_grid - 2020)),
@@ -62,7 +62,7 @@ pred_mr <- data.frame(
 
 # Panel A: Meta-Regression Bubble Plot across Publication Year
 p1 <- ggplot(dat, aes(x = year, y = HR)) +
-  # Reference line at HR = 1.0 (Chemo Parity)
+  # Reference line at HR = 1.0 (Drug A Parity)
   geom_hline(yintercept = 1.0, linetype = "dashed", color = "#78909C", linewidth = 0.8) +
   # True fitted network meta-regression line and 95% CI ribbon
   geom_ribbon(data = pred_mr, aes(x = year, ymin = low, ymax = upp), 

@@ -78,7 +78,7 @@ p_rank <- ggplot(df_plot_rank, aes(x = Pscore_Random, y = Treatment, fill = Trea
                      labels = scales::percent_format(accuracy = 1)) +
   labs(
     title = "Treatment Ranking Hierarchy: Surface Under Cumulative Ranking (P-Scores)",
-    subtitle = "Overall Survival in Advanced NSCLC (Frequentist random-effects model)",
+    subtitle = "Overall Survival Evidence Synthesis (Frequentist random-effects model)",
     x = "P-Score (Certainty of Superiority over Competing Regimens)",
     y = NULL,
     caption = "P-score ranges from 0 (certain worst) to 1 (certain best).\nComputed using netrank(..., small.values = 'good')."
