@@ -383,7 +383,7 @@ if (file.exists("../outputs/tables/subgroup_analysis_results.csv")) {
 | **14** | Exploration for Inconsistency | Completed | Global $Q$ + Node-splitting (`netsplit`) + Net Heat (Figure 05) |
 | **15** | Risk of Bias / Diagnostics | Completed | Global $Q_{\text{inc}}$, local node-splitting, Net Heat leverage, LOO |
 | **16** | Risk of Bias Across Studies | Completed | Comparison-adjusted funnel plot & Egger regression (Figure 06) |
-| **21** | Individual Studies | Completed | Contrast dataset (`data/nsclc_trial_contrasts.csv`) |
+| **21** | Individual Studies | Completed | Contrast dataset (`data/trial_contrasts.csv`) |
 | **22** | Sensitivity Analysis | Completed | Leave-One-Out (LOO) cross-validation (Figure 08) |
 | **23** | Network Meta-Analysis Results | Completed | Reference forest plot + Dual-model League table (Figure 07) |
 | **S1** | Component Deconstruction | Completed | Additive/interactive CNMA via `netcomb` (Figure 09) |

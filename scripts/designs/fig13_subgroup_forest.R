@@ -16,7 +16,7 @@ cat("======================================================================\n")
 
 # 1. Load Subgroup Analysis Data Cache
 sg_data_path <- "outputs/models/subgroup_analysis_data.rds"
-data_path    <- "data/nsclc_trial_contrasts.csv"
+data_path    <- "data/trial_contrasts.csv"
 
 if (!file.exists(sg_data_path) || (file.exists(data_path) && file.mtime(data_path) > file.mtime(sg_data_path))) {
   cat(" - Subgroup cache missing or dataset modified. Running 11_subgroup_analysis.R ...\n")

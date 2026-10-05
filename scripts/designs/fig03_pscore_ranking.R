@@ -16,7 +16,7 @@ cat("======================================================================\n")
 
 # 1. Load Cached Rankings Object (Auto-fit if missing or data changed)
 ranking_path <- "outputs/models/nma_rankings.rds"
-data_path    <- "data/nsclc_trial_contrasts.csv"
+data_path    <- "data/trial_contrasts.csv"
 
 needs_refit <- !file.exists(ranking_path) ||
                (file.exists(data_path) && file.mtime(data_path) > file.mtime(ranking_path))

@@ -20,7 +20,7 @@ cat(" [ANALYSIS 06/12] LEAVE-ONE-OUT (LOO) SENSITIVITY CROSS-VALIDATION\n")
 cat("======================================================================\n")
 
 # 1. Load Clinical Trial Contrast Data & Baseline Model
-data_path  <- "data/nsclc_trial_contrasts.csv"
+data_path  <- "data/trial_contrasts.csv"
 model_path <- "outputs/models/nma_model.rds"
 loo_rds    <- "outputs/models/leave_one_out_data.rds"
 loo_csv    <- "outputs/tables/leave_one_out_results.csv"

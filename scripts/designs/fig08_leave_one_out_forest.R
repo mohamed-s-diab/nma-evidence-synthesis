@@ -16,7 +16,7 @@ cat("======================================================================\n")
 
 # 1. Load Cached LOO Data (Auto-run analysis if missing)
 loo_path <- "outputs/models/leave_one_out_data.rds"
-data_path <- "data/nsclc_trial_contrasts.csv"
+data_path <- "data/trial_contrasts.csv"
 
 if (!file.exists(loo_path) || (file.exists(data_path) && file.mtime(data_path) > file.mtime(loo_path))) {
   cat(" - LOO cache missing or dataset modified. Running 06_leave_one_out_sensitivity.R ...\n")

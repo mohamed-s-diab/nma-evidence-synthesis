@@ -20,7 +20,7 @@ cat("\n======================================================================\n"
 cat(" [ANALYSIS 07/12] COMPONENT NETWORK META-ANALYSIS (CNMA)\n")
 cat("======================================================================\n")
 
-data_path   <- "data/nsclc_trial_contrasts.csv"
+data_path   <- "data/trial_contrasts.csv"
 model_file  <- "outputs/models/component_nma_data.rds"
 table_file  <- "outputs/tables/component_nma_effects.csv"
 script_file <- "scripts/analyses/07_component_nma.R"

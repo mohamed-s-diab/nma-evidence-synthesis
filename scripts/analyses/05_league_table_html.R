@@ -11,7 +11,7 @@ cat("======================================================================\n")
 
 # 1. Load or Generate Raw League Matrix Data
 csv_path  <- "outputs/tables/league_table_random_common.csv"
-data_path <- "data/nsclc_trial_contrasts.csv"
+data_path <- "data/trial_contrasts.csv"
 
 needs_regenerate <- !file.exists(csv_path) ||
                     (file.exists(data_path) && file.mtime(data_path) > file.mtime(csv_path))

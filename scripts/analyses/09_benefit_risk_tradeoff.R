@@ -14,7 +14,7 @@ cat("\n======================================================================\n"
 cat(" [ANALYSIS 09/12] BI-DIMENSIONAL BENEFIT-RISK TRADE-OFF MATRIX\n")
 cat("======================================================================\n")
 
-data_path    <- "data/nsclc_toxicity_events.csv"
+data_path    <- "data/toxicity_events.csv"
 model_file   <- "outputs/models/benefit_risk_data.rds"
 table_file   <- "outputs/tables/benefit_risk_tradeoff.csv"
 nma_os_file  <- "outputs/models/nma_model.rds"

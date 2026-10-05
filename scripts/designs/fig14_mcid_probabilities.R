@@ -19,7 +19,7 @@ cat("======================================================================\n")
 
 # 1. Load Cached MCID Analysis Data
 mcid_data_path <- "outputs/models/mcid_analysis_data.rds"
-data_path      <- "data/nsclc_trial_contrasts.csv"
+data_path      <- "data/trial_contrasts.csv"
 
 if (!file.exists(mcid_data_path) || (file.exists(data_path) && file.mtime(data_path) > file.mtime(mcid_data_path))) {
   cat(" - MCID data cache missing or modified. Running 12_mcid_analysis.R ...\n")

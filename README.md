@@ -417,8 +417,8 @@ Systematic jackknife omission of each trial demonstrated that:
 ├── DESCRIPTION                            # Compendium metadata & dependency specification
 ├── renv.lock                              # Pinned package lockfile (v1.2.3)
 ├── data/
-│   ├── nsclc_trial_contrasts.csv          # Primary contrast dataset (24 trials, 15,753 patients)
-│   └── nsclc_toxicity_events.csv          # Severe adverse event dataset (32 contrasts, 14,357 patients)
+│   ├── trial_contrasts.csv                # Primary contrast dataset (24 trials, 15,753 patients)
+│   └── toxicity_events.csv                # Severe adverse event dataset (32 contrasts, 14,357 patients)
 ├── scripts/
 │   ├── analyses/
 │   │   ├── 01_fit_nma_model.R             # Graph Laplacian model estimation via netmeta
@@ -502,7 +502,7 @@ rmarkdown::render("report/nma_comprehensive_report.Rmd")
 | **Item 4: Objectives** | Explicit PICO specification | Section 2 |
 | **Item 6: Eligibility Criteria** | Define treatment nodes and trial criteria | Section 2 |
 | **Item 8: Geometry of Network** | Present graphical network geometry | **Figure 01:** Weighted nodes & multi-arm polygons |
-| **Item 10: Data Collection** | Process of extracting contrast data | CSV schema in `data/nsclc_trial_contrasts.csv` |
+| **Item 10: Data Collection** | Process of extracting contrast data | CSV schema in `data/trial_contrasts.csv` |
 | **Item 12: Synthesis Methods** | Describe statistical models for NMA | Section 3.3: Graph Laplacian inversion |
 | **Item 13: Inconsistency** | Global and local inconsistency methods | Section 3.4 & 3.5: Cochran's Q, `netsplit`, Net Heat |
 | **Item 14: Model Diagnostics** | Quality and diagnostic checks | Section 6: Global Q_inc, local node-splitting, Net Heat |

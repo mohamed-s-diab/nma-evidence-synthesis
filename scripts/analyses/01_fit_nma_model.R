@@ -16,7 +16,7 @@ cat(" [ANALYSIS 01/12] MODEL ESTIMATION & CACHING (SINGLE SOURCE OF TRUTH)\n")
 cat("======================================================================\n")
 
 # 1. Load Clinical Trial Contrast Data
-data_path <- "data/nsclc_trial_contrasts.csv"
+data_path <- "data/trial_contrasts.csv"
 if (!file.exists(data_path)) {
   stop(sprintf("Error: Contrast dataset not found at '%s'. Please ensure the data file exists before running the analysis.", data_path))
 }

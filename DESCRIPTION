@@ -1,4 +1,4 @@
-Package: nsclc.nma
+Package: nma.frequentist
 Title: Reproducible Frequentist Network Meta-Analysis Framework (Multi-Treatment Evidence Synthesis)
 Version: 1.0.0
 Authors@R: c(

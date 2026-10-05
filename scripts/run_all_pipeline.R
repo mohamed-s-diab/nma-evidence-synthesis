@@ -16,11 +16,11 @@ cat("===========================================================================
 start_time <- Sys.time()
 
 # 0. Ensure required datasets exist
-if (!file.exists("data/nsclc_trial_contrasts.csv")) {
-  stop("Error: Contrast dataset 'data/nsclc_trial_contrasts.csv' not found. Please ensure the data file exists before running the pipeline.")
+if (!file.exists("data/trial_contrasts.csv")) {
+  stop("Error: Contrast dataset 'data/trial_contrasts.csv' not found. Please ensure the data file exists before running the pipeline.")
 }
-if (!file.exists("data/nsclc_toxicity_events.csv")) {
-  stop("Error: Toxicity dataset 'data/nsclc_toxicity_events.csv' not found. Please ensure the data file exists before running the pipeline.")
+if (!file.exists("data/toxicity_events.csv")) {
+  stop("Error: Toxicity dataset 'data/toxicity_events.csv' not found. Please ensure the data file exists before running the pipeline.")
 }
 
 # ------------------------------------------------------------------------------

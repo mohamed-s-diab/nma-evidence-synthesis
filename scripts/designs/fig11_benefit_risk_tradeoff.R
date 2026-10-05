@@ -15,7 +15,7 @@ cat("\n======================================================================\n"
 cat(" [DESIGN 11/12] FIGURE 11: BI-DIMENSIONAL BENEFIT-RISK TRADE-OFF MATRIX\n")
 cat("======================================================================\n")
 
-data_path    <- "data/nsclc_toxicity_events.csv"
+data_path    <- "data/toxicity_events.csv"
 br_data_file <- "outputs/models/benefit_risk_data.rds"
 
 needs_rerun  <- !file.exists(br_data_file) ||

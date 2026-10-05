@@ -30,7 +30,7 @@ assert_test <- function(desc, condition) {
 # ------------------------------------------------------------------------------
 cat("\n--- Section 1: Data Contract & Input Validation ---\n")
 
-contrasts_path <- "data/nsclc_trial_contrasts.csv"
+contrasts_path <- "data/trial_contrasts.csv"
 assert_test("Contrasts dataset file exists", file.exists(contrasts_path))
 
 if (file.exists(contrasts_path)) {
@@ -50,7 +50,7 @@ if (file.exists(contrasts_path)) {
               length(unique(contrasts$studlab)) >= 20)
 }
 
-toxicity_path <- "data/nsclc_toxicity_events.csv"
+toxicity_path <- "data/toxicity_events.csv"
 assert_test("Toxicity dataset file exists", file.exists(toxicity_path))
 
 if (file.exists(toxicity_path)) {

@@ -24,7 +24,7 @@ cat("======================================================================\n")
 model_file   <- "outputs/models/metaregression_data.rds"
 table_file   <- "outputs/tables/metaregression_results.csv"
 nma_file     <- "outputs/models/nma_model.rds"
-data_path    <- "data/nsclc_trial_contrasts.csv"
+data_path    <- "data/trial_contrasts.csv"
 script_file  <- "scripts/analyses/10_network_metaregression.R"
 
 if (!file.exists(nma_file)) {

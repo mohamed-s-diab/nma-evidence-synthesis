@@ -21,7 +21,7 @@ model_file   <- "outputs/models/subgroup_analysis_data.rds"
 table_file   <- "outputs/tables/subgroup_analysis_results.csv"
 summary_file <- "outputs/tables/subgroup_network_summary.csv"
 nma_file     <- "outputs/models/nma_model.rds"
-data_path    <- "data/nsclc_trial_contrasts.csv"
+data_path    <- "data/trial_contrasts.csv"
 script_file  <- "scripts/analyses/11_subgroup_analysis.R"
 
 if (!file.exists(nma_file)) {
