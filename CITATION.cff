@@ -6,8 +6,8 @@ type: software
 version: 1.0.0
 date-released: 2026-09-25
 license: MIT
-repository-code: "https://github.com/mohamed-s-diab/nma-nsclc-evidence-synthesis"
-url: "https://mohamed-s-diab.github.io/nma-nsclc-evidence-synthesis/"
+repository-code: "https://github.com/mohamed-s-diab/nma-evidence-synthesis"
+url: "https://mohamed-s-diab.github.io/nma-evidence-synthesis/"
 authors:
   - family-names: "Diab"
     given-names: "Mohamed Said Mohamed"

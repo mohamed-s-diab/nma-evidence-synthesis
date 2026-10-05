@@ -4,7 +4,7 @@
 
 <br/>
 
-[![CI Pipeline](https://github.com/mohamed-s-diab/nma-nsclc-evidence-synthesis/actions/workflows/ci.yml/badge.svg)](https://github.com/mohamed-s-diab/nma-nsclc-evidence-synthesis/actions/workflows/ci.yml)
+[![CI Pipeline](https://github.com/mohamed-s-diab/nma-evidence-synthesis/actions/workflows/ci.yml/badge.svg)](https://github.com/mohamed-s-diab/nma-evidence-synthesis/actions/workflows/ci.yml)
 [![R Version](https://img.shields.io/badge/R-v4.6.1-276DC3.svg?logo=R&logoColor=white)](https://www.r-project.org/)
 [![renv](https://img.shields.io/badge/renv-v1.2.3%20locked-blue.svg?logo=r&logoColor=white)](https://rstudio.github.io/renv/)
 [![Package: netmeta](https://img.shields.io/badge/netmeta-v3.6--1-blue.svg)](https://cran.r-project.org/package=netmeta)
@@ -13,7 +13,7 @@
 [![Validation: Automated Tests](https://img.shields.io/badge/Quality%20Assurance-19%2F19%20Passed-brightgreen.svg)](#8-computational-reproducibility--execution-pipeline)
 [![Reporting Standard](https://img.shields.io/badge/Reporting%20Standard-PRISMA--NMA%202015-purple.svg)](#9-prisma-nma-computational-reporting-alignment)
 [![Evidence Base](https://img.shields.io/badge/Evidence%20Base-24%20RCTs%20%7C%2015%2C753%20Pts-informational.svg)](#2-evidence-base--study-design)
-[![Interactive Report](https://img.shields.io/badge/Report-Interactive%20Monograph-0071E3.svg?logo=googlechrome&logoColor=white)](https://mohamed-s-diab.github.io/nma-nsclc-evidence-synthesis/)
+[![Interactive Report](https://img.shields.io/badge/Report-Interactive%20Monograph-0071E3.svg?logo=googlechrome&logoColor=white)](https://mohamed-s-diab.github.io/nma-evidence-synthesis/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 </div>
@@ -553,6 +553,6 @@ Developed by the Evidence Synthesis Working Group, Faculty of Medicine, Modern U
   year         = {2026},
   version      = {1.0.0},
   publisher    = {GitHub},
-  url          = {https://github.com/mohamed-s-diab/nma-nsclc-evidence-synthesis}
+  url          = {https://github.com/mohamed-s-diab/nma-evidence-synthesis}
 }
 ```

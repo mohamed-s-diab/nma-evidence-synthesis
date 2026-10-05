@@ -44,7 +44,7 @@ Compliant with:
 ### Option A: One-Click Cloud Reproduction (Zero Installation)
 Launch the fully configured, hermetic computational laboratory directly in your browser:
 
-[![Open in GitHub Codespaces](https://img.shields.io/badge/Codespaces-Open%20in%20Cloud%20(One--Click)-238636.svg?style=for-the-badge&logo=github&logoColor=white)](https://codespaces.new/mohamed-s-diab/nma-nsclc-evidence-synthesis?quickstart=1)
+[![Open in GitHub Codespaces](https://img.shields.io/badge/Codespaces-Open%20in%20Cloud%20(One--Click)-238636.svg?style=for-the-badge&logo=github&logoColor=white)](https://codespaces.new/mohamed-s-diab/nma-evidence-synthesis?quickstart=1)
 
 Within ~30 seconds, an interactive cloud workspace will initialize with R 4.6.1, `netmeta`, Linux system headers (`libglpk-dev`), and all 86 locked dependencies ready to execute.
 
