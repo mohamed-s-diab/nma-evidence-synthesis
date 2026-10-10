@@ -4,46 +4,65 @@
 
 <br/>
 
-[![R](https://img.shields.io/badge/R-276DC3?style=flat-square&logo=r&logoColor=white)](https://www.r-project.org/)
-[![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)](https://git-scm.com/)
-[![Quarto](https://img.shields.io/badge/Quarto-4A9CD6?style=flat-square&logo=quarto&logoColor=white)](https://quarto.org/)
-[![ORCID](https://img.shields.io/badge/ORCID-0009--0003--3143--387X-A6CE39?style=flat-square&logo=orcid&logoColor=white)](https://orcid.org/0009-0003-3143-387X)
-[![Email](https://img.shields.io/badge/Email-Mohamed.98478%40Medicine.mti.edu.eg-0071E3?style=flat-square&logo=gmail&logoColor=white)](mailto:Mohamed.98478@Medicine.mti.edu.eg)
+<p align="center">
+  <img src="./mti_logo.png" height="52" alt="Faculty of Medicine - MTI Logo" />
+  <br/>
+  <strong>Faculty of Medicine &middot; Modern University for Technology and Information (MTI)</strong>
+  <br/>
+  <sub>Cairo, Egypt</sub>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/R-276DC3?style=flat-square&logo=r&logoColor=white" alt="R" />
+  <img src="https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white" alt="Git" />
+  <img src="https://img.shields.io/badge/Quarto-4A9CD6?style=flat-square&logo=quarto&logoColor=white" alt="Quarto" />
+  <img src="https://img.shields.io/badge/renv-v1.2.3-blue?style=flat-square&logo=r&logoColor=white" alt="renv" />
+  <img src="https://img.shields.io/badge/netmeta-v3.6--1-0071E3?style=flat-square&logo=r&logoColor=white" alt="netmeta" />
+  <img src="https://img.shields.io/badge/Markdown-000000?style=flat-square&logo=markdown&logoColor=white" alt="Markdown" />
+</p>
 
 </div>
 
 ---
 
-### 👋 About Me
-I am a medical student at the Faculty of Medicine, Modern University for Technology and Information (MTI) in Cairo, Egypt. I have a strong interest in biostatistics, evidence synthesis methods (pairwise and network meta-analysis), and building clean, reproducible data workflows in R.
+### 👨‍⚕️ About Me
+Medical student and researcher with a focus on biostatistical evidence synthesis, frequentist network meta-analysis, and building reproducible open-science pipelines in R.
 
 ---
 
 > [!NOTE]
-> ### 🔍 Transparency & Dataset Disclosure
-> My public repositories (including [`nma-evidence-synthesis`](https://github.com/mohamed-s-diab/nma-evidence-synthesis)) are **educational and methodological programming demonstrations**.
-> 
-> - They utilize **synthetic / simulated benchmark datasets** (`Drug A` through `Drug F` across mock trials) to demonstrate data wrangling, model execution with R packages like `netmeta`, and publication-quality data visualization.
-> - They do **not** represent real-world clinical trials or actual patient records and are not intended for clinical decision-making.
-> - The primary focus is code quality, workflow reproducibility, and transparent reporting.
+> **🔍 Transparency & Dataset Disclosure:**  
+> All public computational repositories (including [`nma-evidence-synthesis`](https://github.com/mohamed-s-diab/nma-evidence-synthesis)) are educational and methodological demonstrations using **synthetic / simulated benchmark datasets** (`Drug A` through `Drug F`) to showcase data wrangling, model fitting with R packages like `netmeta`, and data visualization. They do not represent real patient data or clinical recommendations.
 
 ---
 
-### 💻 Technical Interests & Toolkit
-- **R Ecosystem:** `netmeta`, `meta`, `tidyverse`, `ggplot2`, `patchwork`
-- **Reproducibility:** `renv`, R Markdown, Quarto, GitHub Actions
-- **Evidence Synthesis:** Pairwise meta-analysis, network meta-analysis workflows, consistency diagnostics, and clinical trial evidence appraisal.
+### 💻 Core Toolkit
+- **Evidence Synthesis:** Pairwise Meta-Analysis, Network Meta-Analysis (`netmeta`), Inconsistency Diagnostics, Treatment Ranking (P-scores).
+- **R Programming:** Data wrangling (`tidyverse`, `dplyr`), Visual Exhibits (`ggplot2`, `patchwork`), Reports (`R Markdown`, `Quarto`).
+- **Reproducible Pipelines:** Package version locking (`renv`), Version Control (`Git`, `GitHub Actions`).
 
 ---
 
 ### 📂 Featured Repository
 - **[`nma-evidence-synthesis`](https://github.com/mohamed-s-diab/nma-evidence-synthesis):**  
-  A modular, reproducible R workflow demonstrating frequentist Network Meta-Analysis using a synthetic benchmark dataset. Features 12 sequential R scripts covering model fitting, consistency checks, sensitivity analyses, and 14 clean `ggplot2` figures.
+  A modular, reproducible R workflow implementing frequentist Network Meta-Analysis using a synthetic benchmark dataset. Features 12 sequential analytical scripts, model diagnostics, and 14 clean visual exhibits.  
+  👉 [**View Live Exhibits Gallery**](https://mohamed-s-diab.github.io/nma-evidence-synthesis/)
 
 ---
 
-### 📬 Contact & Links
-- **Institutional Email:** [Mohamed.98478@Medicine.mti.edu.eg](mailto:Mohamed.98478@Medicine.mti.edu.eg)
-- **ORCID:** [0009-0003-3143-387X](https://orcid.org/0009-0003-3143-387X)
-- **Google Scholar:** [Mohamed Said Diab](https://scholar.google.com/citations?user=_tJ3MkYAAAAJ)
-- **ResearchGate:** [Mohamed Said Mohamed Diab](https://www.researchgate.net/profile/Mohamed-Said-Mohamed-Diab)
+### 📬 Contact & Profiles
+
+<p align="left">
+  <a href="mailto:Mohamed.98478@Medicine.mti.edu.eg">
+    <img src="https://img.shields.io/badge/Institutional%20Email-Mohamed.98478%40Medicine.mti.edu.eg-0071E3?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
+  </a>
+  <a href="https://orcid.org/0009-0003-3143-387X" target="_blank" rel="noopener">
+    <img src="https://img.shields.io/badge/ORCID-0009--0003--3143--387X-A6CE39?style=for-the-badge&logo=orcid&logoColor=white" alt="ORCID" />
+  </a>
+  <a href="https://scholar.google.com/citations?user=_tJ3MkYAAAAJ" target="_blank" rel="noopener">
+    <img src="https://img.shields.io/badge/Google%20Scholar-Mohamed%20Said%20Diab-4285F4?style=for-the-badge&logo=googlescholar&logoColor=white" alt="Google Scholar" />
+  </a>
+  <a href="https://www.researchgate.net/profile/Mohamed-Said-Mohamed-Diab" target="_blank" rel="noopener">
+    <img src="https://img.shields.io/badge/ResearchGate-Mohamed%20Said%20Diab-00CCBB?style=for-the-badge&logo=researchgate&logoColor=white" alt="ResearchGate" />
+  </a>
+</p>
