@@ -14,14 +14,10 @@ Authors@R: c(
            comment = c(Affiliation = "Faculty of Medicine, Modern University for Technology and Information (MTI)"))
   )
 Description: A reproducible frequentist Network Meta-Analysis (NMA)
-    computational engine and research compendium evaluating multi-arm,
-    multi-treatment trial evidence. Implements 12 sequential mathematical
-    engines, graph-theoretical Laplacian synthesis via netmeta, local and global
-    inconsistency diagnostics (node-splitting, NetHeat spectral decomposition),
-    probabilistic rank simulation (10,000 Monte Carlo iterations), Minimal
-    Clinically Important Difference (MCID) frontiers, and high-resolution
-    publication exhibits (300 DPI) adhering strictly to PRISMA-NMA 2015 and
-    Cochrane Handbook guidelines.
+    workflow in R demonstrating multi-treatment evidence synthesis using
+    simulated benchmark data. Implements modular R scripts utilizing the
+    netmeta package for model fitting, consistency diagnostics, treatment
+    rankings, and publication-ready visualizations.
 License: MIT + file LICENSE
 URL: https://github.com/mohamed-s-diab/nma-evidence-synthesis,
     https://mohamed-s-diab.github.io/nma-evidence-synthesis/

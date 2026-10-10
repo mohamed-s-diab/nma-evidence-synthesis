@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: "If you utilize this computational engine, methodology, or evidence synthesis pipeline in your research, please cite it as below."
 title: "Reproducible Frequentist Network Meta-Analysis Framework (Multi-Treatment Evidence Synthesis)"
-abstract: "A modular, reproducible computational evidence synthesis framework written in R (netmeta) synthesizing 24 randomized controlled trials encompassing 15,753 patients. Features 12 analytical engines, graph-theoretical Laplacian synthesis, consistency audits, 10,000-scenario Monte Carlo simulations, bivariate benefit-risk trade-offs, and 14 publication-grade 300 DPI exhibits adhering to PRISMA-NMA and Cochrane standards."
+abstract: "A modular, reproducible computational workflow written in R (netmeta) demonstrating Network Meta-Analysis using a synthetic benchmark dataset. Features 12 analytical R scripts for model fitting, consistency checks, sensitivity analyses, and 14 publication-style visual exhibits."
 type: software
 version: 1.0.0
 date-released: 2026-09-25
