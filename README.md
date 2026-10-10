@@ -251,19 +251,9 @@ Developed by:
 <br/>
 
 <p align="left">
-  <a href="mailto:Mohamed.98478@Medicine.mti.edu.eg">
-    <img src="https://img.shields.io/badge/Email-Mohamed.98478%40Medicine.mti.edu.eg-0071E3?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
-  </a>
-  <a href="https://orcid.org/0009-0003-3143-387X" target="_blank" rel="noopener">
-    <img src="https://img.shields.io/badge/ORCID-0009--0003--3143--387X-A6CE39?style=for-the-badge&logo=orcid&logoColor=white" alt="ORCID" />
-  </a>
-  <a href="https://scholar.google.com/citations?user=_tJ3MkYAAAAJ" target="_blank" rel="noopener">
-    <img src="https://img.shields.io/badge/Google%20Scholar-Mohamed%20Said%20Diab-4285F4?style=for-the-badge&logo=googlescholar&logoColor=white" alt="Google Scholar" />
-  </a>
-  <a href="https://www.researchgate.net/profile/Mohamed-Said-Mohamed-Diab" target="_blank" rel="noopener">
-    <img src="https://img.shields.io/badge/ResearchGate-Mohamed%20Said%20Diab-00CCBB?style=for-the-badge&logo=researchgate&logoColor=white" alt="ResearchGate" />
-  </a>
+  <a href="mailto:Mohamed.98478@Medicine.mti.edu.eg"><img src="https://img.shields.io/badge/Email-0071E3?style=flat-square&logo=gmail&logoColor=white" alt="Email" /></a> <a href="https://orcid.org/0009-0003-3143-387X" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/ORCID-A6CE39?style=flat-square&logo=orcid&logoColor=white" alt="ORCID" /></a> <a href="https://scholar.google.com/citations?user=_tJ3MkYAAAAJ" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/Scholar-4285F4?style=flat-square&logo=google-scholar&logoColor=white" alt="Google Scholar" /></a> <a href="https://www.researchgate.net/profile/Mohamed-Said-Mohamed-Diab" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/ResearchGate-00CCBB?style=flat-square&logo=researchgate&logoColor=white" alt="ResearchGate" /></a>
 </p>
+
 
 ### Citation Format
 
