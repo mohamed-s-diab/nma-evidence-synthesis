@@ -12,7 +12,9 @@
 [![Pipeline](https://img.shields.io/badge/Pipeline-12%20R%20Scripts-teal.svg)](#3-analytical-workflow--r-implementation)
 [![Validation](https://img.shields.io/badge/Tests-19%2F19%20Passed-brightgreen.svg)](#6-how-to-run-the-pipeline)
 [![Interactive Report](https://img.shields.io/badge/Report-Interactive%20HTML-0071E3.svg?logo=googlechrome&logoColor=white)](https://mohamed-s-diab.github.io/nma-evidence-synthesis/)
+[![Open Codebase](https://img.shields.io/badge/Open_Codebase-Codespaces-238636?logo=github&logoColor=white)](https://codespaces.new/mohamed-s-diab/nma-evidence-synthesis)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 
 </div>
 
@@ -213,6 +215,17 @@ All figure generation scripts are located in `scripts/designs/` and save high-re
 ---
 
 ## 7. How to Run the Pipeline
+
+### ⚡ One-Click Cloud Reproduction (Zero Installation)
+Launch the fully configured, isolated computational environment directly in your browser:
+
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/mohamed-s-diab/nma-evidence-synthesis)
+
+*Instantly boots an interactive cloud VS Code / R environment pre-loaded with R 4.x, `netmeta`, Linux headers (`libglpk-dev`), and all locked dependencies ready to run.*
+
+---
+
+### Local Machine Execution
 
 ### Step 1: Restore Package Environment
 This project uses `renv` to lock package versions. In your R console:

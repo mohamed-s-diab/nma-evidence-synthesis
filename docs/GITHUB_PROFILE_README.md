@@ -38,7 +38,7 @@ Medical student and researcher with a focus on biostatistical evidence synthesis
 ### 📂 Featured Repository
 - **[`nma-evidence-synthesis`](https://github.com/mohamed-s-diab/nma-evidence-synthesis):**  
   A modular, reproducible R workflow implementing frequentist Network Meta-Analysis using a synthetic benchmark dataset. Features 12 sequential analytical scripts, model diagnostics, and 14 clean visual exhibits.  
-  👉 [**View Live Exhibits Gallery**](https://mohamed-s-diab.github.io/nma-evidence-synthesis/)
+  👉 [**View Live Exhibits Gallery**](https://mohamed-s-diab.github.io/nma-evidence-synthesis/) &nbsp;&middot;&nbsp; ☁️ [**Open Codebase in Cloud**](https://codespaces.new/mohamed-s-diab/nma-evidence-synthesis)
 
 ---
 

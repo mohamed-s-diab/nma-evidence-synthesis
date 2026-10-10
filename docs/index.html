@@ -105,6 +105,25 @@
       color: var(--apple-blue);
     }
 
+    .nav-btn-cloud {
+      background: var(--text-primary) !important;
+      color: #FFFFFF !important;
+      padding: 5px 12px !important;
+      border-radius: var(--radius-pill) !important;
+      font-size: 0.8rem !important;
+      font-weight: 600 !important;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .nav-btn-cloud:hover {
+      background: var(--apple-blue) !important;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(0, 113, 227, 0.25);
+    }
+
     /* Main Container */
     .container {
       max-width: 1040px;
@@ -481,8 +500,8 @@
       <span>NMA Visual Exhibits</span>
     </a>
     <ul class="nav-links">
-      <li><a href="https://github.com/mohamed-s-diab/nma-evidence-synthesis" target="_blank" rel="noopener">GitHub Repository</a></li>
-      <li><a href="https://mohamed-s-diab.github.io/" target="_blank" rel="noopener">Author Profile</a></li>
+      <li><a href="https://github.com/mohamed-s-diab/nma-evidence-synthesis" target="_blank" rel="noopener">GitHub</a></li>
+      <li><a href="https://codespaces.new/mohamed-s-diab/nma-evidence-synthesis" target="_blank" rel="noopener" class="nav-btn-cloud">☁️ Open Codebase</a></li>
       <li><a href="#exhibits">Browse Figures</a></li>
     </ul>
   </nav>
