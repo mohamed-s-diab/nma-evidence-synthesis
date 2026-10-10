@@ -7,7 +7,7 @@
   <meta name="description" content="Visual exhibits and brief summaries of frequentist network meta-analysis model outputs in R using synthetic benchmark data.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg-dark: #0B0E14;
@@ -21,7 +21,6 @@
       --text-secondary: #8B949E;
       --text-muted: #6E7681;
       --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      --font-ar: 'Noto Sans Arabic', 'Inter', sans-serif;
     }
 
     * {
@@ -270,19 +269,10 @@
     }
 
     .summary-en {
-      font-size: 0.92rem;
+      font-size: 0.94rem;
       color: #E6EDF3;
-      margin-bottom: 10px;
-      line-height: 1.5;
-    }
-
-    .summary-ar {
-      font-family: var(--font-ar);
-      font-size: 0.95rem;
-      color: #A5D6FF;
-      direction: rtl;
-      text-align: right;
-      line-height: 1.6;
+      margin-bottom: 0;
+      line-height: 1.55;
     }
 
     /* Footer */
@@ -322,8 +312,8 @@
     </a>
     <ul class="nav-links">
       <li><a href="https://github.com/mohamed-s-diab/nma-evidence-synthesis" target="_blank" rel="noopener">GitHub Repository</a></li>
-      <li><a href="https://mohamed-s-diab.github.io/" target="_blank" rel="noopener">Author Profile</a></li>
-      <li><a href="#exhibits">All Figures (1-14)</a></li>
+      <li><a href="https://mohamed-s-diab.github.io/" target="_blank" rel="noopener">Author Portfolio</a></li>
+      <li><a href="#exhibits">All Exhibits (1-14)</a></li>
     </ul>
   </nav>
 
@@ -341,8 +331,8 @@
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
         <div>
           <p>
-            <strong>🔍 إقرار الشفافية والبيانات (Dataset Disclosure):</strong><br/>
-            هذا المعرض يعرض المخرجات الرسومية لمشروع برمجي مفتوح في R. البيانات المستخدمة هي <strong>بيانات تجريبية وافتراضية (Synthetic Benchmark Data)</strong> للعلاجات (Drug A إلى Drug F) لغرض التدريب والتحقق البرمجي فقط، ولا تمثل تجارب سريرية أو مرضى حقيقيين.
+            <strong>🔍 Transparency &amp; Dataset Disclosure:</strong><br/>
+            This visual exhibit showcases outputs from an open-source educational R workflow. The data utilized consists of <strong>synthetic / simulated benchmark datasets</strong> for regimens (Drug A through Drug F) created solely for computational testing and pipeline verification. It does not reflect real-world clinical trials or actual patient records.
           </p>
         </div>
       </div>
@@ -363,9 +353,8 @@
           <img src="figures/01_network_geometry.png" alt="Figure 01: Evidence Network Geometry" loading="lazy">
         </div>
         <div class="summary-box">
-          <div class="summary-heading">📌 Key Takeaway &middot; الخلاصة</div>
-          <p class="summary-en"><strong>Summary:</strong> Fully connected evidence network of 6 regimens centered on control anchor `Drug A`, with multi-arm trials and no disconnected nodes.</p>
-          <p class="summary-ar"><strong>الخلاصة:</strong> شبكة مقارنات مترابطة بالكامل تضم 6 أدوية متمحورة حول العلاج المرجعي (Drug A)، دون وجود أي أدوية معزولة أو مسارات منقطعة.</p>
+          <div class="summary-heading">📌 Key Takeaway</div>
+          <p class="summary-en"><strong>Summary:</strong> Fully connected evidence network of 6 treatment regimens centered on the control anchor `Drug A`, with multi-arm trials and no disconnected nodes or pathways.</p>
         </div>
       </div>
 
@@ -382,9 +371,8 @@
           <img src="figures/02_forest_plot_random.png" alt="Figure 02: Forest Plot vs Drug A" loading="lazy">
         </div>
         <div class="summary-box">
-          <div class="summary-heading">📌 Key Takeaway &middot; الخلاصة</div>
-          <p class="summary-en"><strong>Summary:</strong> All active regimens significantly reduced hazard of death versus `Drug A`, with `Drug C` (HR = 0.69) and `Drug F` (HR = 0.72) showing the strongest benefits.</p>
-          <p class="summary-ar"><strong>الخلاصة:</strong> جميع العلاجات التجريبية حققت تحسناً معنوياً في معدل البقاء مقارنة بالعلاج المرجعي Drug A، وتصدرها Drug C (HR = 0.69) ثم Drug F (HR = 0.72).</p>
+          <div class="summary-heading">📌 Key Takeaway</div>
+          <p class="summary-en"><strong>Summary:</strong> All active regimens significantly reduced hazard of death versus `Drug A`, with `Drug C` (HR = 0.69) and `Drug F` (HR = 0.72) showing the strongest survival improvements.</p>
         </div>
       </div>
 
@@ -401,9 +389,8 @@
           <img src="figures/03_pscore_ranking.png" alt="Figure 03: P-Score Ranking" loading="lazy">
         </div>
         <div class="summary-box">
-          <div class="summary-heading">📌 Key Takeaway &middot; الخلاصة</div>
-          <p class="summary-en"><strong>Summary:</strong> `Drug C` ranked #1 with a P-score of 0.9428, followed by `Drug F` (0.7543), `Drug D` (0.5854), `Drug B` (0.5133), and `Drug E` (0.2009).</p>
-          <p class="summary-ar"><strong>الخلاصة:</strong> تصدر Drug C الترتيب باحتمال تفوق P-score قدره 0.9428 (المرتبة الأولى)، تلاه Drug F (0.7543)، بينما حل المرجع Drug A أخيراً.</p>
+          <div class="summary-heading">📌 Key Takeaway</div>
+          <p class="summary-en"><strong>Summary:</strong> `Drug C` ranked #1 with the highest P-score of 0.9428, followed by `Drug F` (0.7543), `Drug D` (0.5854), `Drug B` (0.5133), and `Drug E` (0.2009).</p>
         </div>
       </div>
 
@@ -420,9 +407,8 @@
           <img src="figures/04_netsplit_inconsistency.png" alt="Figure 04: Node-Splitting Inconsistency" loading="lazy">
         </div>
         <div class="summary-box">
-          <div class="summary-heading">📌 Key Takeaway &middot; الخلاصة</div>
-          <p class="summary-en"><strong>Summary:</strong> Direct and indirect estimates showed close statistical alignment across all closed loops (all p &gt; 0.40), confirming consistency.</p>
-          <p class="summary-ar"><strong>الخلاصة:</strong> توافق إحصائي تام بين الأدلة المباشرة وغير المباشرة في كافة الحلقات المغلقة (جميع قيم p &gt; 0.40)، مما يؤكد اتساق الشبكة.</p>
+          <div class="summary-heading">📌 Key Takeaway</div>
+          <p class="summary-en"><strong>Summary:</strong> Direct and indirect effect estimates showed close statistical alignment across all closed loops (all p &gt; 0.40), confirming network consistency.</p>
         </div>
       </div>
 
@@ -439,9 +425,8 @@
           <img src="figures/05_netheat_plot.png" alt="Figure 05: Net Heat Plot" loading="lazy">
         </div>
         <div class="summary-box">
-          <div class="summary-heading">📌 Key Takeaway &middot; الخلاصة</div>
-          <p class="summary-en"><strong>Summary:</strong> Matrix diagnostics confirmed neutral background tiles with no localized tension or hotspot driving evidence conflicts.</p>
-          <p class="summary-ar"><strong>الخلاصة:</strong> مصفوفة Net Heat تؤكد حيادية المقارنات وخلو الشبكة من أي تعارض شاذ أو بؤر توتر بين الدراسات.</p>
+          <div class="summary-heading">📌 Key Takeaway</div>
+          <p class="summary-en"><strong>Summary:</strong> Matrix diagnostics confirmed neutral background tiles with no localized tension or hotspot driving evidence conflicts across comparisons.</p>
         </div>
       </div>
 
@@ -458,9 +443,8 @@
           <img src="figures/06_funnel_plot.png" alt="Figure 06: Funnel Plot" loading="lazy">
         </div>
         <div class="summary-box">
-          <div class="summary-heading">📌 Key Takeaway &middot; الخلاصة</div>
-          <p class="summary-en"><strong>Summary:</strong> Symmetrical distribution around the zero line and non-significant Egger test (p = 0.137) indicate absence of small-study bias.</p>
-          <p class="summary-ar"><strong>الخلاصة:</strong> توزيع متماثل للتأثيرات حول الصفر واختبار إيجر غير دال (p = 0.137)، مما ينفي وجود تحيز الدراسات الصغيرة.</p>
+          <div class="summary-heading">📌 Key Takeaway</div>
+          <p class="summary-en"><strong>Summary:</strong> Symmetrical distribution around the zero line and a non-significant Egger linear regression test (p = 0.137) indicate absence of small-study effects.</p>
         </div>
       </div>
 
@@ -477,9 +461,8 @@
           <img src="figures/07_league_table_figure.png" alt="Figure 07: League Table Matrix" loading="lazy">
         </div>
         <div class="summary-box">
-          <div class="summary-heading">📌 Key Takeaway &middot; الخلاصة</div>
-          <p class="summary-en"><strong>Summary:</strong> Complete pairwise comparative matrix showing that `Drug C` outperforms `Drug A`, `Drug B`, and `Drug E` with statistical significance.</p>
-          <p class="summary-ar"><strong>الخلاصة:</strong> جدول المقارنات الشامل يوضح تفوق Drug C إحصائياً على Drug A و Drug B و Drug E، مع تفوق طفيف غير معنوي على Drug F.</p>
+          <div class="summary-heading">📌 Key Takeaway</div>
+          <p class="summary-en"><strong>Summary:</strong> Complete pairwise comparative matrix showing that `Drug C` outperforms `Drug A`, `Drug B`, and `Drug E` with clear statistical significance.</p>
         </div>
       </div>
 
@@ -496,9 +479,8 @@
           <img src="figures/08_leave_one_out_forest.png" alt="Figure 08: Leave-One-Out Forest Plot" loading="lazy">
         </div>
         <div class="summary-box">
-          <div class="summary-heading">📌 Key Takeaway &middot; الخلاصة</div>
-          <p class="summary-en"><strong>Summary:</strong> Robust findings; `Drug C` retained Rank 1 across 100% of leave-one-out iterations (24/24), demonstrating extreme stability.</p>
-          <p class="summary-ar"><strong>الخلاصة:</strong> نتائج متينة ومستقرة؛ حافظ Drug C على المركز الأول بنسبة 100% في كافة دورات الاستبعاد (24/24) دون تأثر بحذف أي دراسة فردية.</p>
+          <div class="summary-heading">📌 Key Takeaway</div>
+          <p class="summary-en"><strong>Summary:</strong> Robust findings; `Drug C` retained Rank 1 across 100% of leave-one-out iterations (24/24), demonstrating exceptional stability.</p>
         </div>
       </div>
 
@@ -515,9 +497,8 @@
           <img src="figures/09_component_effects.png" alt="Figure 09: Component NMA Forest Plot" loading="lazy">
         </div>
         <div class="summary-box">
-          <div class="summary-heading">📌 Key Takeaway &middot; الخلاصة</div>
-          <p class="summary-en"><strong>Summary:</strong> Component models showed a significant synergistic interaction (p = 0.0004) when adding Component B to the reference backbone.</p>
-          <p class="summary-ar"><strong>الخلاصة:</strong> تحليل المكونات أظهر تآزراً دوائياً معنوياً (p = 0.0004) عند دمج المكون B مع العلاج المرجعي مقارنة بنموذج الجمع البسيط.</p>
+          <div class="summary-heading">📌 Key Takeaway</div>
+          <p class="summary-en"><strong>Summary:</strong> Component models showed a statistically significant synergistic interaction (p = 0.0004) when adding Component B to the reference backbone.</p>
         </div>
       </div>
 
@@ -534,9 +515,8 @@
           <img src="figures/10_rankograms.png" alt="Figure 10: Rankograms" loading="lazy">
         </div>
         <div class="summary-box">
-          <div class="summary-heading">📌 Key Takeaway &middot; الخلاصة</div>
+          <div class="summary-heading">📌 Key Takeaway</div>
           <p class="summary-en"><strong>Summary:</strong> Rank probability simulations placed `Drug C` with a 98.4% cumulative probability of finishing in the top two ranks (SUCRA = 94.4%).</p>
-          <p class="summary-ar"><strong>الخلاصة:</strong> توزيع احتمالات الرتب يضع Drug C باحتمال تراكمي 98.4% في المركزين الأول أو الثاني (SUCRA = 94.4%)، يليه Drug F (SUCRA = 75.1%).</p>
         </div>
       </div>
 
@@ -553,9 +533,8 @@
           <img src="figures/11_benefit_risk_tradeoff.png" alt="Figure 11: Benefit-Risk Trade-Off" loading="lazy">
         </div>
         <div class="summary-box">
-          <div class="summary-heading">📌 Key Takeaway &middot; الخلاصة</div>
-          <p class="summary-en"><strong>Summary:</strong> `Drug B` demonstrated favorable efficacy with the best safety profile, while `Drug C` offered highest efficacy with moderate toxicity.</p>
-          <p class="summary-ar"><strong>الخلاصة:</strong> Drug B حقق التوازن الأمثل بفعالية جيدة وأعلى معدل أمان (أقل سمية)، بينما حقق Drug C أعلى فعالية مع سمية معتدلة مقبولة.</p>
+          <div class="summary-heading">📌 Key Takeaway</div>
+          <p class="summary-en"><strong>Summary:</strong> `Drug B` demonstrated favorable efficacy with the best safety profile, while `Drug C` delivered highest efficacy with acceptable moderate toxicity.</p>
         </div>
       </div>
 
@@ -572,9 +551,8 @@
           <img src="figures/12_metaregression_bubble.png" alt="Figure 12: Meta-Regression Bubble Plot" loading="lazy">
         </div>
         <div class="summary-box">
-          <div class="summary-heading">📌 Key Takeaway &middot; الخلاصة</div>
-          <p class="summary-en"><strong>Summary:</strong> Meta-regression showed that publication year, study size, and setting had no significant confounding effect (all p &gt; 0.30).</p>
-          <p class="summary-ar"><strong>الخلاصة:</strong> انحدار الميتا أكد أن متغيرات سنة النشر وحجم الدراسة والجغرافيا لم تُحدث أي تأثير مشوش أو معدل على النتائج (p &gt; 0.30).</p>
+          <div class="summary-heading">📌 Key Takeaway</div>
+          <p class="summary-en"><strong>Summary:</strong> Meta-regression showed that study publication year, sample size, and setting had no significant confounding or modifying effect (all p &gt; 0.30).</p>
         </div>
       </div>
 
@@ -591,9 +569,8 @@
           <img src="figures/13_subgroup_forest.png" alt="Figure 13: Subgroup Forest Plot" loading="lazy">
         </div>
         <div class="summary-box">
-          <div class="summary-heading">📌 Key Takeaway &middot; الخلاصة</div>
-          <p class="summary-en"><strong>Summary:</strong> Subgroup analysis confirmed identical treatment effects between Global and Asia-Pacific studies (interaction p = 0.85).</p>
-          <p class="summary-ar"><strong>الخلاصة:</strong> تطابق كامل في التأثيرات بين الدراسات العالمية ودراسات منطقة آسيا والمحيط الهادئ (اختبار الفروق p = 0.85)، مؤكداً تجانس النتائج.</p>
+          <div class="summary-heading">📌 Key Takeaway</div>
+          <p class="summary-en"><strong>Summary:</strong> Subgroup analysis confirmed consistent treatment effects between Global and Asia-Pacific studies (interaction test p = 0.85).</p>
         </div>
       </div>
 
@@ -610,9 +587,8 @@
           <img src="figures/14_mcid_probabilities.png" alt="Figure 14: MCID Decision Probabilities" loading="lazy">
         </div>
         <div class="summary-box">
-          <div class="summary-heading">📌 Key Takeaway &middot; الخلاصة</div>
-          <p class="summary-en"><strong>Summary:</strong> `Drug C` demonstrated a 99.99% probability of exceeding the predefined threshold (HR &le; 0.80), followed by `Drug F` (91.92%).</p>
-          <p class="summary-ar"><strong>الخلاصة:</strong> حقق Drug C احتمالاً بنسبة 99.99% في تجاوز حد التحسن المستهدف (HR &le; 0.80)، تلاه Drug F بنسبة 91.92%، ثم Drug D بنسبة 84.42%.</p>
+          <div class="summary-heading">📌 Key Takeaway</div>
+          <p class="summary-en"><strong>Summary:</strong> `Drug C` demonstrated a 99.99% probability of exceeding the predefined threshold (HR &le; 0.80), followed by `Drug F` (91.92%) and `Drug D` (84.42%).</p>
         </div>
       </div>
 
