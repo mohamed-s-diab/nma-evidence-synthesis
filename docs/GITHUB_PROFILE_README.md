@@ -1,9 +1,6 @@
 <div align="center">
 
-# Mohamed Said Mohamed Diab
-
-**Medical Student & Researcher · Biostatistics & R Programming**  
-Faculty of Medicine, Modern University for Technology and Information (MTI), Cairo, Egypt
+<img src="./header.svg" width="100%" alt="Mohamed Said Mohamed Diab" />
 
 <br/>
 
@@ -18,7 +15,7 @@ Faculty of Medicine, Modern University for Technology and Information (MTI), Cai
 ---
 
 ### 👋 About Me
-I am a medical student at the Faculty of Medicine, Modern University for Technology and Information (MTI) in Cairo, Egypt. I have a strong interest in biostatistics, evidence synthesis methods (meta-analysis and network meta-analysis), and computational reproducible workflows in R.
+I am a medical student at the Faculty of Medicine, Modern University for Technology and Information (MTI) in Cairo, Egypt. I have a strong interest in biostatistics, evidence synthesis methods (pairwise and network meta-analysis), and building clean, reproducible data workflows in R.
 
 ---
 
